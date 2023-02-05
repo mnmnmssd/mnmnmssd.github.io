@@ -1,20 +1,12 @@
 name: my-blog
 
 on:
-<<<<<<< HEAD
     push:
         tags:
             - "*"
         branches:
             - master
-=======
-  push:
-    tags:
-      - '*'
-    branches:
-      - master
->>>>>>> 2ce00bfbbda1ddb1b2ca65317b97e139336179c2
-
+            
 env:
     REGISTRY: mnmnmssd.io
     IMAGE_NAME: ${{ github.repository }}
