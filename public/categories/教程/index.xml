@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>教程 on 笑的心酸</title>
+        <link>http://example.org/categories/%E6%95%99%E7%A8%8B/</link>
+        <description>Recent content in 教程 on 笑的心酸</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Tue, 09 Jun 2020 10:14:58 +0000</lastBuildDate><atom:link href="http://example.org/categories/%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>新版Windows Terminal美化配置</title>
+        <link>http://example.org/post/windows-terminal/test-chinese/</link>
+        <pubDate>Tue, 09 Jun 2020 10:14:58 +0000</pubDate>
+        
+        <guid>http://example.org/post/windows-terminal/test-chinese/</guid>
+        <description>&lt;h1 id=&#34;关于新版windows-terminal&#34;&gt;关于新版Windows Terminal&lt;/h1&gt;
+&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
+&lt;p&gt;Windows 终端是一个面向命令行工具和 shell（如命令提示符、PowerShell 和适用于 Linux 的 Windows 子系统 (WSL)）用户的新式终端应用程序。 它的主要功能包括多个选项卡、窗格、Unicode 和 UTF-8 字符支持、GPU 加速文本呈现引擎，还可以用于创建你自己的主题并自定义文本、颜色、背景和快捷键绑定。
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/wt.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;wt&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;下载与安装&#34;&gt;下载与安装&lt;/h2&gt;
+&lt;p&gt;下载途径有两种：
+&lt;strong&gt;&lt;code&gt;需要系统版本190X及以上&lt;/code&gt;&lt;/strong&gt;
+可在&lt;a class=&#34;link&#34; href=&#34;https://aka.ms/terminal&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;微软商店&lt;/code&gt;&lt;/a&gt;内搜索下载
+亦可在&lt;a class=&#34;link&#34; href=&#34;https://github.com/microsoft/terminal/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;GitHub发布页&lt;/code&gt;&lt;/a&gt;下载
+&lt;strong&gt;需要注意：&lt;strong&gt;git处有两种版本
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/dl.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;版本&#34;
+	
+	
+&gt;
+第一个为&lt;/strong&gt;预览版&lt;/strong&gt; ，第二个为&lt;strong&gt;稳定版&lt;/strong&gt;，请自行选择下载
+安装界面如图(因为我这里已经安装了所以显示为启动，正常应为安装):
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/wt-install.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;wt-install&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h1 id=&#34;美化准备工作&#34;&gt;美化准备工作&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;PowerShell7&lt;/li&gt;
+&lt;li&gt;良好的网络环境&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;powershell7安装&#34;&gt;PowerShell7安装&lt;/h2&gt;
+&lt;p&gt;在&lt;a class=&#34;link&#34; href=&#34;https://github.com/PowerShell/PowerShell&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;PowerShell&lt;/code&gt;&lt;/a&gt;处选择对应系统下载
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/![ps7]%28ps7.png%29.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;ps7&#34;
+	
+	
+&gt;
+其中&lt;code&gt;LTS&lt;/code&gt;为长期更新版本, &lt;code&gt;stable&lt;/code&gt; 稳定版本，&lt;code&gt;preview&lt;/code&gt;预览版本&lt;/p&gt;
+&lt;h2 id=&#34;将terminal添加到右键菜单&#34;&gt;将Terminal添加到右键菜单&lt;/h2&gt;
+&lt;p&gt;这里有两种方式修改:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;通过修改注册表(不推荐)&lt;/li&gt;
+&lt;li&gt;使用git上的一键脚本配置&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这里着重说明一下第二种方式(下列操作默认管理员身份运行)
+点击&lt;a class=&#34;link&#34; href=&#34;https://github.com/lextm/windowsterminal-shell&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;一键脚本&lt;/a&gt;跳转页面
+&lt;strong&gt;注意&lt;/strong&gt;&lt;code&gt;需要PowerShell版本为7&lt;/code&gt;
+可下载&lt;code&gt;install.sp1&lt;/code&gt;文件然后在&lt;code&gt;PowerShell7&lt;/code&gt;中找到文件执行命令 &lt;code&gt;.\install.ps1&lt;/code&gt;
+亦可采用git页面给出的命令安装&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString(&amp;#39;https://raw.githubusercontent.com/lextm/windowsterminal-shell/master/install.ps1&amp;#39;)) 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;注意：可能会报下列错误&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;.\install.ps1: File C:\Users\lenovo\Desktop\install.ps1 cannot be loaded because running scripts is disabled on this system. For more information, see about_Execution_Policies at https://go.microsoft.com/fwlink/?LinkID=135170.&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;这是因为&lt;code&gt;PowerShell&lt;/code&gt;默认执行权限的问题,此时只需打开&lt;code&gt;PowerShell&lt;/code&gt;输入下列命令即可:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;set-ExecutionPolicy RemoteSigned
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;windows-terminal配置文件更改&#34;&gt;Windows Terminal配置文件更改&lt;/h2&gt;
+&lt;p&gt;打开&lt;code&gt;Windows Terminal&lt;/code&gt;，点击标题栏小三角，打开设置页面
+目前官方仍未更新GUI页面，所以打开为一个JSON文件
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/setting.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;setting&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;将powershell7添加至windows-terminal启动菜单&#34;&gt;将PowerShell7添加至Windows Terminal启动菜单&lt;/h3&gt;
+&lt;p&gt;在配置文件中修改以下属性
+属性名称:&lt;code&gt;list&lt;/code&gt;
+在其中添加:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;guid&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;{574e775e-4f2a-5b96-ac1e-a2962a402336}&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#75715e&#34;&gt;//程序对应的guid属性唯一值
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;hidden&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;,      &lt;span style=&#34;color:#75715e&#34;&gt;//是否在启动列表隐藏
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;pwsh7&amp;#34;&lt;/span&gt;,    &lt;span style=&#34;color:#75715e&#34;&gt;//启动列表名称
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;tabTitle&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;pwsh7&amp;#34;&lt;/span&gt;,    &lt;span style=&#34;color:#75715e&#34;&gt;//选项卡标题名称
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;source&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Windows.Terminal.PowershellCore&amp;#34;&lt;/span&gt;,    &lt;span style=&#34;color:#75715e&#34;&gt;//这会存储源自配置文件的配置文件生成器的名称
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;startingDirectory&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;.&amp;#34;&lt;/span&gt;,   &lt;span style=&#34;color:#75715e&#34;&gt;//加载 shell 时所处的起始目录 这一步一定要设为&amp;#39;.&amp;#39;，否则会影响后续操作
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;historySize&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;9001&lt;/span&gt;,        &lt;span style=&#34;color:#75715e&#34;&gt;//历史记录大小
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;commandline&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;C:/Program Files/PowerShell/7/pwsh.exe -nologo&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#75715e&#34;&gt;//配置文件中使用的可执行文件
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;snapOnInput&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;//键入时滚动到输入行
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;其中&lt;code&gt;guid&lt;/code&gt;生成可以点击&lt;a class=&#34;link&#34; href=&#34;http://www.ofmonkey.com/transfer/guid&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;此处&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;修改默认启动shell&#34;&gt;修改默认启动shell&lt;/h3&gt;
+&lt;p&gt;此时我们修改默认的启动shell为新安装的&lt;code&gt;PowerShell7&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;属性名称: &lt;code&gt;defaultProfile&lt;/code&gt;
+属性值: 对应shell的&lt;code&gt;guid&lt;/code&gt;属性&lt;/p&gt;
+&lt;p&gt;将此值改为我们上方设置的&lt;code&gt;PowerShell7&lt;/code&gt;的&lt;code&gt;guid&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;修改字体背景及配色方案等&#34;&gt;修改字体，背景及配色方案等&lt;/h3&gt;
+&lt;p&gt;在&lt;code&gt;profiles&lt;/code&gt; 属性下的 &lt;code&gt;defaults&lt;/code&gt;属性中添加/修改些默认参数:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;acrylicOpacity&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0.25&lt;/span&gt;, &lt;span style=&#34;color:#75715e&#34;&gt;//设置背景模糊度
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;useAcrylic&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;, &lt;span style=&#34;color:#75715e&#34;&gt;//开启背景毛玻璃效果
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;colorScheme&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Monokai Night&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#75715e&#34;&gt;//设置配色方案，需要搭配后面的配色方案使用
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;suppressApplicationTitle&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;, &lt;span style=&#34;color:#75715e&#34;&gt;//启动自定义选项卡标题
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;fontSize&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;11&lt;/span&gt;, &lt;span style=&#34;color:#75715e&#34;&gt;//字体大小
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;fontFace&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Fira Code&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#75715e&#34;&gt;//设置字体
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;字体修改&#34;&gt;字体修改：&lt;/h4&gt;
+&lt;p&gt;选择喜欢的字体下载(最好是支持PowerLine的，否则后续会出现字符渲染的问题)
+这里以&lt;code&gt;Fira Code&lt;/code&gt;字体为例
+点击此处&lt;a class=&#34;link&#34; href=&#34;https://github.com/tonsky/FiraCode/releases/download/5/Fira_Code_v5.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;开始下载Fira Code&lt;/a&gt;
+安装好字体后，在&lt;code&gt;defaults&lt;/code&gt;属性中添加&lt;code&gt;&amp;quot;fontFace&amp;quot;: &amp;quot;Fira Code&amp;quot;&lt;/code&gt;值&lt;/p&gt;
+&lt;h4 id=&#34;配色方案修改&#34;&gt;配色方案修改:&lt;/h4&gt;
+&lt;p&gt;下方网址寻找喜欢的配色方案
+&lt;a class=&#34;link&#34; href=&#34;https://terminalsplash.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;terminalsplash&lt;/a&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://atomcorp.github.io/themes/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;atomcorp&lt;/a&gt;
+多种配色方案，此处以第一个网址为例，进入后等待加载完毕
+选择喜欢的配色方案，点击&lt;code&gt;code&lt;/code&gt;
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/themes.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;themes&#34;
+	
+	
+&gt;
+复制弹出的代码
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/themes-2.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;themes-2&#34;
+	
+	
+&gt;
+粘贴至&lt;code&gt;配置文件&lt;/code&gt;的&lt;code&gt;schemes&lt;/code&gt;属性中
+如&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;schemes&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;:&lt;/span&gt; [{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Monokai Night&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#75715e&#34;&gt;//配色方案名称
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;background&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;#1f1f1f&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;foreground&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;#f8f8f8&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;black&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;#1f1f1f&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;blue&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;#6699df&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;cyan&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;#e69f66&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;green&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;#a6e22e&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;purple&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;#ae81ff&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;red&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;#f92672&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;white&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;#f8f8f2&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;yellow&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;#e6db74&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;brightBlack&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;#75715e&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;brightBlue&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;#66d9ef&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;brightCyan&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;#e69f66&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;brightGreen&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;#a6e22e&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;brightPurple&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;#ae81ff&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;brightRed&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;#f92672&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;brightWhite&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;#f8f8f2&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;brightYellow&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;#e6db74&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;修改默认配色方案&lt;code&gt;colorScheme&lt;/code&gt;属性值为自定义的配色方案名称&lt;/p&gt;
+&lt;h4 id=&#34;背景修改&#34;&gt;背景修改：&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;开启背景毛玻璃效果&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;acrylicOpacity&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.25&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;//设置背景模糊度
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;useAcrylic&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;//开启毛玻璃效果
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;设置背景图片&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;backgroundImage&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;图片路径&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;backgroundImageStretchMode&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;背景拉伸&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;//可选属性: &amp;#34;none&amp;#34;、&amp;#34;fill&amp;#34;、&amp;#34;uniform&amp;#34;、&amp;#34;uniformToFill&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;backgroundImageAlignment&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;背景对齐方式&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;//可选属性: &amp;#34;center&amp;#34;、&amp;#34;left&amp;#34;、&amp;#34;top&amp;#34;、&amp;#34;right&amp;#34;、&amp;#34;bottom&amp;#34;、
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                                                &lt;span style=&#34;color:#75715e&#34;&gt;//&amp;#34;topLeft&amp;#34;、&amp;#34;topRight&amp;#34;、&amp;#34;bottomLeft&amp;#34;、&amp;#34;bottomRight&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;backgroundImageOpacity&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;背景不透明度&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;//0-1
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;其他属性如滚动条，光标颜色等可参考&lt;code&gt;官方文档&lt;/code&gt;&lt;a class=&#34;link&#34; href=&#34;https://docs.microsoft.com/zh-cn/windows/terminal/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;powershell配置&#34;&gt;PowerShell配置&lt;/h1&gt;
+&lt;p&gt;新版的&lt;code&gt;PowerShell&lt;/code&gt;虽然功能更新不少，但默认的操作和界面比较不耐看，此时我们便需要借助一些插件来完善他&lt;/p&gt;
+&lt;h2 id=&#34;powershell插件配置&#34;&gt;PowerShell插件配置&lt;/h2&gt;
+&lt;p&gt;使用管理员身份打开&lt;code&gt;PowerShell&lt;/code&gt;
+依次输入下方三个命令安装插件&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Install-Module -Name PSReadLine -AllowPrerelease -Force 
+Install-Module posh-git -Scope CurrentUser
+Install-Module oh-my-posh -Scope CurrentUser                                                
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后输入以下命令来配置插件&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;notepad.exe $PROFILE 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这会打开默认&lt;code&gt;PowerShell&lt;/code&gt; 的启动配置文件，如果提示没有该文件，点击创建就好
+在打开的文件中输入&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# 引入 posh-git
+Import-Module posh-git
+
+# 引入 oh-my-posh
+Import-Module oh-my-posh
+
+#引入 PSReadLine
+Import-Module PSReadLine
+
+# 设置 PowerShell 主题
+Set-Theme Paradox
+
+#设置 Tab 键补全
+Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
+
+# 设置 Ctrl+d 为退出 PowerShell
+Set-PSReadlineKeyHandler -Key &amp;#34;Ctrl+d&amp;#34; -Function ViExit
+
+# 设置 Ctrl+z 为撤销
+Set-PSReadLineKeyHandler -Key &amp;#34;Ctrl+z&amp;#34; -Function Undo
+
+# 设置向上键为后向搜索历史记录
+Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
+
+# 设置向下键为前向搜索历史纪录
+Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;亦可参考&lt;a class=&#34;link&#34; href=&#34;https://raw.githubusercontent.com/PowerShell/PSReadLine/master/PSReadLine/SamplePSReadLineProfile.ps1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;官方样例&lt;/a&gt;来自行修改&lt;/p&gt;
+&lt;h2 id=&#34;使powershell支持git-bash&#34;&gt;使PowerShell支持git bash&lt;/h2&gt;
+&lt;p&gt;此时修改的已经差不多了，但&lt;code&gt;PowerShell&lt;/code&gt;的&lt;code&gt;git&lt;/code&gt;功能仍有一些缺陷
+我们需要修改环境变量，使&lt;code&gt;PowerShell&lt;/code&gt;更上一层楼
+&lt;img src=&#34;https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/path.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;path&#34;
+	
+	
+&gt;
+将&lt;code&gt;git Bash&lt;/code&gt;目录下的&lt;code&gt;usr/bin&lt;/code&gt;路径复制进去就好了&lt;/p&gt;
+&lt;h1 id=&#34;后记&#34;&gt;后记&lt;/h1&gt;
+&lt;p&gt;这是我的第一篇文章，自微软&lt;code&gt;Bulid 2019&lt;/code&gt;以来，宣布新的终端&lt;code&gt;Windows Terminal&lt;/code&gt;，我就一直在关注，并第一时间下下来使用，那时的&lt;code&gt;Windows Terminal&lt;/code&gt;充满bug，动不动就会闪退，蛋疼的操作，蛋疼的配置，让我着实没能香起来，最近&lt;code&gt;Bulid 2020&lt;/code&gt;大会，微软正式推出&lt;code&gt;Windows Terminal 1.0&lt;/code&gt;正式版，迫不及待下载后，一个字，香，两个字，真香，虽然还有一些小瑕疵，譬如图形化配置界面，还整json文件呢，真就人均极客了嗷。并没有使用过&lt;code&gt;cmder&lt;/code&gt;、&lt;code&gt;Xshell&lt;/code&gt;等第三方终端，所以以上观点仅代表个人审美。溜了溜了&lt;/p&gt;
+&lt;p&gt;顺便这篇文章的生成与发布均使用新版&lt;code&gt;Windows Terminal&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h3 id=&#34;参考文献&#34;&gt;参考文献:&lt;/h3&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://docs.microsoft.com/zh-cn/windows/terminal/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;微软官方文档&lt;/a&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://blog.ichr.me/post/windows-terminal-configuration/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;如何打造好看还好用的 Windows Terminal&amp;mdash;ChrAlpha&lt;/a&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://sspai.com/post/52907&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;5 个 PowerShell 主题，让你的 Windows 终端更好看&amp;mdash;少数派&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
