@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>教程 on 笑的心酸</title>
-        <link>http://example.org/categories/%E6%95%99%E7%A8%8B/</link>
+        <link>https://mnmnmssd.github.io/categories/%E6%95%99%E7%A8%8B/</link>
         <description>Recent content in 教程 on 笑的心酸</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Tue, 09 Jun 2020 10:14:58 +0000</lastBuildDate><atom:link href="http://example.org/categories/%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 09 Jun 2020 10:14:58 +0000</lastBuildDate><atom:link href="https://mnmnmssd.github.io/categories/%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>新版Windows Terminal美化配置</title>
-        <link>http://example.org/post/windows-terminal/test-chinese/</link>
+        <link>https://mnmnmssd.github.io/post/windows-terminal/windows-terminal%E7%BE%8E%E5%8C%96%E9%85%8D%E7%BD%AE/</link>
         <pubDate>Tue, 09 Jun 2020 10:14:58 +0000</pubDate>
         
-        <guid>http://example.org/post/windows-terminal/test-chinese/</guid>
+        <guid>https://mnmnmssd.github.io/post/windows-terminal/windows-terminal%E7%BE%8E%E5%8C%96%E9%85%8D%E7%BD%AE/</guid>
         <description>&lt;h1 id=&#34;关于新版windows-terminal&#34;&gt;关于新版Windows Terminal&lt;/h1&gt;
 &lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
 &lt;p&gt;Windows 终端是一个面向命令行工具和 shell（如命令提示符、PowerShell 和适用于 Linux 的 Windows 子系统 (WSL)）用户的新式终端应用程序。 它的主要功能包括多个选项卡、窗格、Unicode 和 UTF-8 字符支持、GPU 加速文本呈现引擎，还可以用于创建你自己的主题并自定义文本、颜色、背景和快捷键绑定。
@@ -90,7 +90,7 @@
 亦可采用git页面给出的命令安装&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString(&amp;#39;https://raw.githubusercontent.com/lextm/windowsterminal-shell/master/install.ps1&amp;#39;)) 
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;注意：可能会报下列错误&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;.\install.ps1: File C:\Users\lenovo\Desktop\install.ps1 cannot be loaded because running scripts is disabled on this system. For more information, see about_Execution_Policies at https://go.microsoft.com/fwlink/?LinkID=135170.&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt; .\install.ps1: File C:\Users\lenovo\Desktop\install.ps1 cannot be loaded because running scripts is disabled on this system. For more information, see about_Execution_Policies at https://go.microsoft.com/fwlink/?LinkID=135170. &lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;这是因为&lt;code&gt;PowerShell&lt;/code&gt;默认执行权限的问题,此时只需打开&lt;code&gt;PowerShell&lt;/code&gt;输入下列命令即可:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;set-ExecutionPolicy RemoteSigned
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;windows-terminal配置文件更改&#34;&gt;Windows Terminal配置文件更改&lt;/h2&gt;

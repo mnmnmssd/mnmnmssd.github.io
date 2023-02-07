@@ -2,7 +2,7 @@
 title: 新版Windows Terminal美化配置
 description: 已落后版本
 date: 2020-06-09 10:14:58
-slug: test-chinese
+slug: Windows Terminal美化配置
 categories:
     - 美化
     - 教程
