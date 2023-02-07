@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on 笑的心酸</title><link>https://mnmnmssd.github.io/categories/linux/</link><description>Recent content in Linux on 笑的心酸</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 10 Aug 2020 23:23:10 +0000</lastBuildDate><atom:link href="https://mnmnmssd.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>虚拟机下的ArchLinux 安装实录(一)</title><link>https://mnmnmssd.github.io/post/arch/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E7%9A%84archlinux-%E5%AE%89%E8%A3%85%E5%AE%9E%E5%BD%95/</link><pubDate>Mon, 10 Aug 2020 23:23:10 +0000</pubDate><guid>https://mnmnmssd.github.io/post/arch/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E7%9A%84archlinux-%E5%AE%89%E8%A3%85%E5%AE%9E%E5%BD%95/</guid><description>&lt;h1 id="虚拟机下的archlinux-安装实录一">虚拟机下的ArchLinux 安装实录(一)&lt;/h1>
+&lt;h2 id="获取镜像---创建虚拟机">获取镜像 -&amp;gt; 创建虚拟机&lt;/h2>
+&lt;h3 id="获取安装镜像">获取安装镜像&lt;/h3>
+&lt;p>首先在 &lt;a class="link" href="https://www.archlinux.org/download/" target="_blank" rel="noopener"
+>Archlinux.org&lt;/a> 处选择适合的镜像与下载方式&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/image-20200811113135424.png"
+loading="lazy"
+alt="image-20200811113135424"
+>&lt;/p>
+&lt;p>这里选择 &lt;a class="link" href="http://mirrors.163.com/archlinux/iso/2020.08.01/" target="_blank" rel="noopener"
+>163&lt;/a> 源的下载镜像(ISO)&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/image-20200811150119046.png"
+loading="lazy"
+alt="image-20200811150119046"
+>&lt;/p>
+&lt;h3 id="创建虚拟机">创建虚拟机&lt;/h3>
+&lt;p>选择自定义(高级) -&amp;gt; 下一步&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/111.png"
+loading="lazy"
+alt="image-20200811150218403"
+>&lt;/p>
+&lt;p>默认就好 -&amp;gt; 下一步&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/2222.png"
+loading="lazy"
+alt="image-20200811150306980"
+>&lt;/p>
+&lt;p>选择刚刚下载好的镜像 -&amp;gt; 下一步&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/image-20200811150345665.png"
+loading="lazy"
+alt="image-20200811150345665"
+>&lt;/p>
+&lt;p>操作系统选择 &lt;code>Linux&lt;/code> , 版本根据自己下载的内核选择 , 这里选择 &lt;code>5.x&lt;/code> 内核 -&amp;gt; 下一步&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/image-20200811150517381.png"
+loading="lazy"
+alt="image-20200811150517381"
+>&lt;/p>
+&lt;p>根据自己情况选择安装位置 -&amp;gt; 下一步&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/image-20200811150606483.png"
+loading="lazy"
+alt="image-20200811150606483"
+>&lt;/p>
+&lt;p>根据自己情况自行配置 , 也可后期更改 -&amp;gt; 下一步&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/3333.png"
+loading="lazy"
+alt="image-20200811150658662"
+>&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/4444.png"
+loading="lazy"
+alt="image-20200811150713274"
+>&lt;/p>
+&lt;p>这里选择 &lt;code>NAT&lt;/code> 连接方式 -&amp;gt; 下一步&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/image-20200811150821883.png"
+loading="lazy"
+alt="image-20200811150821883"
+>&lt;/p>
+&lt;p>默认即可 -&amp;gt; 下一步&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/image-20200811150844908.png"
+loading="lazy"
+alt="image-20200811150844908"
+>&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/image-20200811150853037.png"
+loading="lazy"
+alt="image-20200811150853037"
+>&lt;/p>
+&lt;p>视情况而定 , 这里选择 &lt;code>20G&lt;/code> -&amp;gt; 下一步&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/image-20200811150944834.png"
+loading="lazy"
+alt="image-20200811150944834"
+>&lt;/p>
+&lt;p>一直下一步直到出现完成界面 -&amp;gt; 完成&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/image-20200811151034804.png"
+loading="lazy"
+alt="image-20200811151034804"
+>&lt;/p>
+&lt;h3 id="更改启动模式">更改启动模式&lt;/h3>
+&lt;p>在虚拟机详情页面 ，点击进入虚拟机设置 ，进入 &lt;code>选项&lt;/code> 选项卡 ，点击 &lt;code>高级&lt;/code> 选项 ，在 &lt;code>固件类型&lt;/code> 处选择 &lt;code>UEFI&lt;/code> ，点击确定&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/5555.png"
+loading="lazy"
+alt="image-20200811152442125"
+>&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/6666.png"
+loading="lazy"
+alt="image-20200811152420629"
+>&lt;/p>
+&lt;h2 id="arch安装">Arch安装&lt;/h2>
+&lt;h3 id="安装菜单页面">安装菜单页面&lt;/h3>
+&lt;p>开启刚创建的虚拟机&lt;/p>
+&lt;p>这里选择 &lt;em>&lt;code>Arch Linux install medium&lt;/code>&lt;/em>, 敲回车[Enter]进入&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/9999.png"
+loading="lazy"
+alt="image-20200811152739303"
+>&lt;/p>
+&lt;p>等待&amp;hellip;&amp;hellip; 进入Live默认Shell&lt;/p>
+&lt;p>出现这个就代表进入成功了 ，如果没有进入 ，就要考虑是否镜像下载完整了&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/image-20200811151606159.png"
+loading="lazy"
+alt="image-20200811151606159"
+>&lt;/p>
+&lt;h3 id="键盘布局">键盘布局&lt;/h3>
+&lt;p>初始键盘布局是标准的 &lt;code>QWERTY&lt;/code> 布局 ，如果想更改布局 ，则输入以下命令查看支持的布局&lt;/p>
+&lt;p>&lt;code>ls /usr/share/kbd/keymaps/**/*.map.gz&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/8888.png"
+loading="lazy"
+alt="image-20200811152119693"
+>&lt;/p>
+&lt;p>设置键盘布局为以下命令&lt;/p>
+&lt;p>&lt;code>loadkeys 布局名称&lt;/code>&lt;/p>
+&lt;p>这里并不更改布局 ，进行下一步的安装&lt;/p>
+&lt;h3 id="验证启动模式">验证启动模式&lt;/h3>
+&lt;p>验证启动模式来为后面的 &lt;code>GRUB&lt;/code> 引导安装做准备 ，输入以下命令&lt;/p>
+&lt;p>&lt;code>ls /sys/firmware/efi/efivars&lt;/code>&lt;/p>
+&lt;p>若正确显示为以下界面 ，则表示系统以 &lt;code>UEFI&lt;/code> 模式启动 ，若提示目录不存在，则可能以 &lt;code>BIOS&lt;/code> 或 &lt;code>CSM&lt;/code> 等模式启动 ，本教程是以 &lt;code>UEFI&lt;/code> 模式为基础的&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/image-20200811153154877.png"
+loading="lazy"
+alt="image-20200811153154877"
+>&lt;/p>
+&lt;h3 id="网络连接">网络连接&lt;/h3>
+&lt;p>虚拟机启动了 &lt;code>NAT&lt;/code> 模式 ，所以默认是直接连接了网络的 ， 可以执行 &lt;code>ip link&lt;/code> 命令查看网络信息 ， 执行 &lt;code>ping&lt;/code> 命令查看网络连通情况&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/image-20200811153430905.png"
+loading="lazy"
+alt="image-20200811153430905"
+>&lt;/p>
+&lt;h3 id="时间校正">时间校正&lt;/h3>
+&lt;p>输入以下命令来确保系统时间准确&lt;/p>
+&lt;p>&lt;code>timedatectl set-ntp true&lt;/code>&lt;/p>
+&lt;p>可以使用 &lt;code>timedatectl status&lt;/code> 来查看时间状态&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/image-20200811153720383.png"
+loading="lazy"
+alt="image-20200811153720383"
+>&lt;/p>
+&lt;h2 id="硬盘分区">硬盘分区&lt;/h2>
+&lt;p>分区是很重要的 ，这里也有几个坑&lt;/p>
+&lt;h3 id="建立分区">建立分区&lt;/h3>
+&lt;p>这里使用 &lt;code>fdisk&lt;/code> 工具来建立分区&lt;/p>
+&lt;p>输入 &lt;code>fdisk -l&lt;/code> 查看硬盘信息 ，其中以 &lt;code>loop&lt;/code>/&lt;code>rom&lt;/code>/&lt;code>airoot&lt;/code> 结尾的可以省略&lt;/p>
+&lt;p>这里我的硬盘被识别并命名为 &lt;code>/dev/sda&lt;/code> ， 记好这个名称 ， 接下来将在这块硬盘上进行分区&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/7777.png"
+loading="lazy"
+alt="image-20200811154130565"
+>&lt;/p>
+&lt;p>输入 &lt;code>fdisk /dev/sda&lt;/code> 进入分区命令界面 ， 可以输入 &lt;code>m&lt;/code> 查看命令帮助&lt;/p>
+&lt;p>这里输入 &lt;code>g&lt;/code> 新建 &lt;code>GPT 分区表&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/101010.png"
+loading="lazy"
+alt="image-20200811154329134"
+>&lt;/p>
+&lt;p>输入 &lt;code>n&lt;/code> 来新建分区 ， 第一个分区我们把它作为一个 &lt;code>EFI 系统分区&lt;/code>&lt;/p>
+&lt;p>分区标识默认1即可 [Enter]， 分区开始 ，这里我们输入 &lt;code>2048&lt;/code> ，敲击回车&lt;/p>
+&lt;p>结束标识 ，可以直接输入分区大小 ， boot分区不需要太大 ， 输入 &lt;code>+500M&lt;/code> 即可 ，第一个分区建立完毕。&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/image-20200811154722520.png"
+loading="lazy"
+alt="image-20200811154722520"
+>&lt;/p>
+&lt;p>接下来建立第二个分区 ， 我们把它作为 &lt;code>SWAP 交换空间&lt;/code>的分区 ，可以理解为 win 的虚拟内存 , 依旧输入 &lt;code>n&lt;/code> ，分区标识这里选择 3 ，因为我们打算 2 来作为主分区的标识 ，起始标识默认即可 ， 结束标识因为是作为交换空间来使用 ， 所以可以适当设置大一些 ，至此第二个分区建立完毕&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/image-20200811155117805.png"
+loading="lazy"
+alt="image-20200811155117805"
+>&lt;/p>
+&lt;p>接下来建立主分区 ，输入 &lt;code>n&lt;/code> ，分区标识默认 2 ，起始标识默认 ， 结束标识默认直到最后 ，至此三个分区全部建立完毕&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/image-20200811155248590.png"
+loading="lazy"
+alt="image-20200811155248590"
+>&lt;/p>
+&lt;p>输入 &lt;code>w&lt;/code> 来保存并退出分区&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/image-20200811155320845.png"
+loading="lazy"
+alt="image-20200811155320845"
+>&lt;/p>
+&lt;p>可以再执行 &lt;code>fdisk -l&lt;/code> 查看分区情况 ， 可以看到多出了三个新建的分区&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/111111.png"
+loading="lazy"
+alt="image-20200811155406918"
+>&lt;/p>
+&lt;h3 id="设置文件系统类型">设置文件系统类型&lt;/h3>
+&lt;p>接下来设置每个分区的文件系统与格式化&lt;/p>
+&lt;p>这里注意: &lt;em>&lt;code>EFI系统分区的文件系统必须是FAT32的系统&lt;/code>&lt;/em> ，如果是其他类型的系统 ， 会导致 &lt;code>GRUB&lt;/code> 安装失败&lt;/p>
+&lt;p>首先格式化 &lt;code>EFI 系统分区&lt;/code> ，输入 &lt;code>mkfs.fat -F32 /dev/sda1&lt;/code> 来设置分区系统类型为 &lt;code>FAT32&lt;/code> 并格式化&lt;/p>
+&lt;p>接下来格式化并设置 &lt;code>SWAP 分区&lt;/code> ，输入 &lt;code>mkswap /dev/sda3&lt;/code> 来初始化 &lt;code>SWAP 分区&lt;/code> ，接着输入 &lt;code>swapon /dev/sda3&lt;/code> 激活 &lt;code>SWAP&lt;/code>&lt;/p>
+&lt;p>最后格式化主分区 ， 输入 &lt;code>mkfs.ext4 /dev/sda2&lt;/code> 格式化并设置主分区格式&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/image-20200811160513632.png"
+loading="lazy"
+alt="image-20200811160513632"
+>&lt;/p>
+&lt;h3 id="挂载分区">挂载分区&lt;/h3>
+&lt;p>接下来进行分区挂载 ， 首先将主分区挂载到 &lt;code>/mnt&lt;/code> 目录 ，这也是根目录&lt;/p>
+&lt;p>&lt;code>mount /dev/sda2 /mnt&lt;/code>&lt;/p>
+&lt;p>进行 &lt;code>EFI 系统分区&lt;/code> 挂载&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>mkdir /mnt/efi
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mount /dev/sda1 /mnt/efi
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/image-20200811161158469.png"
+loading="lazy"
+alt="image-20200811161158469"
+>&lt;/p>
+&lt;p>执行 &lt;code>lsblk&lt;/code> 查看挂载情况&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/image-20200811161344180.png"
+loading="lazy"
+alt="image-20200811161344180"
+>&lt;/p>
+&lt;p>&lt;code>SWAP&lt;/code> 分区会自动挂载 ，所以无需设置&lt;/p>
+&lt;h3 id="安装系统镜像和软件包">安装系统镜像和软件包&lt;/h3>
+&lt;h4 id="设置源">设置源&lt;/h4>
+&lt;p>因为不可抗力的情况 ，国内使用默认源会出现下载缓慢的情况 ，所以要设置国内源 ，比如清华源等 ，这里编辑 &lt;code>/etc/pacman.d/mirrorlist&lt;/code> 可以设置国内镜像源 ， 这里我们添加清华源&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>vim /etc/pacman.d/mirrorlist
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>添加一条记录
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Server &lt;span style="color:#f92672">=&lt;/span> https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>更新源
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pacman -Syy
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="安装软件包">安装软件包&lt;/h4>
+&lt;p>使用 &lt;code>pacstrap&lt;/code> 脚本 ， 安装 &lt;code>base&lt;/code> 软件包和 &lt;code>linux 内核&lt;/code>等等 ，新版Arch不带Vim等软件 ，所以也建议安装上 ，以及 &lt;code>dhcpcd&lt;/code> , &lt;code>haveged&lt;/code> 等&lt;/p>
+&lt;p>最基本的套件为&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>pacstrap /mnt base linux linux-firmware
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>可以直接执行我这条指令&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>pacstrap /mnt base base-devel linux linux-firmware dhcpcd haveged
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>等待下载与安装完成 ，安装完成后进入系统配置&lt;/p>
+&lt;h2 id="系统配置">系统配置&lt;/h2>
+&lt;p>生成 &lt;code>fstab&lt;/code> 文件&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>genfstab -U /mnt &amp;gt;&amp;gt; /mnt/etc/fstab
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cat /mnt/etc/fstab
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/121212.png"
+loading="lazy"
+alt="image-20200811163334589"
+>&lt;/p>
+&lt;h3 id="chroot">Chroot&lt;/h3>
+&lt;p>进入新安装的系统&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>arch-chroot /mnt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="语言与时区设置">语言与时区设置&lt;/h3>
+&lt;h4 id="设置时区">设置时区&lt;/h4>
+&lt;pre tabindex="0">&lt;code class="language-she" data-lang="she">ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+hwclock --systohc
+&lt;/code>&lt;/pre>&lt;h4 id="设置语言地区">设置语言地区&lt;/h4>
+&lt;pre tabindex="0">&lt;code class="language-shel" data-lang="shel">vim /etc/locale.gen
+找到需要的地区语言 ，将注释移除
+如: en_US.UTF-8 UTF-8
+zh_CN.UTF-8 UTF-8
+执行
+locale-gen
+生成locale信息
+创建 locale.conf 文件 ，并添加
+LANG=en_US.UTF-8
+也可设置为中文 ，视情况而定
+&lt;/code>&lt;/pre>&lt;h3 id="网络配置">网络配置&lt;/h3>
+&lt;p>编辑主机名称&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-shel" data-lang="shel">vim /etc/hostname
+XXX
+&lt;/code>&lt;/pre>&lt;p>编辑 &lt;code>hosts&lt;/code> 添加&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-she" data-lang="she">127.0.0.1 localhost
+::1 localhost
+127.0.0.1 XXX.localdomain XXX
+# 其中XXX为上一步创建的主机名
+&lt;/code>&lt;/pre>&lt;p>设置 &lt;code>dhcpcd&lt;/code> / &lt;code>haveged&lt;/code> 开机启动&lt;/p>
+&lt;p>&lt;code>dhcpcd&lt;/code> 会自动分配ip&lt;/p>
+&lt;p>&lt;code>haveged&lt;/code> 会在开机时自动搜集 &lt;code>系统熵&lt;/code> 解决开机启动缓慢的问题&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-she" data-lang="she">systemctl enable dhcpcd
+systemctl enable haveged
+&lt;/code>&lt;/pre>&lt;h3 id="用户设置">用户设置&lt;/h3>
+&lt;p>设置 &lt;code>root&lt;/code> 密码&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-she" data-lang="she">passwd
+&lt;/code>&lt;/pre>&lt;p>添加一个用户并设置权限与密码&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-she" data-lang="she"># useradd -m -g users -s /bin/bash XXX
+passwd XXX
+vim /etc/sudoers
+在 root ALL=(ALL) ALL 下添加一句
+XXX ALL=(ALL) ALL
+&lt;/code>&lt;/pre>&lt;h2 id="安装grub引导">安装GRUB引导&lt;/h2>
+&lt;p>安装 &lt;code>grub&lt;/code> 和 &lt;code>efibootmgr&lt;/code> 软件包&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-shel" data-lang="shel">pacman -S grub efibootmgr
+&lt;/code>&lt;/pre>&lt;h4 id="grub-安装">GRUB 安装&lt;/h4>
+&lt;p>安装前使用 &lt;code>uname -a&lt;/code> 查看自己的系统架构&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/131313.png"
+loading="lazy"
+alt="image-20200811171434724"
+>&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-she" data-lang="she">grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
+# 注意
+# --target后为你的系统架构 ，如我的为x86_64 ，--efi-directory后为你的 EFI系统分区地址
+&lt;/code>&lt;/pre>&lt;p>此处有一个小坑 ，若你的 &lt;code>EFI 系统分区&lt;/code> 不是&lt;code>fat32&lt;/code>类型 ， 就会安装失败&lt;/p>
+&lt;p>如果为&lt;code>fat32&lt;/code>仍安装失败 ， 可以用 &lt;code>gdisk&lt;/code> 将分区设置 &lt;code>ef00&lt;/code>&lt;/p>
+&lt;p>如图所示 ， 即为安装完成&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/1414.png"
+loading="lazy"
+alt="image-20200811172429643"
+>&lt;/p>
+&lt;h4 id="生成配置文件">生成配置文件&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>grub-mkconfig -o /boot/grub/grub.cfg
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/image-20200811172715340.png"
+loading="lazy"
+alt="image-20200811172715340"
+>&lt;/p>
+&lt;h2 id="安装完成">安装完成&lt;/h2>
+&lt;p>退出新系统 , 重启&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-she" data-lang="she">exit
+reboot
+&lt;/code>&lt;/pre>&lt;h3 id="进入新系统-开始愉快玩耍">进入新系统 ，开始愉快玩耍&lt;/h3>
+&lt;h2 id="使用aur">使用AUR&lt;/h2>
+&lt;p>既然用上了 &lt;code>Arch&lt;/code> 不能不来用一下 &lt;code>AUR&lt;/code> ，&lt;code>AUR&lt;/code> 工具很多 ，这里选择 &lt;code>yay&lt;/code>&lt;/p>
+&lt;p>首先添加 &lt;code>pacman&lt;/code> 的 &lt;code>archlinuxcn&lt;/code> 源&lt;/p>
+&lt;p>修改 &lt;code>/etc/pacman.conf&lt;/code> ，在最后添加以下内容&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-she" data-lang="she">[archlinuxcn]
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
+&lt;/code>&lt;/pre>&lt;p>执行 &lt;code>pacman -Syy&lt;/code> 更新源&lt;/p>
+&lt;p>安装 &lt;code>archlinuxcn-keyring&lt;/code> 来导入 &lt;code>GPG key&lt;/code>&lt;/p>
+&lt;p>安装 &lt;code>yay&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>pacman -S yay
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>配置 &lt;code>AUR&lt;/code> 源&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-she" data-lang="she">yay --aururl &amp;#34;https://aur.tuna.tsinghua.edu.cn&amp;#34; --save
+&lt;/code>&lt;/pre>&lt;p>剩下的就是愉快的安装软件与配置 ，接下来会更新美化 、配置等教程&lt;/p>
+&lt;h2 id="几个坑点">几个坑点&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>EFI 系统分区&lt;/code>必须要是 &lt;code>FAT32&lt;/code> 格式&lt;/li>
+&lt;li>新版&lt;code>arch&lt;/code>貌似在安装后不包括 &lt;code>dhcpcd&lt;/code> ，所以在执行安装安装脚本时请安装 &lt;code>dhcpcd&lt;/code> 服务 ，否则只能进入 &lt;code>LiveCD&lt;/code> 安装了&lt;/li>
+&lt;li>如果安装后开机启动缓慢 ，只停留一个界面光标闪烁 ，这是搜集&lt;code>系统熵&lt;/code>的问题 ， 安装 &lt;code>haveged&lt;/code> 并开启服务可解决&lt;/li>
+&lt;li>&lt;code>archlinux-keyring&lt;/code> 安装失败 ，并提示 &lt;code>could not be locally signed(无法在本地签署)&lt;/code> ， 请看&lt;a class="link" href="https://www.archlinuxcn.org/gnupg-2-1-and-the-pacman-keyring/" target="_blank" rel="noopener"
+>这里&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>2020年8月11日&lt;/p>
+&lt;p>by &amp;mdash;笑的心酸&lt;/p>
+&lt;/blockquote></description></item></channel></rss>
