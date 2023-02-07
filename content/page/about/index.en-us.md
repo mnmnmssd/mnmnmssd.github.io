@@ -1,6 +1,5 @@
 ---
 title: about
-date: 2020-05-10 10:21:53
 menu:
     main: 
         weight: -90
