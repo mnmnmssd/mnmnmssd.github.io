@@ -527,15 +527,15 @@ alt="path"
 >如何打造好看还好用的 Windows Terminal&amp;mdash;ChrAlpha&lt;/a>
 &lt;a class="link" href="https://sspai.com/post/52907" target="_blank" rel="noopener"
 >5 个 PowerShell 主题，让你的 Windows 终端更好看&amp;mdash;少数派&lt;/a>&lt;/p>
-&lt;/blockquote></description></item><item><title>Archives</title><link>https://mnmnmssd.github.io/page/archives/</link><pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate><guid>https://mnmnmssd.github.io/page/archives/</guid><description/></item><item><title>Links</title><link>https://mnmnmssd.github.io/page/links/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mnmnmssd.github.io/page/links/</guid><description>&lt;p>To use this feature, add &lt;code>links&lt;/code> section to frontmatter.&lt;/p>
-&lt;p>This page&amp;rsquo;s frontmatter:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">links&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">title&lt;/span>: &lt;span style="color:#ae81ff">GitHub&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">description&lt;/span>: &lt;span style="color:#ae81ff">GitHub is the world&amp;#39;s largest software development platform.&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">website&lt;/span>: &lt;span style="color:#ae81ff">https://github.com&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">image&lt;/span>: &lt;span style="color:#ae81ff">https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">title&lt;/span>: &lt;span style="color:#ae81ff">TypeScript&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">description&lt;/span>: &lt;span style="color:#ae81ff">TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">website&lt;/span>: &lt;span style="color:#ae81ff">https://www.typescriptlang.org&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">image&lt;/span>: &lt;span style="color:#ae81ff">ts-logo-128.jpg&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>image&lt;/code> field accepts both local and external images.&lt;/p></description></item><item><title>Search</title><link>https://mnmnmssd.github.io/page/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mnmnmssd.github.io/page/search/</guid><description/></item><item><title>关于</title><link>https://mnmnmssd.github.io/page/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mnmnmssd.github.io/page/about/</guid><description>&lt;p>This is a test page for i18n support.&lt;/p></description></item></channel></rss>
+&lt;/blockquote></description></item><item><title>Archives</title><link>https://mnmnmssd.github.io/page/archives/</link><pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate><guid>https://mnmnmssd.github.io/page/archives/</guid><description/></item><item><title>about</title><link>https://mnmnmssd.github.io/page/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mnmnmssd.github.io/page/about/</guid><description>&lt;h1 id="关于">关于&lt;/h1>
+&lt;p>大三计科在读 , 热衷一切Geek事物
+所学习的语言 :
+- Java
+- C
+- Python
+- html/Css/Javascript&lt;/p>
+&lt;p>写一些随笔与学习笔记
+就酱 (*^_^*)&lt;/p>
+&lt;h3 id="待补充">待补充&amp;hellip;.&lt;/h3>
+&lt;h3 id="听歌">听歌&amp;hellip;.&lt;/h3>
+&lt;!-- raw HTML omitted --></description></item><item><title>Links</title><link>https://mnmnmssd.github.io/page/links/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mnmnmssd.github.io/page/links/</guid><description/></item><item><title>Search</title><link>https://mnmnmssd.github.io/page/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mnmnmssd.github.io/page/search/</guid><description/></item></channel></rss>
