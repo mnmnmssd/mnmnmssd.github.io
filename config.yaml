@@ -75,7 +75,7 @@ params:
 
     comments:
         enabled: true
-        provider: disqus
+        provider: waline
 
         disqusjs:
             shortname:
@@ -104,8 +104,8 @@ params:
 
         # Waline client configuration see: https://waline.js.org/en/reference/component.html
         waline:
-            serverURL:
-            lang:
+            serverURL: https://waline-hugo-blog-4hlv2o6ta-mnmnmssd.vercel.app/
+            lang: zh-CN
             pageview:
             emoji:
                 - https://unpkg.com/@waline/emojis@1.0.1/weibo
@@ -115,7 +115,7 @@ params:
                 - url
             locale:
                 admin: Admin
-                placeholder:
+                placeholder: 评论试试吧，宝贵的意见会让我更加进步！
 
         twikoo:
             envId:
