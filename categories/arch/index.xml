@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Arch on 笑的心酸</title><link>https://mnmnmssd.github.io/categories/arch/</link><description>Recent content in Arch on 笑的心酸</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 10 Aug 2020 23:23:10 +0000</lastBuildDate><atom:link href="https://mnmnmssd.github.io/categories/arch/index.xml" rel="self" type="application/rss+xml"/><item><title>虚拟机下的ArchLinux 安装实录(一)</title><link>https://mnmnmssd.github.io/post/arch/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E7%9A%84archlinux-%E5%AE%89%E8%A3%85%E5%AE%9E%E5%BD%95/</link><pubDate>Mon, 10 Aug 2020 23:23:10 +0000</pubDate><guid>https://mnmnmssd.github.io/post/arch/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E7%9A%84archlinux-%E5%AE%89%E8%A3%85%E5%AE%9E%E5%BD%95/</guid><description>&lt;h1 id="虚拟机下的archlinux-安装实录一">虚拟机下的ArchLinux 安装实录(一)&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Arch on 笑的心酸</title><link>https://mnmnmssd.github.io/categories/arch/</link><description>Recent content in Arch on 笑的心酸</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 10 Aug 2020 23:23:10 +0000</lastBuildDate><atom:link href="https://mnmnmssd.github.io/categories/arch/index.xml" rel="self" type="application/rss+xml"/><item><title>虚拟机下的ArchLinux 安装实录(一)</title><link>https://mnmnmssd.github.io/p/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E7%9A%84archlinux-%E5%AE%89%E8%A3%85%E5%AE%9E%E5%BD%95/</link><pubDate>Mon, 10 Aug 2020 23:23:10 +0000</pubDate><guid>https://mnmnmssd.github.io/p/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E7%9A%84archlinux-%E5%AE%89%E8%A3%85%E5%AE%9E%E5%BD%95/</guid><description>&lt;h1 id="虚拟机下的archlinux-安装实录一">虚拟机下的ArchLinux 安装实录(一)&lt;/h1>
 &lt;h2 id="获取镜像---创建虚拟机">获取镜像 -&amp;gt; 创建虚拟机&lt;/h2>
 &lt;h3 id="获取安装镜像">获取安装镜像&lt;/h3>
 &lt;p>首先在 &lt;a class="link" href="https://www.archlinux.org/download/" target="_blank" rel="noopener"
@@ -185,9 +185,17 @@ alt="image-20200811160513632"
 &lt;p>接下来进行分区挂载 ， 首先将主分区挂载到 &lt;code>/mnt&lt;/code> 目录 ，这也是根目录&lt;/p>
 &lt;p>&lt;code>mount /dev/sda2 /mnt&lt;/code>&lt;/p>
 &lt;p>进行 &lt;code>EFI 系统分区&lt;/code> 挂载&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>mkdir /mnt/efi
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mount /dev/sda1 /mnt/efi
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/image-20200811161158469.png"
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">mkdir /mnt/efi
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mount /dev/sda1 /mnt/efi
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/image-20200811161158469.png"
 loading="lazy"
 alt="image-20200811161158469"
 >&lt;/p>
@@ -200,80 +208,204 @@ alt="image-20200811161344180"
 &lt;h3 id="安装系统镜像和软件包">安装系统镜像和软件包&lt;/h3>
 &lt;h4 id="设置源">设置源&lt;/h4>
 &lt;p>因为不可抗力的情况 ，国内使用默认源会出现下载缓慢的情况 ，所以要设置国内源 ，比如清华源等 ，这里编辑 &lt;code>/etc/pacman.d/mirrorlist&lt;/code> 可以设置国内镜像源 ， 这里我们添加清华源&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>vim /etc/pacman.d/mirrorlist
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>添加一条记录
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Server &lt;span style="color:#f92672">=&lt;/span> https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>更新源
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pacman -Syy
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="安装软件包">安装软件包&lt;/h4>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">vim /etc/pacman.d/mirrorlist
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">添加一条记录
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">Server&lt;/span> &lt;span class="o">=&lt;/span> https://mirrors.tuna.tsinghua.edu.cn/archlinux/&lt;span class="nv">$repo&lt;/span>/os/&lt;span class="nv">$arch&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">更新源
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pacman -Syy
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="安装软件包">安装软件包&lt;/h4>
 &lt;p>使用 &lt;code>pacstrap&lt;/code> 脚本 ， 安装 &lt;code>base&lt;/code> 软件包和 &lt;code>linux 内核&lt;/code>等等 ，新版Arch不带Vim等软件 ，所以也建议安装上 ，以及 &lt;code>dhcpcd&lt;/code> , &lt;code>haveged&lt;/code> 等&lt;/p>
 &lt;p>最基本的套件为&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>pacstrap /mnt base linux linux-firmware
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>可以直接执行我这条指令&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>pacstrap /mnt base base-devel linux linux-firmware dhcpcd haveged
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>等待下载与安装完成 ，安装完成后进入系统配置&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">pacstrap /mnt base linux linux-firmware
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>可以直接执行我这条指令&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">pacstrap /mnt base base-devel linux linux-firmware dhcpcd haveged
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>等待下载与安装完成 ，安装完成后进入系统配置&lt;/p>
 &lt;h2 id="系统配置">系统配置&lt;/h2>
 &lt;p>生成 &lt;code>fstab&lt;/code> 文件&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>genfstab -U /mnt &amp;gt;&amp;gt; /mnt/etc/fstab
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cat /mnt/etc/fstab
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/121212.png"
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">genfstab -U /mnt &amp;gt;&amp;gt; /mnt/etc/fstab
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">cat /mnt/etc/fstab
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/121212.png"
 loading="lazy"
 alt="image-20200811163334589"
 >&lt;/p>
 &lt;h3 id="chroot">Chroot&lt;/h3>
 &lt;p>进入新安装的系统&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>arch-chroot /mnt
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="语言与时区设置">语言与时区设置&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">arch-chroot /mnt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="语言与时区设置">语言与时区设置&lt;/h3>
 &lt;h4 id="设置时区">设置时区&lt;/h4>
-&lt;pre tabindex="0">&lt;code class="language-she" data-lang="she">ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-hwclock --systohc
-&lt;/code>&lt;/pre>&lt;h4 id="设置语言地区">设置语言地区&lt;/h4>
-&lt;pre tabindex="0">&lt;code class="language-shel" data-lang="shel">vim /etc/locale.gen
-找到需要的地区语言 ，将注释移除
-如: en_US.UTF-8 UTF-8
-zh_CN.UTF-8 UTF-8
-执行
-locale-gen
-生成locale信息
-创建 locale.conf 文件 ，并添加
-LANG=en_US.UTF-8
-也可设置为中文 ，视情况而定
-&lt;/code>&lt;/pre>&lt;h3 id="网络配置">网络配置&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">hwclock --systohc
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="设置语言地区">设置语言地区&lt;/h4>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">vim /etc/locale.gen
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">找到需要的地区语言 ，将注释移除
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">如: en_US.UTF-8 UTF-8
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> zh_CN.UTF-8 UTF-8
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">执行
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">locale-gen
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">生成locale信息
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">创建 locale.conf 文件 ，并添加
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">LANG=en_US.UTF-8
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">也可设置为中文 ，视情况而定
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="网络配置">网络配置&lt;/h3>
 &lt;p>编辑主机名称&lt;/p>
-&lt;pre tabindex="0">&lt;code class="language-shel" data-lang="shel">vim /etc/hostname
-XXX
-&lt;/code>&lt;/pre>&lt;p>编辑 &lt;code>hosts&lt;/code> 添加&lt;/p>
-&lt;pre tabindex="0">&lt;code class="language-she" data-lang="she">127.0.0.1 localhost
-::1 localhost
-127.0.0.1 XXX.localdomain XXX
-# 其中XXX为上一步创建的主机名
-&lt;/code>&lt;/pre>&lt;p>设置 &lt;code>dhcpcd&lt;/code> / &lt;code>haveged&lt;/code> 开机启动&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">vim /etc/hostname
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">XXX
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>编辑 &lt;code>hosts&lt;/code> 添加&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">127.0.0.1 localhost
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">::1 localhost
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">127.0.0.1 XXX.localdomain XXX
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"># 其中XXX为上一步创建的主机名
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>设置 &lt;code>dhcpcd&lt;/code> / &lt;code>haveged&lt;/code> 开机启动&lt;/p>
 &lt;p>&lt;code>dhcpcd&lt;/code> 会自动分配ip&lt;/p>
 &lt;p>&lt;code>haveged&lt;/code> 会在开机时自动搜集 &lt;code>系统熵&lt;/code> 解决开机启动缓慢的问题&lt;/p>
-&lt;pre tabindex="0">&lt;code class="language-she" data-lang="she">systemctl enable dhcpcd
-systemctl enable haveged
-&lt;/code>&lt;/pre>&lt;h3 id="用户设置">用户设置&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">systemctl enable dhcpcd
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">systemctl enable haveged
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="用户设置">用户设置&lt;/h3>
 &lt;p>设置 &lt;code>root&lt;/code> 密码&lt;/p>
-&lt;pre tabindex="0">&lt;code class="language-she" data-lang="she">passwd
-&lt;/code>&lt;/pre>&lt;p>添加一个用户并设置权限与密码&lt;/p>
-&lt;pre tabindex="0">&lt;code class="language-she" data-lang="she"># useradd -m -g users -s /bin/bash XXX
-passwd XXX
-vim /etc/sudoers
-在 root ALL=(ALL) ALL 下添加一句
-XXX ALL=(ALL) ALL
-&lt;/code>&lt;/pre>&lt;h2 id="安装grub引导">安装GRUB引导&lt;/h2>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">passwd
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>添加一个用户并设置权限与密码&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl"># useradd -m -g users -s /bin/bash XXX
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">passwd XXX
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">vim /etc/sudoers
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">在 root ALL=(ALL) ALL 下添加一句
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">XXX ALL=(ALL) ALL
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="安装grub引导">安装GRUB引导&lt;/h2>
 &lt;p>安装 &lt;code>grub&lt;/code> 和 &lt;code>efibootmgr&lt;/code> 软件包&lt;/p>
-&lt;pre tabindex="0">&lt;code class="language-shel" data-lang="shel">pacman -S grub efibootmgr
-&lt;/code>&lt;/pre>&lt;h4 id="grub-安装">GRUB 安装&lt;/h4>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">pacman -S grub efibootmgr
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="grub-安装">GRUB 安装&lt;/h4>
 &lt;p>安装前使用 &lt;code>uname -a&lt;/code> 查看自己的系统架构&lt;/p>
 &lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/131313.png"
 loading="lazy"
 alt="image-20200811171434724"
 >&lt;/p>
-&lt;pre tabindex="0">&lt;code class="language-she" data-lang="she">grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
-# 注意
-# --target后为你的系统架构 ，如我的为x86_64 ，--efi-directory后为你的 EFI系统分区地址
-&lt;/code>&lt;/pre>&lt;p>此处有一个小坑 ，若你的 &lt;code>EFI 系统分区&lt;/code> 不是&lt;code>fat32&lt;/code>类型 ， 就会安装失败&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"># 注意
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"># --target后为你的系统架构 ，如我的为x86_64 ，--efi-directory后为你的 EFI系统分区地址
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>此处有一个小坑 ，若你的 &lt;code>EFI 系统分区&lt;/code> 不是&lt;code>fat32&lt;/code>类型 ， 就会安装失败&lt;/p>
 &lt;p>如果为&lt;code>fat32&lt;/code>仍安装失败 ， 可以用 &lt;code>gdisk&lt;/code> 将分区设置 &lt;code>ef00&lt;/code>&lt;/p>
 &lt;p>如图所示 ， 即为安装完成&lt;/p>
 &lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/1414.png"
@@ -281,29 +413,66 @@ loading="lazy"
 alt="image-20200811172429643"
 >&lt;/p>
 &lt;h4 id="生成配置文件">生成配置文件&lt;/h4>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>grub-mkconfig -o /boot/grub/grub.cfg
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/image-20200811172715340.png"
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">grub-mkconfig -o /boot/grub/grub.cfg
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/image-20200811172715340.png"
 loading="lazy"
 alt="image-20200811172715340"
 >&lt;/p>
 &lt;h2 id="安装完成">安装完成&lt;/h2>
 &lt;p>退出新系统 , 重启&lt;/p>
-&lt;pre tabindex="0">&lt;code class="language-she" data-lang="she">exit
-reboot
-&lt;/code>&lt;/pre>&lt;h3 id="进入新系统-开始愉快玩耍">进入新系统 ，开始愉快玩耍&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">exit
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">reboot
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="进入新系统-开始愉快玩耍">进入新系统 ，开始愉快玩耍&lt;/h3>
 &lt;h2 id="使用aur">使用AUR&lt;/h2>
 &lt;p>既然用上了 &lt;code>Arch&lt;/code> 不能不来用一下 &lt;code>AUR&lt;/code> ，&lt;code>AUR&lt;/code> 工具很多 ，这里选择 &lt;code>yay&lt;/code>&lt;/p>
 &lt;p>首先添加 &lt;code>pacman&lt;/code> 的 &lt;code>archlinuxcn&lt;/code> 源&lt;/p>
 &lt;p>修改 &lt;code>/etc/pacman.conf&lt;/code> ，在最后添加以下内容&lt;/p>
-&lt;pre tabindex="0">&lt;code class="language-she" data-lang="she">[archlinuxcn]
-Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
-&lt;/code>&lt;/pre>&lt;p>执行 &lt;code>pacman -Syy&lt;/code> 更新源&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">[archlinuxcn]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>执行 &lt;code>pacman -Syy&lt;/code> 更新源&lt;/p>
 &lt;p>安装 &lt;code>archlinuxcn-keyring&lt;/code> 来导入 &lt;code>GPG key&lt;/code>&lt;/p>
 &lt;p>安装 &lt;code>yay&lt;/code>&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>pacman -S yay
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>配置 &lt;code>AUR&lt;/code> 源&lt;/p>
-&lt;pre tabindex="0">&lt;code class="language-she" data-lang="she">yay --aururl &amp;#34;https://aur.tuna.tsinghua.edu.cn&amp;#34; --save
-&lt;/code>&lt;/pre>&lt;p>剩下的就是愉快的安装软件与配置 ，接下来会更新美化 、配置等教程&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">pacman -S yay
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>配置 &lt;code>AUR&lt;/code> 源&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">yay --aururl &amp;#34;https://aur.tuna.tsinghua.edu.cn&amp;#34; --save
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>剩下的就是愉快的安装软件与配置 ，接下来会更新美化 、配置等教程&lt;/p>
 &lt;h2 id="几个坑点">几个坑点&lt;/h2>
 &lt;ul>
 &lt;li>&lt;code>EFI 系统分区&lt;/code>必须要是 &lt;code>FAT32&lt;/code> 格式&lt;/li>

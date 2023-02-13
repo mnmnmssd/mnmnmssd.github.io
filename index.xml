@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>笑的心酸</title><link>https://mnmnmssd.github.io/</link><description>Recent content on 笑的心酸</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 10 Aug 2020 23:23:10 +0000</lastBuildDate><atom:link href="https://mnmnmssd.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>虚拟机下的ArchLinux 安装实录(一)</title><link>https://mnmnmssd.github.io/post/arch/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E7%9A%84archlinux-%E5%AE%89%E8%A3%85%E5%AE%9E%E5%BD%95/</link><pubDate>Mon, 10 Aug 2020 23:23:10 +0000</pubDate><guid>https://mnmnmssd.github.io/post/arch/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E7%9A%84archlinux-%E5%AE%89%E8%A3%85%E5%AE%9E%E5%BD%95/</guid><description>&lt;h1 id="虚拟机下的archlinux-安装实录一">虚拟机下的ArchLinux 安装实录(一)&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>笑的心酸</title><link>https://mnmnmssd.github.io/</link><description>Recent content on 笑的心酸</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 10 Aug 2020 23:23:10 +0000</lastBuildDate><atom:link href="https://mnmnmssd.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>虚拟机下的ArchLinux 安装实录(一)</title><link>https://mnmnmssd.github.io/p/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E7%9A%84archlinux-%E5%AE%89%E8%A3%85%E5%AE%9E%E5%BD%95/</link><pubDate>Mon, 10 Aug 2020 23:23:10 +0000</pubDate><guid>https://mnmnmssd.github.io/p/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E7%9A%84archlinux-%E5%AE%89%E8%A3%85%E5%AE%9E%E5%BD%95/</guid><description>&lt;h1 id="虚拟机下的archlinux-安装实录一">虚拟机下的ArchLinux 安装实录(一)&lt;/h1>
 &lt;h2 id="获取镜像---创建虚拟机">获取镜像 -&amp;gt; 创建虚拟机&lt;/h2>
 &lt;h3 id="获取安装镜像">获取安装镜像&lt;/h3>
 &lt;p>首先在 &lt;a class="link" href="https://www.archlinux.org/download/" target="_blank" rel="noopener"
@@ -185,9 +185,17 @@ alt="image-20200811160513632"
 &lt;p>接下来进行分区挂载 ， 首先将主分区挂载到 &lt;code>/mnt&lt;/code> 目录 ，这也是根目录&lt;/p>
 &lt;p>&lt;code>mount /dev/sda2 /mnt&lt;/code>&lt;/p>
 &lt;p>进行 &lt;code>EFI 系统分区&lt;/code> 挂载&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>mkdir /mnt/efi
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mount /dev/sda1 /mnt/efi
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/image-20200811161158469.png"
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">mkdir /mnt/efi
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mount /dev/sda1 /mnt/efi
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/image-20200811161158469.png"
 loading="lazy"
 alt="image-20200811161158469"
 >&lt;/p>
@@ -200,80 +208,204 @@ alt="image-20200811161344180"
 &lt;h3 id="安装系统镜像和软件包">安装系统镜像和软件包&lt;/h3>
 &lt;h4 id="设置源">设置源&lt;/h4>
 &lt;p>因为不可抗力的情况 ，国内使用默认源会出现下载缓慢的情况 ，所以要设置国内源 ，比如清华源等 ，这里编辑 &lt;code>/etc/pacman.d/mirrorlist&lt;/code> 可以设置国内镜像源 ， 这里我们添加清华源&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>vim /etc/pacman.d/mirrorlist
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>添加一条记录
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Server &lt;span style="color:#f92672">=&lt;/span> https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>更新源
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pacman -Syy
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="安装软件包">安装软件包&lt;/h4>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">vim /etc/pacman.d/mirrorlist
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">添加一条记录
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">Server&lt;/span> &lt;span class="o">=&lt;/span> https://mirrors.tuna.tsinghua.edu.cn/archlinux/&lt;span class="nv">$repo&lt;/span>/os/&lt;span class="nv">$arch&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">更新源
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pacman -Syy
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="安装软件包">安装软件包&lt;/h4>
 &lt;p>使用 &lt;code>pacstrap&lt;/code> 脚本 ， 安装 &lt;code>base&lt;/code> 软件包和 &lt;code>linux 内核&lt;/code>等等 ，新版Arch不带Vim等软件 ，所以也建议安装上 ，以及 &lt;code>dhcpcd&lt;/code> , &lt;code>haveged&lt;/code> 等&lt;/p>
 &lt;p>最基本的套件为&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>pacstrap /mnt base linux linux-firmware
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>可以直接执行我这条指令&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>pacstrap /mnt base base-devel linux linux-firmware dhcpcd haveged
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>等待下载与安装完成 ，安装完成后进入系统配置&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">pacstrap /mnt base linux linux-firmware
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>可以直接执行我这条指令&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">pacstrap /mnt base base-devel linux linux-firmware dhcpcd haveged
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>等待下载与安装完成 ，安装完成后进入系统配置&lt;/p>
 &lt;h2 id="系统配置">系统配置&lt;/h2>
 &lt;p>生成 &lt;code>fstab&lt;/code> 文件&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>genfstab -U /mnt &amp;gt;&amp;gt; /mnt/etc/fstab
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cat /mnt/etc/fstab
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/121212.png"
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">genfstab -U /mnt &amp;gt;&amp;gt; /mnt/etc/fstab
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">cat /mnt/etc/fstab
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/121212.png"
 loading="lazy"
 alt="image-20200811163334589"
 >&lt;/p>
 &lt;h3 id="chroot">Chroot&lt;/h3>
 &lt;p>进入新安装的系统&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>arch-chroot /mnt
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="语言与时区设置">语言与时区设置&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">arch-chroot /mnt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="语言与时区设置">语言与时区设置&lt;/h3>
 &lt;h4 id="设置时区">设置时区&lt;/h4>
-&lt;pre tabindex="0">&lt;code class="language-she" data-lang="she">ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-hwclock --systohc
-&lt;/code>&lt;/pre>&lt;h4 id="设置语言地区">设置语言地区&lt;/h4>
-&lt;pre tabindex="0">&lt;code class="language-shel" data-lang="shel">vim /etc/locale.gen
-找到需要的地区语言 ，将注释移除
-如: en_US.UTF-8 UTF-8
-zh_CN.UTF-8 UTF-8
-执行
-locale-gen
-生成locale信息
-创建 locale.conf 文件 ，并添加
-LANG=en_US.UTF-8
-也可设置为中文 ，视情况而定
-&lt;/code>&lt;/pre>&lt;h3 id="网络配置">网络配置&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">hwclock --systohc
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="设置语言地区">设置语言地区&lt;/h4>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">vim /etc/locale.gen
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">找到需要的地区语言 ，将注释移除
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">如: en_US.UTF-8 UTF-8
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> zh_CN.UTF-8 UTF-8
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">执行
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">locale-gen
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">生成locale信息
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">创建 locale.conf 文件 ，并添加
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">LANG=en_US.UTF-8
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">也可设置为中文 ，视情况而定
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="网络配置">网络配置&lt;/h3>
 &lt;p>编辑主机名称&lt;/p>
-&lt;pre tabindex="0">&lt;code class="language-shel" data-lang="shel">vim /etc/hostname
-XXX
-&lt;/code>&lt;/pre>&lt;p>编辑 &lt;code>hosts&lt;/code> 添加&lt;/p>
-&lt;pre tabindex="0">&lt;code class="language-she" data-lang="she">127.0.0.1 localhost
-::1 localhost
-127.0.0.1 XXX.localdomain XXX
-# 其中XXX为上一步创建的主机名
-&lt;/code>&lt;/pre>&lt;p>设置 &lt;code>dhcpcd&lt;/code> / &lt;code>haveged&lt;/code> 开机启动&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">vim /etc/hostname
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">XXX
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>编辑 &lt;code>hosts&lt;/code> 添加&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">127.0.0.1 localhost
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">::1 localhost
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">127.0.0.1 XXX.localdomain XXX
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"># 其中XXX为上一步创建的主机名
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>设置 &lt;code>dhcpcd&lt;/code> / &lt;code>haveged&lt;/code> 开机启动&lt;/p>
 &lt;p>&lt;code>dhcpcd&lt;/code> 会自动分配ip&lt;/p>
 &lt;p>&lt;code>haveged&lt;/code> 会在开机时自动搜集 &lt;code>系统熵&lt;/code> 解决开机启动缓慢的问题&lt;/p>
-&lt;pre tabindex="0">&lt;code class="language-she" data-lang="she">systemctl enable dhcpcd
-systemctl enable haveged
-&lt;/code>&lt;/pre>&lt;h3 id="用户设置">用户设置&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">systemctl enable dhcpcd
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">systemctl enable haveged
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="用户设置">用户设置&lt;/h3>
 &lt;p>设置 &lt;code>root&lt;/code> 密码&lt;/p>
-&lt;pre tabindex="0">&lt;code class="language-she" data-lang="she">passwd
-&lt;/code>&lt;/pre>&lt;p>添加一个用户并设置权限与密码&lt;/p>
-&lt;pre tabindex="0">&lt;code class="language-she" data-lang="she"># useradd -m -g users -s /bin/bash XXX
-passwd XXX
-vim /etc/sudoers
-在 root ALL=(ALL) ALL 下添加一句
-XXX ALL=(ALL) ALL
-&lt;/code>&lt;/pre>&lt;h2 id="安装grub引导">安装GRUB引导&lt;/h2>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">passwd
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>添加一个用户并设置权限与密码&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl"># useradd -m -g users -s /bin/bash XXX
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">passwd XXX
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">vim /etc/sudoers
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">在 root ALL=(ALL) ALL 下添加一句
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">XXX ALL=(ALL) ALL
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="安装grub引导">安装GRUB引导&lt;/h2>
 &lt;p>安装 &lt;code>grub&lt;/code> 和 &lt;code>efibootmgr&lt;/code> 软件包&lt;/p>
-&lt;pre tabindex="0">&lt;code class="language-shel" data-lang="shel">pacman -S grub efibootmgr
-&lt;/code>&lt;/pre>&lt;h4 id="grub-安装">GRUB 安装&lt;/h4>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">pacman -S grub efibootmgr
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="grub-安装">GRUB 安装&lt;/h4>
 &lt;p>安装前使用 &lt;code>uname -a&lt;/code> 查看自己的系统架构&lt;/p>
 &lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/131313.png"
 loading="lazy"
 alt="image-20200811171434724"
 >&lt;/p>
-&lt;pre tabindex="0">&lt;code class="language-she" data-lang="she">grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
-# 注意
-# --target后为你的系统架构 ，如我的为x86_64 ，--efi-directory后为你的 EFI系统分区地址
-&lt;/code>&lt;/pre>&lt;p>此处有一个小坑 ，若你的 &lt;code>EFI 系统分区&lt;/code> 不是&lt;code>fat32&lt;/code>类型 ， 就会安装失败&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"># 注意
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"># --target后为你的系统架构 ，如我的为x86_64 ，--efi-directory后为你的 EFI系统分区地址
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>此处有一个小坑 ，若你的 &lt;code>EFI 系统分区&lt;/code> 不是&lt;code>fat32&lt;/code>类型 ， 就会安装失败&lt;/p>
 &lt;p>如果为&lt;code>fat32&lt;/code>仍安装失败 ， 可以用 &lt;code>gdisk&lt;/code> 将分区设置 &lt;code>ef00&lt;/code>&lt;/p>
 &lt;p>如图所示 ， 即为安装完成&lt;/p>
 &lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/1414.png"
@@ -281,29 +413,66 @@ loading="lazy"
 alt="image-20200811172429643"
 >&lt;/p>
 &lt;h4 id="生成配置文件">生成配置文件&lt;/h4>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>grub-mkconfig -o /boot/grub/grub.cfg
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/image-20200811172715340.png"
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">grub-mkconfig -o /boot/grub/grub.cfg
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/image-20200811172715340.png"
 loading="lazy"
 alt="image-20200811172715340"
 >&lt;/p>
 &lt;h2 id="安装完成">安装完成&lt;/h2>
 &lt;p>退出新系统 , 重启&lt;/p>
-&lt;pre tabindex="0">&lt;code class="language-she" data-lang="she">exit
-reboot
-&lt;/code>&lt;/pre>&lt;h3 id="进入新系统-开始愉快玩耍">进入新系统 ，开始愉快玩耍&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">exit
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">reboot
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="进入新系统-开始愉快玩耍">进入新系统 ，开始愉快玩耍&lt;/h3>
 &lt;h2 id="使用aur">使用AUR&lt;/h2>
 &lt;p>既然用上了 &lt;code>Arch&lt;/code> 不能不来用一下 &lt;code>AUR&lt;/code> ，&lt;code>AUR&lt;/code> 工具很多 ，这里选择 &lt;code>yay&lt;/code>&lt;/p>
 &lt;p>首先添加 &lt;code>pacman&lt;/code> 的 &lt;code>archlinuxcn&lt;/code> 源&lt;/p>
 &lt;p>修改 &lt;code>/etc/pacman.conf&lt;/code> ，在最后添加以下内容&lt;/p>
-&lt;pre tabindex="0">&lt;code class="language-she" data-lang="she">[archlinuxcn]
-Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
-&lt;/code>&lt;/pre>&lt;p>执行 &lt;code>pacman -Syy&lt;/code> 更新源&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">[archlinuxcn]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>执行 &lt;code>pacman -Syy&lt;/code> 更新源&lt;/p>
 &lt;p>安装 &lt;code>archlinuxcn-keyring&lt;/code> 来导入 &lt;code>GPG key&lt;/code>&lt;/p>
 &lt;p>安装 &lt;code>yay&lt;/code>&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>pacman -S yay
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>配置 &lt;code>AUR&lt;/code> 源&lt;/p>
-&lt;pre tabindex="0">&lt;code class="language-she" data-lang="she">yay --aururl &amp;#34;https://aur.tuna.tsinghua.edu.cn&amp;#34; --save
-&lt;/code>&lt;/pre>&lt;p>剩下的就是愉快的安装软件与配置 ，接下来会更新美化 、配置等教程&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">pacman -S yay
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>配置 &lt;code>AUR&lt;/code> 源&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">yay --aururl &amp;#34;https://aur.tuna.tsinghua.edu.cn&amp;#34; --save
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>剩下的就是愉快的安装软件与配置 ，接下来会更新美化 、配置等教程&lt;/p>
 &lt;h2 id="几个坑点">几个坑点&lt;/h2>
 &lt;ul>
 &lt;li>&lt;code>EFI 系统分区&lt;/code>必须要是 &lt;code>FAT32&lt;/code> 格式&lt;/li>
@@ -315,7 +484,7 @@ Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
 &lt;blockquote>
 &lt;p>2020年8月11日&lt;/p>
 &lt;p>by &amp;mdash;笑的心酸&lt;/p>
-&lt;/blockquote></description></item><item><title>新版Windows Terminal美化配置</title><link>https://mnmnmssd.github.io/post/windows-terminal/windows-terminal%E7%BE%8E%E5%8C%96%E9%85%8D%E7%BD%AE/</link><pubDate>Tue, 09 Jun 2020 10:14:58 +0000</pubDate><guid>https://mnmnmssd.github.io/post/windows-terminal/windows-terminal%E7%BE%8E%E5%8C%96%E9%85%8D%E7%BD%AE/</guid><description>&lt;h1 id="关于新版windows-terminal">关于新版Windows Terminal&lt;/h1>
+&lt;/blockquote></description></item><item><title>新版Windows Terminal美化配置</title><link>https://mnmnmssd.github.io/p/windows-terminal%E7%BE%8E%E5%8C%96%E9%85%8D%E7%BD%AE/</link><pubDate>Tue, 09 Jun 2020 10:14:58 +0000</pubDate><guid>https://mnmnmssd.github.io/p/windows-terminal%E7%BE%8E%E5%8C%96%E9%85%8D%E7%BD%AE/</guid><description>&lt;h1 id="关于新版windows-terminal">关于新版Windows Terminal&lt;/h1>
 &lt;h2 id="简介">简介&lt;/h2>
 &lt;p>Windows 终端是一个面向命令行工具和 shell（如命令提示符、PowerShell 和适用于 Linux 的 Windows 子系统 (WSL)）用户的新式终端应用程序。 它的主要功能包括多个选项卡、窗格、Unicode 和 UTF-8 字符支持、GPU 加速文本呈现引擎，还可以用于创建你自己的主题并自定义文本、颜色、背景和快捷键绑定。
 &lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/wt.png"
@@ -367,12 +536,26 @@ alt="ps7"
 &lt;strong>注意&lt;/strong>&lt;code>需要PowerShell版本为7&lt;/code>
 可下载&lt;code>install.sp1&lt;/code>文件然后在&lt;code>PowerShell7&lt;/code>中找到文件执行命令 &lt;code>.\install.ps1&lt;/code>
 亦可采用git页面给出的命令安装&lt;/p>
-&lt;pre tabindex="0">&lt;code>Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString(&amp;#39;https://raw.githubusercontent.com/lextm/windowsterminal-shell/master/install.ps1&amp;#39;))
-&lt;/code>&lt;/pre>&lt;p>&lt;strong>注意：可能会报下列错误&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString(&amp;#39;https://raw.githubusercontent.com/lextm/windowsterminal-shell/master/install.ps1&amp;#39;))
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>注意：可能会报下列错误&lt;/strong>&lt;/p>
 &lt;p>&lt;code>.\install.ps1: File C:\Users\lenovo\Desktop\install.ps1 cannot be loaded because running scripts is disabled on this system. For more information, see about_Execution_Policies at https://go.microsoft.com/fwlink/?LinkID=135170.&lt;/code>&lt;/p>
 &lt;p>这是因为&lt;code>PowerShell&lt;/code>默认执行权限的问题,此时只需打开&lt;code>PowerShell&lt;/code>输入下列命令即可:&lt;/p>
-&lt;pre tabindex="0">&lt;code>set-ExecutionPolicy RemoteSigned
-&lt;/code>&lt;/pre>&lt;h2 id="windows-terminal配置文件更改">Windows Terminal配置文件更改&lt;/h2>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">set-ExecutionPolicy RemoteSigned
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="windows-terminal配置文件更改">Windows Terminal配置文件更改&lt;/h2>
 &lt;p>打开&lt;code>Windows Terminal&lt;/code>，点击标题栏小三角，打开设置页面
 目前官方仍未更新GUI页面，所以打开为一个JSON文件
 &lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/setting.png"
@@ -383,18 +566,35 @@ alt="setting"
 &lt;p>在配置文件中修改以下属性
 属性名称:&lt;code>list&lt;/code>
 在其中添加:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;guid&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;{574e775e-4f2a-5b96-ac1e-a2962a402336}&amp;#34;&lt;/span>, &lt;span style="color:#75715e">//程序对应的guid属性唯一值
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#f92672">&amp;#34;hidden&amp;#34;&lt;/span>: &lt;span style="color:#66d9ef">false&lt;/span>, &lt;span style="color:#75715e">//是否在启动列表隐藏
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#f92672">&amp;#34;name&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;pwsh7&amp;#34;&lt;/span>, &lt;span style="color:#75715e">//启动列表名称
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#f92672">&amp;#34;tabTitle&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;pwsh7&amp;#34;&lt;/span>, &lt;span style="color:#75715e">//选项卡标题名称
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#f92672">&amp;#34;source&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;Windows.Terminal.PowershellCore&amp;#34;&lt;/span>, &lt;span style="color:#75715e">//这会存储源自配置文件的配置文件生成器的名称
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#f92672">&amp;#34;startingDirectory&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;.&amp;#34;&lt;/span>, &lt;span style="color:#75715e">//加载 shell 时所处的起始目录 这一步一定要设为&amp;#39;.&amp;#39;，否则会影响后续操作
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#f92672">&amp;#34;historySize&amp;#34;&lt;/span>: &lt;span style="color:#ae81ff">9001&lt;/span>, &lt;span style="color:#75715e">//历史记录大小
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#f92672">&amp;#34;commandline&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;C:/Program Files/PowerShell/7/pwsh.exe -nologo&amp;#34;&lt;/span>, &lt;span style="color:#75715e">//配置文件中使用的可执行文件
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#f92672">&amp;#34;snapOnInput&amp;#34;&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span> &lt;span style="color:#75715e">//键入时滚动到输入行
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>其中&lt;code>guid&lt;/code>生成可以点击&lt;a class="link" href="http://www.ofmonkey.com/transfer/guid" target="_blank" rel="noopener"
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;guid&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;{574e775e-4f2a-5b96-ac1e-a2962a402336}&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="c1">//程序对应的guid属性唯一值
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nt">&amp;#34;hidden&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="c1">//是否在启动列表隐藏
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nt">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;pwsh7&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="c1">//启动列表名称
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nt">&amp;#34;tabTitle&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;pwsh7&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="c1">//选项卡标题名称
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nt">&amp;#34;source&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;Windows.Terminal.PowershellCore&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="c1">//这会存储源自配置文件的配置文件生成器的名称
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nt">&amp;#34;startingDirectory&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;.&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="c1">//加载 shell 时所处的起始目录 这一步一定要设为&amp;#39;.&amp;#39;，否则会影响后续操作
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nt">&amp;#34;historySize&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">9001&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="c1">//历史记录大小
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nt">&amp;#34;commandline&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;C:/Program Files/PowerShell/7/pwsh.exe -nologo&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="c1">//配置文件中使用的可执行文件
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nt">&amp;#34;snapOnInput&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">true&lt;/span> &lt;span class="c1">//键入时滚动到输入行
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>其中&lt;code>guid&lt;/code>生成可以点击&lt;a class="link" href="http://www.ofmonkey.com/transfer/guid" target="_blank" rel="noopener"
 >此处&lt;/a>&lt;/p>
 &lt;h3 id="修改默认启动shell">修改默认启动shell&lt;/h3>
 &lt;p>此时我们修改默认的启动shell为新安装的&lt;code>PowerShell7&lt;/code>&lt;/p>
@@ -403,15 +603,29 @@ alt="setting"
 &lt;p>将此值改为我们上方设置的&lt;code>PowerShell7&lt;/code>的&lt;code>guid&lt;/code>&lt;/p>
 &lt;h3 id="修改字体背景及配色方案等">修改字体，背景及配色方案等&lt;/h3>
 &lt;p>在&lt;code>profiles&lt;/code> 属性下的 &lt;code>defaults&lt;/code>属性中添加/修改些默认参数:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;acrylicOpacity&amp;#34;&lt;/span>: &lt;span style="color:#ae81ff">0.25&lt;/span>, &lt;span style="color:#75715e">//设置背景模糊度
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#f92672">&amp;#34;useAcrylic&amp;#34;&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>, &lt;span style="color:#75715e">//开启背景毛玻璃效果
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#f92672">&amp;#34;colorScheme&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;Monokai Night&amp;#34;&lt;/span>, &lt;span style="color:#75715e">//设置配色方案，需要搭配后面的配色方案使用
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#f92672">&amp;#34;suppressApplicationTitle&amp;#34;&lt;/span>:&lt;span style="color:#66d9ef">true&lt;/span>, &lt;span style="color:#75715e">//启动自定义选项卡标题
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#f92672">&amp;#34;fontSize&amp;#34;&lt;/span>: &lt;span style="color:#ae81ff">11&lt;/span>, &lt;span style="color:#75715e">//字体大小
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#f92672">&amp;#34;fontFace&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;Fira Code&amp;#34;&lt;/span>, &lt;span style="color:#75715e">//设置字体
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="字体修改">字体修改：&lt;/h4>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;acrylicOpacity&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mf">0.25&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="c1">//设置背景模糊度
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nt">&amp;#34;useAcrylic&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">true&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="c1">//开启背景毛玻璃效果
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nt">&amp;#34;colorScheme&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;Monokai Night&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="c1">//设置配色方案，需要搭配后面的配色方案使用
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nt">&amp;#34;suppressApplicationTitle&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="kc">true&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="c1">//启动自定义选项卡标题
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nt">&amp;#34;fontSize&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">11&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="c1">//字体大小
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nt">&amp;#34;fontFace&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;Fira Code&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="c1">//设置字体
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="字体修改">字体修改：&lt;/h4>
 &lt;p>选择喜欢的字体下载(最好是支持PowerLine的，否则后续会出现字符渲染的问题)
 这里以&lt;code>Fira Code&lt;/code>字体为例
 点击此处&lt;a class="link" href="https://github.com/tonsky/FiraCode/releases/download/5/Fira_Code_v5.zip" target="_blank" rel="noopener"
@@ -436,43 +650,89 @@ alt="themes-2"
 >
 粘贴至&lt;code>配置文件&lt;/code>的&lt;code>schemes&lt;/code>属性中
 如&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;schemes&amp;#34;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">:&lt;/span> [{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;name&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;Monokai Night&amp;#34;&lt;/span>, &lt;span style="color:#75715e">//配色方案名称
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#f92672">&amp;#34;background&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;#1f1f1f&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;foreground&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;#f8f8f8&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;black&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;#1f1f1f&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;blue&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;#6699df&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;cyan&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;#e69f66&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;green&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;#a6e22e&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;purple&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;#ae81ff&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;red&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;#f92672&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;white&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;#f8f8f2&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;yellow&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;#e6db74&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;brightBlack&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;#75715e&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;brightBlue&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;#66d9ef&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;brightCyan&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;#e69f66&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;brightGreen&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;#a6e22e&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;brightPurple&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;#ae81ff&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;brightRed&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;#f92672&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;brightWhite&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;#f8f8f2&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;brightYellow&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;#e6db74&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }]
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>修改默认配色方案&lt;code>colorScheme&lt;/code>属性值为自定义的配色方案名称&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;schemes&amp;#34;&lt;/span>&lt;span class="err">:&lt;/span> &lt;span class="p">[{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;Monokai Night&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="c1">//配色方案名称
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nt">&amp;#34;background&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;#1f1f1f&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;foreground&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;#f8f8f8&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;black&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;#1f1f1f&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;blue&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;#6699df&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;cyan&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;#e69f66&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;green&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;#a6e22e&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;purple&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;#ae81ff&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;red&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;#f92672&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;white&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;#f8f8f2&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;yellow&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;#e6db74&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;brightBlack&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;#75715e&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;brightBlue&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;#66d9ef&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;brightCyan&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;#e69f66&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;brightGreen&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;#a6e22e&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;brightPurple&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;#ae81ff&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;brightRed&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;#f92672&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;brightWhite&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;#f8f8f2&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;#34;brightYellow&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;#e6db74&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>修改默认配色方案&lt;code>colorScheme&lt;/code>属性值为自定义的配色方案名称&lt;/p>
 &lt;h4 id="背景修改">背景修改：&lt;/h4>
 &lt;ul>
 &lt;li>开启背景毛玻璃效果&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#34;acrylicOpacity&amp;#34;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">:&lt;/span> &lt;span style="color:#ae81ff">0.25&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">,&lt;/span> &lt;span style="color:#75715e">//设置背景模糊度
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#e6db74">&amp;#34;useAcrylic&amp;#34;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">:&lt;/span> &lt;span style="color:#66d9ef">true&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">,&lt;/span> &lt;span style="color:#75715e">//开启毛玻璃效果
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="s2">&amp;#34;acrylicOpacity&amp;#34;&lt;/span>&lt;span class="err">:&lt;/span> &lt;span class="mf">0.25&lt;/span>&lt;span class="err">,&lt;/span> &lt;span class="c1">//设置背景模糊度
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="s2">&amp;#34;useAcrylic&amp;#34;&lt;/span>&lt;span class="err">:&lt;/span> &lt;span class="kc">true&lt;/span>&lt;span class="err">,&lt;/span> &lt;span class="c1">//开启毛玻璃效果
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ul>
 &lt;li>设置背景图片&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#34;backgroundImage&amp;#34;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">:&lt;/span>&lt;span style="color:#e6db74">&amp;#34;图片路径&amp;#34;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#34;backgroundImageStretchMode&amp;#34;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">:&lt;/span>&lt;span style="color:#e6db74">&amp;#34;背景拉伸&amp;#34;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">,&lt;/span> &lt;span style="color:#75715e">//可选属性: &amp;#34;none&amp;#34;、&amp;#34;fill&amp;#34;、&amp;#34;uniform&amp;#34;、&amp;#34;uniformToFill&amp;#34;
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#e6db74">&amp;#34;backgroundImageAlignment&amp;#34;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">:&lt;/span>&lt;span style="color:#e6db74">&amp;#34;背景对齐方式&amp;#34;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">,&lt;/span>&lt;span style="color:#75715e">//可选属性: &amp;#34;center&amp;#34;、&amp;#34;left&amp;#34;、&amp;#34;top&amp;#34;、&amp;#34;right&amp;#34;、&amp;#34;bottom&amp;#34;、
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">//&amp;#34;topLeft&amp;#34;、&amp;#34;topRight&amp;#34;、&amp;#34;bottomLeft&amp;#34;、&amp;#34;bottomRight&amp;#34;
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#e6db74">&amp;#34;backgroundImageOpacity&amp;#34;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">:&lt;/span>&lt;span style="color:#e6db74">&amp;#34;背景不透明度&amp;#34;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">,&lt;/span> &lt;span style="color:#75715e">//0-1
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-json" data-lang="json">&lt;span class="line">&lt;span class="cl">&lt;span class="s2">&amp;#34;backgroundImage&amp;#34;&lt;/span>&lt;span class="err">:&lt;/span>&lt;span class="s2">&amp;#34;图片路径&amp;#34;&lt;/span>&lt;span class="err">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s2">&amp;#34;backgroundImageStretchMode&amp;#34;&lt;/span>&lt;span class="err">:&lt;/span>&lt;span class="s2">&amp;#34;背景拉伸&amp;#34;&lt;/span>&lt;span class="err">,&lt;/span> &lt;span class="c1">//可选属性: &amp;#34;none&amp;#34;、&amp;#34;fill&amp;#34;、&amp;#34;uniform&amp;#34;、&amp;#34;uniformToFill&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="s2">&amp;#34;backgroundImageAlignment&amp;#34;&lt;/span>&lt;span class="err">:&lt;/span>&lt;span class="s2">&amp;#34;背景对齐方式&amp;#34;&lt;/span>&lt;span class="err">,&lt;/span>&lt;span class="c1">//可选属性: &amp;#34;center&amp;#34;、&amp;#34;left&amp;#34;、&amp;#34;top&amp;#34;、&amp;#34;right&amp;#34;、&amp;#34;bottom&amp;#34;、
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="c1">//&amp;#34;topLeft&amp;#34;、&amp;#34;topRight&amp;#34;、&amp;#34;bottomLeft&amp;#34;、&amp;#34;bottomRight&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="s2">&amp;#34;backgroundImageOpacity&amp;#34;&lt;/span>&lt;span class="err">:&lt;/span>&lt;span class="s2">&amp;#34;背景不透明度&amp;#34;&lt;/span>&lt;span class="err">,&lt;/span> &lt;span class="c1">//0-1
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ul>
 &lt;li>其他属性如滚动条，光标颜色等可参考&lt;code>官方文档&lt;/code>&lt;a class="link" href="https://docs.microsoft.com/zh-cn/windows/terminal/" target="_blank" rel="noopener"
 >链接&lt;/a>&lt;/li>
 &lt;/ul>
@@ -481,32 +741,88 @@ alt="themes-2"
 &lt;h2 id="powershell插件配置">PowerShell插件配置&lt;/h2>
 &lt;p>使用管理员身份打开&lt;code>PowerShell&lt;/code>
 依次输入下方三个命令安装插件&lt;/p>
-&lt;pre tabindex="0">&lt;code>Install-Module -Name PSReadLine -AllowPrerelease -Force
-Install-Module posh-git -Scope CurrentUser
-Install-Module oh-my-posh -Scope CurrentUser
-&lt;/code>&lt;/pre>&lt;p>然后输入以下命令来配置插件&lt;/p>
-&lt;pre tabindex="0">&lt;code>notepad.exe $PROFILE
-&lt;/code>&lt;/pre>&lt;p>这会打开默认&lt;code>PowerShell&lt;/code> 的启动配置文件，如果提示没有该文件，点击创建就好
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Install-Module -Name PSReadLine -AllowPrerelease -Force
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Install-Module posh-git -Scope CurrentUser
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Install-Module oh-my-posh -Scope CurrentUser
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>然后输入以下命令来配置插件&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">notepad.exe $PROFILE
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>这会打开默认&lt;code>PowerShell&lt;/code> 的启动配置文件，如果提示没有该文件，点击创建就好
 在打开的文件中输入&lt;/p>
-&lt;pre tabindex="0">&lt;code># 引入 posh-git
-Import-Module posh-git
-# 引入 oh-my-posh
-Import-Module oh-my-posh
-#引入 PSReadLine
-Import-Module PSReadLine
-# 设置 PowerShell 主题
-Set-Theme Paradox
-#设置 Tab 键补全
-Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
-# 设置 Ctrl+d 为退出 PowerShell
-Set-PSReadlineKeyHandler -Key &amp;#34;Ctrl+d&amp;#34; -Function ViExit
-# 设置 Ctrl+z 为撤销
-Set-PSReadLineKeyHandler -Key &amp;#34;Ctrl+z&amp;#34; -Function Undo
-# 设置向上键为后向搜索历史记录
-Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
-# 设置向下键为前向搜索历史纪录
-Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
-&lt;/code>&lt;/pre>&lt;p>亦可参考&lt;a class="link" href="https://raw.githubusercontent.com/PowerShell/PSReadLine/master/PSReadLine/SamplePSReadLineProfile.ps1" target="_blank" rel="noopener"
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl"># 引入 posh-git
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Import-Module posh-git
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"># 引入 oh-my-posh
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Import-Module oh-my-posh
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">#引入 PSReadLine
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Import-Module PSReadLine
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"># 设置 PowerShell 主题
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Set-Theme Paradox
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">#设置 Tab 键补全
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"># 设置 Ctrl+d 为退出 PowerShell
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Set-PSReadlineKeyHandler -Key &amp;#34;Ctrl+d&amp;#34; -Function ViExit
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"># 设置 Ctrl+z 为撤销
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Set-PSReadLineKeyHandler -Key &amp;#34;Ctrl+z&amp;#34; -Function Undo
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"># 设置向上键为后向搜索历史记录
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"># 设置向下键为前向搜索历史纪录
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>亦可参考&lt;a class="link" href="https://raw.githubusercontent.com/PowerShell/PSReadLine/master/PSReadLine/SamplePSReadLineProfile.ps1" target="_blank" rel="noopener"
 >官方样例&lt;/a>来自行修改&lt;/p>
 &lt;h2 id="使powershell支持git-bash">使PowerShell支持git bash&lt;/h2>
 &lt;p>此时修改的已经差不多了，但&lt;code>PowerShell&lt;/code>的&lt;code>git&lt;/code>功能仍有一些缺陷
@@ -527,7 +843,7 @@ alt="path"
 >如何打造好看还好用的 Windows Terminal&amp;mdash;ChrAlpha&lt;/a>
 &lt;a class="link" href="https://sspai.com/post/52907" target="_blank" rel="noopener"
 >5 个 PowerShell 主题，让你的 Windows 终端更好看&amp;mdash;少数派&lt;/a>&lt;/p>
-&lt;/blockquote></description></item><item><title>Archives</title><link>https://mnmnmssd.github.io/page/archives/</link><pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate><guid>https://mnmnmssd.github.io/page/archives/</guid><description/></item><item><title>about</title><link>https://mnmnmssd.github.io/page/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mnmnmssd.github.io/page/about/</guid><description>&lt;h1 id="关于">关于&lt;/h1>
+&lt;/blockquote></description></item><item><title>Archives</title><link>https://mnmnmssd.github.io/archives/</link><pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate><guid>https://mnmnmssd.github.io/archives/</guid><description/></item><item><title>about</title><link>https://mnmnmssd.github.io/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mnmnmssd.github.io/about/</guid><description>&lt;h1 id="关于">关于&lt;/h1>
 &lt;p>大三计科在读 , 热衷一切Geek事物
 所学习的语言 :
 - Java
@@ -536,4 +852,4 @@ alt="path"
 - html/Css/Javascript&lt;/p>
 &lt;p>写一些随笔与学习笔记
 就酱 (*^_^*)&lt;/p>
-&lt;h3 id="待补充">待补充&amp;hellip;.&lt;/h3></description></item><item><title>Links</title><link>https://mnmnmssd.github.io/page/links/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mnmnmssd.github.io/page/links/</guid><description/></item><item><title>Search</title><link>https://mnmnmssd.github.io/page/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mnmnmssd.github.io/page/search/</guid><description/></item></channel></rss>
+&lt;h3 id="待补充">待补充&amp;hellip;.&lt;/h3></description></item><item><title>Links</title><link>https://mnmnmssd.github.io/links/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mnmnmssd.github.io/links/</guid><description/></item><item><title>Search</title><link>https://mnmnmssd.github.io/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mnmnmssd.github.io/search/</guid><description/></item></channel></rss>
