@@ -1,7 +1,6 @@
 ---
 title: "SpringDay01"
 date: 2023-03-16T17:45:29+08:00
-draft: true
 slug: Spring学习
 categories:
     - 学习
@@ -156,11 +155,11 @@ System.out.println(userService);
 
 ​	而调试`BeanFactoryTest`测试类时我们发现，再执行完毕加载配置文件后，单例池内并没有出现`userService`对象，而在执行`getBean`方法时，才正式加到了单例池内。如下图
 
-​	![image-20230316195349951](C:\Users\fan\AppData\Roaming\Typora\typora-user-images\BeanFactory方法加载时机1.png)
+​	![image-20230316195349951](https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg@master/2023/03/upgit_20230316_1678968914_BeanFactory方法加载时机1.png)
 
 ​	执行`getBean`方法后
 
-​	![image-20230316195506908](C:\Users\fan\AppData\Roaming\Typora\typora-user-images\BeanFactory方法加载时机2.png)
+​	![image-20230316195506908](https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg@master/2023/03/upgit_20230316_1678968904_BeanFactory方法加载时机2.png)
 
 ## 小结
 
