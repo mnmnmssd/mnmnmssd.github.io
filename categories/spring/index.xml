@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spring on 笑的心酸</title><link>https://mnmnmssd.github.io/categories/spring/</link><description>Recent content in Spring on 笑的心酸</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 16 Mar 2023 17:45:29 +0800</lastBuildDate><atom:link href="https://mnmnmssd.github.io/categories/spring/index.xml" rel="self" type="application/rss+xml"/><item><title>SpringDay01</title><link>https://mnmnmssd.github.io/p/spring%E5%AD%A6%E4%B9%A0/</link><pubDate>Thu, 16 Mar 2023 17:45:29 +0800</pubDate><guid>https://mnmnmssd.github.io/p/spring%E5%AD%A6%E4%B9%A0/</guid><description>&lt;h1 id="spring概述">Spring概述&lt;/h1>
+&lt;p>Spring 是最受欢迎的企业级 Java 应用程序开发框架，数以百万的来自世界各地的开发人员使用 Spring 框架来创建性能好、易于测试、可重用的代码。&lt;/p>
+&lt;p>Spring 框架是一个开源的 Java 平台，它最初是由 Rod Johnson 编写的，并且于 2003 年 6 月首次在 Apache 2.0 许可下发布。&lt;/p>
+&lt;p>Spring 是轻量级的框架，其基础版本只有 2 MB 左右的大小。&lt;/p>
+&lt;p>Spring 框架的核心特性是可以用于开发任何 Java 应用程序，但是在 Java EE 平台上构建 web 应用程序是需要扩展的。 Spring 框架的目标是使 J2EE 开发变得更容易使用，通过启用基于 POJO 的编程模型来促进良好的编程实践。&lt;/p>
+&lt;h1 id="spring快速入门">Spring快速入门&lt;/h1>
+&lt;p>&lt;strong>本项目使用Maven构建&lt;/strong>&lt;/p>
+&lt;h2 id="spring-ioc容器">Spring IOC容器&lt;/h2>
+&lt;p>在常规Java开发中，Bean的管理常常是非常头疼的事情，常规一般随用随new，造成极大资源浪费，而且增大了代码的耦合程度，使定位问题和修改成为了极大的困难，Spring的出现解决了这一问题，他将开发者与Bean进行了抽离，在两者之间使用Bean工厂进行链接，使Bean的创建与管理极大的便利了起来。&lt;/p>
+&lt;p>常规方式管理Bean：开发者&amp;ndash;&amp;gt;Bean&lt;/p>
+&lt;p>Spring方式管理Bean：开发者&amp;ndash;&amp;gt;第三方工具&amp;ndash;&amp;gt;Bean&lt;/p>
+&lt;p>Spring中提供了两种方式创建Bean对象，一种使用BeanFactory来创建，一种使用ApplicationContext来创建。&lt;/p>
+&lt;p>以上两种方式需要首先从配置文件中指定bean的名称等属性&lt;/p>
+&lt;h3 id="创建xml配置文件">创建xml配置文件&lt;/h3>
+&lt;p>首先ApplicationContext有三种方式&lt;/p>
+&lt;ul>
+&lt;li>系统路径获取配置文件 (FileSystemXmlApplicationContext)&lt;/li>
+&lt;li>直接获取配置文件 (ClassPathXmlApplicationContext)&lt;/li>
+&lt;li>注解方式获取Bean (AnnotationConfigApplicationContext)&lt;/li>
+&lt;/ul>
+&lt;p>我们这里使用第二种也是除了注解外最常用的一种方式，在项目的resource文件夹下创建&lt;code>applicationContext.xml&lt;/code>文件。&lt;/p>
+&lt;p>文件初始内容如下&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-xml" data-lang="xml">&lt;span class="line">&lt;span class="cl">&lt;span class="cp">&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;beans&lt;/span> &lt;span class="na">xmlns=&lt;/span>&lt;span class="s">&amp;#34;http://www.springframework.org/schema/beans&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="na">xmlns:xsi=&lt;/span>&lt;span class="s">&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="na">xsi:schemaLocation=&lt;/span>&lt;span class="s">&amp;#34;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd&amp;#34;&lt;/span>&lt;span class="nt">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;/beans&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>我们在项目中创建几个测试Bean对象，如下图所示，其中&lt;code>UserServiceImpl&lt;/code>实现了&lt;code>UserService&lt;/code>接口，并在内部引用了&lt;code>UserDao&lt;/code>对象。&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg@master/2023/03/upgit_20230316_1678963189_image-20230316183943486.png"
+loading="lazy"
+alt="image-20230316183943486"
+>&lt;/p>
+&lt;p>UserServiceImpl内部书写&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">private&lt;/span> &lt;span class="n">UserDao&lt;/span> &lt;span class="n">userDao&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">public&lt;/span> &lt;span class="kt">void&lt;/span> &lt;span class="nf">setUserDao&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">UserDao&lt;/span> &lt;span class="n">userDao&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">this&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">userDao&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">userDao&lt;/span>&lt;span class="o">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">System&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">out&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">println&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">userDao&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="使用beanfactory创建bean对象">使用BeanFactory创建Bean对象&lt;/h3>
+&lt;p>首先我们使用BeanFactory方式创建Bean对象。&lt;/p>
+&lt;h4 id="bean标签形式">Bean标签形式&lt;/h4>
+&lt;p>编辑我们创建的&lt;code>applicationContext.xml&lt;/code>文件，配置如下&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-xml" data-lang="xml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;bean&lt;/span> &lt;span class="na">id=&lt;/span>&lt;span class="s">&amp;#34;userService&amp;#34;&lt;/span> &lt;span class="na">class=&lt;/span>&lt;span class="s">&amp;#34;org.itHeima.service.impl.UserServiceImpl&amp;#34;&lt;/span> &lt;span class="nt">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>其中&lt;code>bean&lt;/code>标签表示为一个bean对象，&lt;code>id&lt;/code>属性为唯一标识，在后续中可通过该标识获取Bean对象，&lt;code>class&lt;/code>属性为实例化对象位置。&lt;/p>
+&lt;p>接下来我们在主包下创建BeanFactoryTest测试类来测试，其中main方法内书写如下&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">//创建Bean工厂
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="n">DefaultListableBeanFactory&lt;/span> &lt;span class="n">beanFactory&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">DefaultListableBeanFactory&lt;/span>&lt;span class="o">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">//创建读取器
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="n">XmlBeanDefinitionReader&lt;/span> &lt;span class="n">reader&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">XmlBeanDefinitionReader&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">beanFactory&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">//读取配置文件
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="n">reader&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">loadBeanDefinitions&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;applicationContext.xml&amp;#34;&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">//通过getBean获取Bean对象
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="n">UserService&lt;/span> &lt;span class="n">userService&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="o">(&lt;/span>&lt;span class="n">UserService&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="n">beanFactory&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">getBean&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;userService&amp;#34;&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">System&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">out&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">println&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">userService&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>在这种方法下&lt;code>userService&lt;/code>中并没有实例化&lt;code>userDao&lt;/code>对象，运行后可以观测到输出&lt;/p>
+&lt;p>&lt;code>org.itHeima.service.impl.UserServiceImpl@28f67ac7&lt;/code>。&lt;/p>
+&lt;h4 id="自动注入形式">自动注入形式&lt;/h4>
+&lt;p>修改xml配置文件中内容为&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-xml" data-lang="xml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;bean&lt;/span> &lt;span class="na">id=&lt;/span>&lt;span class="s">&amp;#34;userService&amp;#34;&lt;/span> &lt;span class="na">class=&lt;/span>&lt;span class="s">&amp;#34;org.itHeima.service.impl.UserServiceImpl&amp;#34;&lt;/span>&lt;span class="nt">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;property&lt;/span> &lt;span class="na">name=&lt;/span>&lt;span class="s">&amp;#34;userDao&amp;#34;&lt;/span> &lt;span class="na">ref=&lt;/span>&lt;span class="s">&amp;#34;userDao&amp;#34;&lt;/span>&lt;span class="nt">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;/bean&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;bean&lt;/span> &lt;span class="na">id=&lt;/span>&lt;span class="s">&amp;#34;userDao&amp;#34;&lt;/span> &lt;span class="na">class=&lt;/span>&lt;span class="s">&amp;#34;org.itHeima.Dao.impl.UserDaoImpl&amp;#34;&lt;/span>&lt;span class="nt">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>其中&lt;code>property&lt;/code>标签表示其为当前bean的一个属性内容，这里的&lt;code>name&lt;/code>属性应该与&lt;code>userServiceImpl&lt;/code>中的&lt;code>setUserDao&lt;/code>方法中&lt;strong>set后的&lt;/strong>名称(&lt;strong>UserDao-&amp;gt;userDao&lt;/strong>)吻合,并不是下方的&lt;code>id&lt;/code>属性，后面的&lt;code>ref&lt;/code>属性才应为要自动注入的bean的&lt;code>id&lt;/code>属性。&lt;/p>
+&lt;p>main方法不变。&lt;/p>
+&lt;p>运行后应输出以下内容&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">org.itHeima.Dao.impl.UserDaoImpl@17550481 //userDao对象实例地址
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">org.itHeima.service.impl.UserServiceImpl@735f7ae5 //userService对象实例地址
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>以上为BeanFactory方法创建Bean对象，可以见到代码略多，不易记忆，而且功能较少，接下来我们将使用也是开发中常用的&lt;code>ApplicationContext&lt;/code>方法来创建实例Bean。&lt;/p>
+&lt;h3 id="使用applicationcontext创建bean">使用ApplicationContext创建Bean&lt;/h3>
+&lt;p>xml配置文件不用改变，我们创建一个&lt;code>ApplicationContextTest&lt;/code>测试类来测试，在main方法中输入以下内容&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="n">ApplicationContext&lt;/span> &lt;span class="n">applicationContext&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">ClassPathXmlApplicationContext&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;applicationContext.xml&amp;#34;&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">UserService&lt;/span> &lt;span class="n">userService&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="o">(&lt;/span>&lt;span class="n">UserService&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="n">applicationContext&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">getBean&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;userService&amp;#34;&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">System&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">out&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">println&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">userService&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>运行后将输出与上方BeanFactory方法运行相一致的结果。&lt;/p>
+&lt;h3 id="applicationcontext与beanfactory的区别">ApplicationContext与BeanFactory的区别&lt;/h3>
+&lt;p>那么为什么在工作中常常使用&lt;code>ApplicationContext&lt;/code>来进行Bean的创建呢，一个是代码简单易于记忆，而另外就是它与&lt;code>BeanFactory&lt;/code>有着截然的不同。&lt;/p>
+&lt;ul>
+&lt;li>ApplicationContext脱身于BeanFactory，又青出于蓝而胜于蓝，比传统的BeanFactory多出了很多功能，包括监视器、国际化等。我们在它的类继承图中也可以看到，它实现了&lt;code>BeanFactory&lt;/code>接口，又实现了其他一些功能性的接口，加强了自身的功能。&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg@master/2023/03/upgit_20230316_1678966398_appliactionContext%e7%bb%a7%e6%89%bf%e5%85%b3%e7%b3%bb%e5%9b%be.png"
+loading="lazy"
+alt="image-20230316193239887"
+>&lt;/p>
+&lt;ul>
+&lt;li>BeanFactory更应该称之为一个Spring工厂，负责生产和管理Bean，而ApplicationContext更高级一些，可以被称之为Spring容器。&lt;/li>
+&lt;li>Bean的初始化时机不同，在默认情况下，ApplicationContext在读取配置文件的同时就创建好了Bean并添加到了Bean池中，而BeanFactory是在首次&lt;code>getBean&lt;/code>时才会对对象实例并初始化，这里可以进行调试验证，分别在&lt;code>ApplicationContextTest&lt;/code>测试类中的读取配置文件与&lt;code>BeanFactoryTest&lt;/code>测试类中读取配置文件处打上断点，进行调试。会发现在&lt;code>ApplicationContextTest&lt;/code>执行完毕配置文件读取后，单例Bean池内已经存在了&lt;code>userService&lt;/code>对象&lt;/li>
+&lt;/ul>
+&lt;p>​ &lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg@master/2023/03/upgit_20230316_1678967097_applicationContext%e5%8a%a0%e8%bd%bdBean%e6%97%b6%e6%9c%ba.png"
+loading="lazy"
+alt="image-20230316194433029"
+>&lt;/p>
+&lt;p>​ 而调试&lt;code>BeanFactoryTest&lt;/code>测试类时我们发现，再执行完毕加载配置文件后，单例池内并没有出现&lt;code>userService&lt;/code>对象，而在执行&lt;code>getBean&lt;/code>方法时，才正式加到了单例池内。如下图&lt;/p>
+&lt;p>​ &lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg@master/2023/03/upgit_20230316_1678968914_BeanFactory%e6%96%b9%e6%b3%95%e5%8a%a0%e8%bd%bd%e6%97%b6%e6%9c%ba1.png"
+loading="lazy"
+alt="image-20230316195349951"
+>&lt;/p>
+&lt;p>​ 执行&lt;code>getBean&lt;/code>方法后&lt;/p>
+&lt;p>​ &lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg@master/2023/03/upgit_20230316_1678968904_BeanFactory%e6%96%b9%e6%b3%95%e5%8a%a0%e8%bd%bd%e6%97%b6%e6%9c%ba2.png"
+loading="lazy"
+alt="image-20230316195506908"
+>&lt;/p>
+&lt;h2 id="小结">小结&lt;/h2>
+&lt;p>今天学习了Spring中常见的Bean生产方式，分为&lt;code>BeanFactory&lt;/code>与&lt;code>ApplicationContext&lt;/code>方式，后者更为常用与强大。&lt;/p>
+&lt;p>虽然如今SpringBoot与SpringCould如火如荼，但其底层仍为Spring框架，之前只是使用SpringBoot进行项目开发，并未从源码角度进行思考，只是会用的级别，此次从新学习Spring有了更多感悟。&lt;/p></description></item></channel></rss>
