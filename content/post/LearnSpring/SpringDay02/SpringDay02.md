@@ -1,7 +1,7 @@
 ---
 title: "SpringDay02"
 date: 2023-03-17T16:55:36+08:00
-slug: Spring学习
+slug: Spring学习 02
 categories:
     - 学习
     - Spring
