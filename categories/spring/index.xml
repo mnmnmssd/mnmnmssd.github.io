@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spring on 笑的心酸</title><link>https://mnmnmssd.github.io/categories/spring/</link><description>Recent content in Spring on 笑的心酸</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 17 Mar 2023 16:55:36 +0800</lastBuildDate><atom:link href="https://mnmnmssd.github.io/categories/spring/index.xml" rel="self" type="application/rss+xml"/><item><title>SpringDay02</title><link>https://mnmnmssd.github.io/p/spring%E5%AD%A6%E4%B9%A0-02/</link><pubDate>Fri, 17 Mar 2023 16:55:36 +0800</pubDate><guid>https://mnmnmssd.github.io/p/spring%E5%AD%A6%E4%B9%A0-02/</guid><description>&lt;h1 id="基于xml的bean配置">基于XML的Bean配置&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spring on 笑的心酸</title><link>https://blog.bigcry.asia/categories/spring/</link><description>Recent content in Spring on 笑的心酸</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 17 Mar 2023 16:55:36 +0800</lastBuildDate><atom:link href="https://blog.bigcry.asia/categories/spring/index.xml" rel="self" type="application/rss+xml"/><item><title>SpringDay02</title><link>https://blog.bigcry.asia/p/spring%E5%AD%A6%E4%B9%A0-02/</link><pubDate>Fri, 17 Mar 2023 16:55:36 +0800</pubDate><guid>https://blog.bigcry.asia/p/spring%E5%AD%A6%E4%B9%A0-02/</guid><description>&lt;h1 id="基于xml的bean配置">基于XML的Bean配置&lt;/h1>
 &lt;h2 id="基础属性">基础属性&lt;/h2>
 &lt;h3 id="beanname与别名">BeanName与别名&lt;/h3>
 &lt;p>bean标签除了id属性指定唯一标识外，还允许使用name属性指定多个别名&lt;/p>
@@ -241,7 +241,7 @@ alt="image-20230317201814909"
 &lt;/div>
 &lt;/div>&lt;p>运行后即可正常输出&lt;/p>
 &lt;h2 id="小结">小结&lt;/h2>
-&lt;p>Spring博大精深啊&lt;/p></description></item><item><title>SpringDay01</title><link>https://mnmnmssd.github.io/p/spring%E5%AD%A6%E4%B9%A0/</link><pubDate>Thu, 16 Mar 2023 17:45:29 +0800</pubDate><guid>https://mnmnmssd.github.io/p/spring%E5%AD%A6%E4%B9%A0/</guid><description>&lt;h1 id="spring概述">Spring概述&lt;/h1>
+&lt;p>Spring博大精深啊&lt;/p></description></item><item><title>SpringDay01</title><link>https://blog.bigcry.asia/p/spring%E5%AD%A6%E4%B9%A0/</link><pubDate>Thu, 16 Mar 2023 17:45:29 +0800</pubDate><guid>https://blog.bigcry.asia/p/spring%E5%AD%A6%E4%B9%A0/</guid><description>&lt;h1 id="spring概述">Spring概述&lt;/h1>
 &lt;p>Spring 是最受欢迎的企业级 Java 应用程序开发框架，数以百万的来自世界各地的开发人员使用 Spring 框架来创建性能好、易于测试、可重用的代码。&lt;/p>
 &lt;p>Spring 框架是一个开源的 Java 平台，它最初是由 Rod Johnson 编写的，并且于 2003 年 6 月首次在 Apache 2.0 许可下发布。&lt;/p>
 &lt;p>Spring 是轻量级的框架，其基础版本只有 2 MB 左右的大小。&lt;/p>

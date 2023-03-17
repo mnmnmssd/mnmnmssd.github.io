@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>笑的心酸</title><link>https://mnmnmssd.github.io/</link><description>Recent content on 笑的心酸</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 17 Mar 2023 16:55:36 +0800</lastBuildDate><atom:link href="https://mnmnmssd.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>SpringDay02</title><link>https://mnmnmssd.github.io/p/spring%E5%AD%A6%E4%B9%A0-02/</link><pubDate>Fri, 17 Mar 2023 16:55:36 +0800</pubDate><guid>https://mnmnmssd.github.io/p/spring%E5%AD%A6%E4%B9%A0-02/</guid><description>&lt;h1 id="基于xml的bean配置">基于XML的Bean配置&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>笑的心酸</title><link>https://blog.bigcry.asia/</link><description>Recent content on 笑的心酸</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 17 Mar 2023 16:55:36 +0800</lastBuildDate><atom:link href="https://blog.bigcry.asia/index.xml" rel="self" type="application/rss+xml"/><item><title>SpringDay02</title><link>https://blog.bigcry.asia/p/spring%E5%AD%A6%E4%B9%A0-02/</link><pubDate>Fri, 17 Mar 2023 16:55:36 +0800</pubDate><guid>https://blog.bigcry.asia/p/spring%E5%AD%A6%E4%B9%A0-02/</guid><description>&lt;h1 id="基于xml的bean配置">基于XML的Bean配置&lt;/h1>
 &lt;h2 id="基础属性">基础属性&lt;/h2>
 &lt;h3 id="beanname与别名">BeanName与别名&lt;/h3>
 &lt;p>bean标签除了id属性指定唯一标识外，还允许使用name属性指定多个别名&lt;/p>
@@ -241,7 +241,7 @@ alt="image-20230317201814909"
 &lt;/div>
 &lt;/div>&lt;p>运行后即可正常输出&lt;/p>
 &lt;h2 id="小结">小结&lt;/h2>
-&lt;p>Spring博大精深啊&lt;/p></description></item><item><title>SpringDay01</title><link>https://mnmnmssd.github.io/p/spring%E5%AD%A6%E4%B9%A0/</link><pubDate>Thu, 16 Mar 2023 17:45:29 +0800</pubDate><guid>https://mnmnmssd.github.io/p/spring%E5%AD%A6%E4%B9%A0/</guid><description>&lt;h1 id="spring概述">Spring概述&lt;/h1>
+&lt;p>Spring博大精深啊&lt;/p></description></item><item><title>SpringDay01</title><link>https://blog.bigcry.asia/p/spring%E5%AD%A6%E4%B9%A0/</link><pubDate>Thu, 16 Mar 2023 17:45:29 +0800</pubDate><guid>https://blog.bigcry.asia/p/spring%E5%AD%A6%E4%B9%A0/</guid><description>&lt;h1 id="spring概述">Spring概述&lt;/h1>
 &lt;p>Spring 是最受欢迎的企业级 Java 应用程序开发框架，数以百万的来自世界各地的开发人员使用 Spring 框架来创建性能好、易于测试、可重用的代码。&lt;/p>
 &lt;p>Spring 框架是一个开源的 Java 平台，它最初是由 Rod Johnson 编写的，并且于 2003 年 6 月首次在 Apache 2.0 许可下发布。&lt;/p>
 &lt;p>Spring 是轻量级的框架，其基础版本只有 2 MB 左右的大小。&lt;/p>
@@ -421,7 +421,7 @@ alt="image-20230316195506908"
 >&lt;/p>
 &lt;h2 id="小结">小结&lt;/h2>
 &lt;p>今天学习了Spring中常见的Bean生产方式，分为&lt;code>BeanFactory&lt;/code>与&lt;code>ApplicationContext&lt;/code>方式，后者更为常用与强大。&lt;/p>
-&lt;p>虽然如今SpringBoot与SpringCould如火如荼，但其底层仍为Spring框架，之前只是使用SpringBoot进行项目开发，并未从源码角度进行思考，只是会用的级别，此次从新学习Spring有了更多感悟。&lt;/p></description></item><item><title>虚拟机下的ArchLinux 安装实录(一)</title><link>https://mnmnmssd.github.io/p/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E7%9A%84archlinux-%E5%AE%89%E8%A3%85%E5%AE%9E%E5%BD%95/</link><pubDate>Mon, 10 Aug 2020 23:23:10 +0000</pubDate><guid>https://mnmnmssd.github.io/p/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E7%9A%84archlinux-%E5%AE%89%E8%A3%85%E5%AE%9E%E5%BD%95/</guid><description>&lt;h1 id="虚拟机下的archlinux-安装实录一">虚拟机下的ArchLinux 安装实录(一)&lt;/h1>
+&lt;p>虽然如今SpringBoot与SpringCould如火如荼，但其底层仍为Spring框架，之前只是使用SpringBoot进行项目开发，并未从源码角度进行思考，只是会用的级别，此次从新学习Spring有了更多感悟。&lt;/p></description></item><item><title>虚拟机下的ArchLinux 安装实录(一)</title><link>https://blog.bigcry.asia/p/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E7%9A%84archlinux-%E5%AE%89%E8%A3%85%E5%AE%9E%E5%BD%95/</link><pubDate>Mon, 10 Aug 2020 23:23:10 +0000</pubDate><guid>https://blog.bigcry.asia/p/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E7%9A%84archlinux-%E5%AE%89%E8%A3%85%E5%AE%9E%E5%BD%95/</guid><description>&lt;h1 id="虚拟机下的archlinux-安装实录一">虚拟机下的ArchLinux 安装实录(一)&lt;/h1>
 &lt;h2 id="获取镜像---创建虚拟机">获取镜像 -&amp;gt; 创建虚拟机&lt;/h2>
 &lt;h3 id="获取安装镜像">获取安装镜像&lt;/h3>
 &lt;p>首先在 &lt;a class="link" href="https://www.archlinux.org/download/" target="_blank" rel="noopener"
@@ -907,7 +907,7 @@ alt="image-20200811172715340"
 &lt;blockquote>
 &lt;p>2020年8月11日&lt;/p>
 &lt;p>by &amp;mdash;笑的心酸&lt;/p>
-&lt;/blockquote></description></item><item><title>新版Windows Terminal美化配置</title><link>https://mnmnmssd.github.io/p/windows-terminal%E7%BE%8E%E5%8C%96%E9%85%8D%E7%BD%AE/</link><pubDate>Tue, 09 Jun 2020 10:14:58 +0000</pubDate><guid>https://mnmnmssd.github.io/p/windows-terminal%E7%BE%8E%E5%8C%96%E9%85%8D%E7%BD%AE/</guid><description>&lt;h1 id="关于新版windows-terminal">关于新版Windows Terminal&lt;/h1>
+&lt;/blockquote></description></item><item><title>新版Windows Terminal美化配置</title><link>https://blog.bigcry.asia/p/windows-terminal%E7%BE%8E%E5%8C%96%E9%85%8D%E7%BD%AE/</link><pubDate>Tue, 09 Jun 2020 10:14:58 +0000</pubDate><guid>https://blog.bigcry.asia/p/windows-terminal%E7%BE%8E%E5%8C%96%E9%85%8D%E7%BD%AE/</guid><description>&lt;h1 id="关于新版windows-terminal">关于新版Windows Terminal&lt;/h1>
 &lt;h2 id="简介">简介&lt;/h2>
 &lt;p>Windows 终端是一个面向命令行工具和 shell（如命令提示符、PowerShell 和适用于 Linux 的 Windows 子系统 (WSL)）用户的新式终端应用程序。 它的主要功能包括多个选项卡、窗格、Unicode 和 UTF-8 字符支持、GPU 加速文本呈现引擎，还可以用于创建你自己的主题并自定义文本、颜色、背景和快捷键绑定。
 &lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/wt.png"
@@ -1266,7 +1266,7 @@ alt="path"
 >如何打造好看还好用的 Windows Terminal&amp;mdash;ChrAlpha&lt;/a>
 &lt;a class="link" href="https://sspai.com/post/52907" target="_blank" rel="noopener"
 >5 个 PowerShell 主题，让你的 Windows 终端更好看&amp;mdash;少数派&lt;/a>&lt;/p>
-&lt;/blockquote></description></item><item><title>Archives</title><link>https://mnmnmssd.github.io/archives/</link><pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate><guid>https://mnmnmssd.github.io/archives/</guid><description/></item><item><title>about</title><link>https://mnmnmssd.github.io/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mnmnmssd.github.io/about/</guid><description>&lt;h1 id="关于">关于&lt;/h1>
+&lt;/blockquote></description></item><item><title>Archives</title><link>https://blog.bigcry.asia/archives/</link><pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate><guid>https://blog.bigcry.asia/archives/</guid><description/></item><item><title>about</title><link>https://blog.bigcry.asia/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://blog.bigcry.asia/about/</guid><description>&lt;h1 id="关于">关于&lt;/h1>
 &lt;p>大三计科在读 , 热衷一切Geek事物
 所学习的语言 :
 - Java
@@ -1275,4 +1275,4 @@ alt="path"
 - html/Css/Javascript&lt;/p>
 &lt;p>写一些随笔与学习笔记
 就酱 (*^_^*)&lt;/p>
-&lt;h3 id="待补充">待补充&amp;hellip;.&lt;/h3></description></item><item><title>Links</title><link>https://mnmnmssd.github.io/links/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mnmnmssd.github.io/links/</guid><description/></item><item><title>Search</title><link>https://mnmnmssd.github.io/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mnmnmssd.github.io/search/</guid><description/></item></channel></rss>
+&lt;h3 id="待补充">待补充&amp;hellip;.&lt;/h3></description></item><item><title>Links</title><link>https://blog.bigcry.asia/links/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://blog.bigcry.asia/links/</guid><description/></item><item><title>Search</title><link>https://blog.bigcry.asia/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://blog.bigcry.asia/search/</guid><description/></item></channel></rss>
