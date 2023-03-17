@@ -1,4 +1,247 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>笑的心酸</title><link>https://mnmnmssd.github.io/</link><description>Recent content on 笑的心酸</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 16 Mar 2023 17:45:29 +0800</lastBuildDate><atom:link href="https://mnmnmssd.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>SpringDay01</title><link>https://mnmnmssd.github.io/p/spring%E5%AD%A6%E4%B9%A0/</link><pubDate>Thu, 16 Mar 2023 17:45:29 +0800</pubDate><guid>https://mnmnmssd.github.io/p/spring%E5%AD%A6%E4%B9%A0/</guid><description>&lt;h1 id="spring概述">Spring概述&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>笑的心酸</title><link>https://mnmnmssd.github.io/</link><description>Recent content on 笑的心酸</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 17 Mar 2023 16:55:36 +0800</lastBuildDate><atom:link href="https://mnmnmssd.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>SpringDay02</title><link>https://mnmnmssd.github.io/p/spring%E5%AD%A6%E4%B9%A0/</link><pubDate>Fri, 17 Mar 2023 16:55:36 +0800</pubDate><guid>https://mnmnmssd.github.io/p/spring%E5%AD%A6%E4%B9%A0/</guid><description>&lt;h1 id="基于xml的bean配置">基于XML的Bean配置&lt;/h1>
+&lt;h2 id="基础属性">基础属性&lt;/h2>
+&lt;h3 id="beanname与别名">BeanName与别名&lt;/h3>
+&lt;p>bean标签除了id属性指定唯一标识外，还允许使用name属性指定多个别名&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-xml" data-lang="xml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;bean&lt;/span> &lt;span class="na">id=&lt;/span>&lt;span class="s">&amp;#34;userDao&amp;#34;&lt;/span> &lt;span class="na">name=&lt;/span>&lt;span class="s">&amp;#34;aaa,bbb,ccc&amp;#34;&lt;/span> &lt;span class="na">class=&lt;/span>&lt;span class="s">&amp;#34;org.itHeima.Dao.impl.userDaoImpl&amp;#34;&lt;/span> &lt;span class="nt">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>此时，除了使用userDao可以获取Bean之外，还可以使用aaa、bbb、ccc来获取，此时这些别名都将保存在单例池中的别名集合中&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="n">UserDao&lt;/span> &lt;span class="n">userDao&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="o">(&lt;/span>&lt;span class="n">UserDao&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="n">applicationContext&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">getBean&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;aaa&amp;#34;&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg@master/2023/03/upgit_20230317_1679046389_image-20230317174627405.png"
+loading="lazy"
+alt="image-20230317174627405"
+>&lt;/p>
+&lt;p>假如在声明时并未指定id、name属性，那么此时通过类路径也就是class属性中的内容来获取，除此以外，也可以直接通过类型匹配来获取&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">//通过类路径
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="n">UserDao&lt;/span> &lt;span class="n">userDao&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="o">(&lt;/span>&lt;span class="n">UserDao&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="n">applicationContext&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">getBean&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;org.itHeima.Dao.impl.userDaoImpl&amp;#34;&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">//通过类型匹配
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="n">UserDao&lt;/span> &lt;span class="n">userDao&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">applicationContext&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">getBean&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">UserDao&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">class&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="bean的作用范围">Bean的作用范围&lt;/h3>
+&lt;p>初始引入&lt;code>spring-context&lt;/code>包时，Bean的作用范围只有两个，分别为&lt;code>singleton(单例)&lt;/code>与&lt;code>prototype(原型)&lt;/code>&lt;/p>
+&lt;h4 id="singleton单例">singleton(单例)&lt;/h4>
+&lt;p>顾名思义，在整个Bean的生命周期内，只会产生一个实例化对象，每次使用getBean都获取的是同一个对象，这也是spring默认的Bean作用域。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="n">UserService&lt;/span> &lt;span class="n">userService&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="o">(&lt;/span>&lt;span class="n">UserService&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="n">applicationContext&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">getBean&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;userService&amp;#34;&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">UserService&lt;/span> &lt;span class="n">userService2&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="o">(&lt;/span>&lt;span class="n">UserService&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="n">applicationContext&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">getBean&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;userService&amp;#34;&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg@master/2023/03/upgit_20230317_1679048574_image-20230317182250723.png"
+loading="lazy"
+alt="image-20230317182250723"
+>&lt;/p>
+&lt;h4 id="prototype原型">prototype(原型)&lt;/h4>
+&lt;p>其表示一个Bean对应多个实例对象，并且在读取配置文件时并不会创建Bean对象，而是在每次使用getBean方法获取Bean实例时才会创建，并且每次getBean都会创建并返回一个新的Bean对象。&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg@master/2023/03/upgit_20230317_1679048756_image-20230317182555421.png"
+loading="lazy"
+alt="image-20230317182555421"
+>&lt;/p>
+&lt;h3 id="bean的延迟加载">Bean的延迟加载&lt;/h3>
+&lt;p>如果使用的是BeanFactory方式创建bean对象时，Bean是在使用getBean方法时实例化，而在使用ApplicationContext方式创建时，Bean是在读取配置文件时实例化，通过&lt;code>lazy-init&lt;/code>属性则可以控制这一过程。其取值有&lt;code>default&lt;/code>、&lt;code>false&lt;/code>与&lt;code>true&lt;/code>三种。&lt;/p>
+&lt;p>延迟加载只能修改ApplicationContext方式，对BeanFactory方式不起效。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="n">bean&lt;/span> &lt;span class="n">id&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;userService&amp;#34;&lt;/span> &lt;span class="n">class&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;org.itHeima.service.impl.UserServiceImpl&amp;#34;&lt;/span> &lt;span class="n">lazy&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">init&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;true&amp;#34;&lt;/span> &lt;span class="o">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>运行后，调试发现在读取配置文件时并没有实例化对象和存入单例池。&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg@master/2023/03/upgit_20230317_1679049851_image-20230317184410698.png"
+loading="lazy"
+alt="image-20230317184410698"
+>&lt;/p>
+&lt;p>只有当调用getBean方法时，才会实例化并放入单例池。&lt;/p>
+&lt;h3 id="初始化方法和销毁方法">初始化方法和销毁方法&lt;/h3>
+&lt;p>Spring支持在Bean实例化时执行一些初始方法，并在其销毁前执行销毁方法，使用&lt;code>init-method&lt;/code>与&lt;code>destroy-method&lt;/code>属性来指定执行的方法名称。&lt;/p>
+&lt;p>在UserServiceImpl类中我们添加两个方法。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">public&lt;/span> &lt;span class="nf">UserServiceImpl&lt;/span>&lt;span class="o">()&lt;/span> &lt;span class="o">{&lt;/span>&lt;span class="n">System&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">out&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">println&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;无参构造执行...&amp;#34;&lt;/span>&lt;span class="o">);}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">public&lt;/span> &lt;span class="kt">void&lt;/span> &lt;span class="nf">init&lt;/span>&lt;span class="o">()&lt;/span> &lt;span class="o">{&lt;/span>&lt;span class="n">System&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">out&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">println&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;init方法执行...&amp;#34;&lt;/span>&lt;span class="o">);}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">public&lt;/span> &lt;span class="kt">void&lt;/span> &lt;span class="nf">destroy&lt;/span>&lt;span class="o">()&lt;/span> &lt;span class="o">{&lt;/span>&lt;span class="n">System&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">out&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">println&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;destroy方法执行...&amp;#34;&lt;/span>&lt;span class="o">);}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>在xml配置文件中，我们使用&lt;code>init-method&lt;/code>与&lt;code>destroy-method&lt;/code>属性来指定方法。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-xml" data-lang="xml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;bean&lt;/span> &lt;span class="na">id=&lt;/span>&lt;span class="s">&amp;#34;userService&amp;#34;&lt;/span> &lt;span class="na">class=&lt;/span>&lt;span class="s">&amp;#34;org.itHeima.service.impl.UserServiceImpl&amp;#34;&lt;/span> &lt;span class="na">init-method=&lt;/span>&lt;span class="s">&amp;#34;init&amp;#34;&lt;/span> &lt;span class="na">destroy-method=&lt;/span>&lt;span class="s">&amp;#34;destroy&amp;#34;&lt;/span>&lt;span class="nt">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>执行后可以看到以下输出：&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg@master/2023/03/upgit_20230317_1679050297_image-20230317185136006.png"
+loading="lazy"
+alt="image-20230317185136006"
+>&lt;/p>
+&lt;p>在结果中我们可以得知init方法是在构造方法之后才会执行，并且并没有输出销毁方法。这是为什么呢，这是因为程序并没有显式的关闭，而是自动停止运行，就好像突然停电，电脑内的一部分数据都没来得及进行保存。所以我们要显式的关闭才会执行销毁方法。&lt;/p>
+&lt;p>修改main方法中的代码，由于ApplicationContext并没有声明显式关闭方法，所以我们直接使用它的接口实现类&lt;code>ClassPathXmlApplicationContext&lt;/code>中的&lt;code>close&lt;/code>方法。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="n">ClassPathXmlApplicationContext&lt;/span> &lt;span class="n">applicationContext&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">ClassPathXmlApplicationContext&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;applicationContext.xml&amp;#34;&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">applicationContext&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">close&lt;/span>&lt;span class="o">();&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>运行后就可以看到以下输出&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg@master/2023/03/upgit_20230317_1679050604_image-20230317185641804.png"
+loading="lazy"
+alt="image-20230317185641804"
+>&lt;/p>
+&lt;h3 id="initializingbean方法初始化">initializingBean方法初始化&lt;/h3>
+&lt;p>除了使用&lt;code>init-method&lt;/code>属性指定初始化方法外，Spring还允许对象通过实现&lt;code>InitializingBean&lt;/code>接口中的&lt;code>afterPropertiesSet&lt;/code>方法来进行初始化。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">public&lt;/span> &lt;span class="kd">class&lt;/span> &lt;span class="nc">UserServiceImpl&lt;/span> &lt;span class="kd">implements&lt;/span> &lt;span class="n">UserService&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="n">InitializingBean&lt;/span>&lt;span class="o">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">//...其他方法
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nd">@Override&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">public&lt;/span> &lt;span class="kt">void&lt;/span> &lt;span class="nf">afterPropertiesSet&lt;/span>&lt;span class="o">()&lt;/span> &lt;span class="kd">throws&lt;/span> &lt;span class="n">Exception&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">System&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">out&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">println&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;afterPropertiesSet方法执行....&amp;#34;&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>执行后可以有以下输出：&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg@master/2023/03/upgit_20230317_1679051623_image-20230317191342073.png"
+loading="lazy"
+alt="image-20230317191342073"
+>&lt;/p>
+&lt;p>这里我们也可以看到，&lt;code>afterPropertiesSet&lt;/code>方法的执行是在&lt;code>init-method&lt;/code>属性指定的初始化方法前执行的。&lt;/p>
+&lt;h3 id="实例化bean的方法">实例化Bean的方法&lt;/h3>
+&lt;h4 id="静态工厂方法">静态工厂方法&lt;/h4>
+&lt;p>类似于单例工厂模式&lt;/p>
+&lt;p>新建一个&lt;code>MyBeanFactory&lt;/code>类，此类有一个静态方法&lt;code>getBean&lt;/code>来获取一个&lt;code>UserServiceImpl&lt;/code>实例化对象&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">public&lt;/span> &lt;span class="kd">class&lt;/span> &lt;span class="nc">MyBeanFactory&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">public&lt;/span> &lt;span class="kd">static&lt;/span> &lt;span class="n">UserService&lt;/span> &lt;span class="nf">getBean&lt;/span>&lt;span class="o">()&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">UserServiceImpl&lt;/span>&lt;span class="o">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>在xml文件中进行配置&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-xml" data-lang="xml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;bean&lt;/span> &lt;span class="na">id=&lt;/span>&lt;span class="s">&amp;#34;userServiceFactory&amp;#34;&lt;/span> &lt;span class="na">class=&lt;/span>&lt;span class="s">&amp;#34;org.itHeima.factory.MyBeanFactory&amp;#34;&lt;/span> &lt;span class="na">factory-method=&lt;/span>&lt;span class="s">&amp;#34;getBean&amp;#34;&lt;/span> &lt;span class="nt">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>此配置并不会将&lt;code>MyBeanFactory&lt;/code>加入单例池，而是会自动执行工厂内的getBean方法来返回UserServiceImpl实例化对象&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg@master/2023/03/upgit_20230317_1679055056_image-20230317201052885.png"
+loading="lazy"
+alt="image-20230317201052885"
+>&lt;/p>
+&lt;h4 id="实例工厂方法">实例工厂方法&lt;/h4>
+&lt;p>修改上述&lt;code>MyBeanFactory&lt;/code>类，将静态方法修改为普通方法。&lt;/p>
+&lt;p>同时修改xml配置为&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-xml" data-lang="xml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;bean&lt;/span> &lt;span class="na">id=&lt;/span>&lt;span class="s">&amp;#34;userServiceFactory&amp;#34;&lt;/span> &lt;span class="na">class=&lt;/span>&lt;span class="s">&amp;#34;org.itHeima.factory.MyBeanFactory&amp;#34;&lt;/span> &lt;span class="nt">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;bean&lt;/span> &lt;span class="na">id=&lt;/span>&lt;span class="s">&amp;#34;userService&amp;#34;&lt;/span> &lt;span class="na">factory-bean=&lt;/span>&lt;span class="s">&amp;#34;userServiceFactory&amp;#34;&lt;/span> &lt;span class="na">factory-method=&lt;/span>&lt;span class="s">&amp;#34;getBean&amp;#34;&lt;/span>&lt;span class="nt">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>再次运行会产生和上述一样的结果,区别在于将我们的&lt;code>MyBeanFactory&lt;/code>类也加入了单例池中&lt;/p>
+&lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg@master/2023/03/upgit_20230317_1679055497_image-20230317201814909.png"
+loading="lazy"
+alt="image-20230317201814909"
+>&lt;/p>
+&lt;h4 id="带参静态工厂与实例工厂方法">带参静态工厂与实例工厂方法&lt;/h4>
+&lt;p>如果我们的实例化对象在构造时存在参数的传入(带参构造，Bean实例化必须存在一个无参构造)，此时我们可以使用&lt;code>constructor-arg&lt;/code>标签来指定参数名称(&lt;code>name&lt;/code>属性)与数值(&lt;code>value&lt;/code>属性)。&lt;/p>
+&lt;p>修改上述自定义工厂的getBean方法为带参方法&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">public&lt;/span> &lt;span class="n">UserService&lt;/span> &lt;span class="nf">getBean&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="n">String&lt;/span> &lt;span class="n">name&lt;/span>&lt;span class="o">,&lt;/span> &lt;span class="kt">int&lt;/span> &lt;span class="n">age&lt;/span>&lt;span class="o">)&lt;/span> &lt;span class="o">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">System&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">out&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="na">println&lt;/span>&lt;span class="o">(&lt;/span>&lt;span class="s">&amp;#34;name:&amp;#34;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">name&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="s">&amp;#34;\n&amp;#34;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="s">&amp;#34;age:&amp;#34;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">age&lt;/span>&lt;span class="o">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="n">UserServiceImpl&lt;/span>&lt;span class="o">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>修改xml文件，在获取对应实例对象的bean标签下添加&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-xml" data-lang="xml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;bean&lt;/span> &lt;span class="na">id=&lt;/span>&lt;span class="s">&amp;#34;userService&amp;#34;&lt;/span> &lt;span class="na">factory-bean=&lt;/span>&lt;span class="s">&amp;#34;userServiceFactory&amp;#34;&lt;/span> &lt;span class="na">factory-method=&lt;/span>&lt;span class="s">&amp;#34;getBean&amp;#34;&lt;/span>&lt;span class="nt">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;constructor-arg&lt;/span> &lt;span class="na">name=&lt;/span>&lt;span class="s">&amp;#34;name&amp;#34;&lt;/span> &lt;span class="na">value=&lt;/span>&lt;span class="s">&amp;#34;test&amp;#34;&lt;/span>&lt;span class="nt">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;constructor-arg&lt;/span> &lt;span class="na">name=&lt;/span>&lt;span class="s">&amp;#34;age&amp;#34;&lt;/span> &lt;span class="na">value=&lt;/span>&lt;span class="s">&amp;#34;18&amp;#34;&lt;/span> &lt;span class="nt">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;/bean&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>运行后即可正常输出&lt;/p>
+&lt;h2 id="小结">小结&lt;/h2>
+&lt;p>Spring博大精深啊&lt;/p></description></item><item><title>SpringDay01</title><link>https://mnmnmssd.github.io/p/spring%E5%AD%A6%E4%B9%A0/</link><pubDate>Thu, 16 Mar 2023 17:45:29 +0800</pubDate><guid>https://mnmnmssd.github.io/p/spring%E5%AD%A6%E4%B9%A0/</guid><description>&lt;h1 id="spring概述">Spring概述&lt;/h1>
 &lt;p>Spring 是最受欢迎的企业级 Java 应用程序开发框架，数以百万的来自世界各地的开发人员使用 Spring 框架来创建性能好、易于测试、可重用的代码。&lt;/p>
 &lt;p>Spring 框架是一个开源的 Java 平台，它最初是由 Rod Johnson 编写的，并且于 2003 年 6 月首次在 Apache 2.0 许可下发布。&lt;/p>
 &lt;p>Spring 是轻量级的框架，其基础版本只有 2 MB 左右的大小。&lt;/p>
