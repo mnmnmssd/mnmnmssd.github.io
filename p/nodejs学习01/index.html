@@ -1,0 +1,253 @@
+<!doctype html><html lang=zh-cn dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="1. node学习笔记day01 2. node简介 是一个运行js的环境 , 不是一门新的语言 , 不是js的框架 , 而是独立于浏览器来运行js的环境或js编译器 , 采用谷歌的V8引擎 , node可以用来写后端及操作文件或数据库 , 使js更强 node中可以输出一下window/document对象 , 会发现没有定义 , 这是因为这两个对象都是浏览器环境下的 , 而node作为一个独立环境是不存在这两个对象的定义的
+1 2 console.log(window); //node报错：ReferenceError: window is not defined 3. node安装 百度node官网 , 下载安装包 , 安装完成自动配置环境变量 , 控制台输入node -v来检测node是否安装成功及查看node版本
+4. node运行js文件 可在命令行使用node命令之后 , 输入js语句 , 回车运行 , 也可输入node XX.js来运行js文件
+5. node运行示例 1 2 3 4 5 6 7 8 9 10 11 12 13 class user { constructor(){ this."><title>node学习笔记day01</title><link rel=canonical href=https://blog.bigcry.asia/p/nodejs%E5%AD%A6%E4%B9%A001/><link rel=stylesheet href=/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css><meta property="og:title" content="node学习笔记day01"><meta property="og:description" content="1. node学习笔记day01 2. node简介 是一个运行js的环境 , 不是一门新的语言 , 不是js的框架 , 而是独立于浏览器来运行js的环境或js编译器 , 采用谷歌的V8引擎 , node可以用来写后端及操作文件或数据库 , 使js更强 node中可以输出一下window/document对象 , 会发现没有定义 , 这是因为这两个对象都是浏览器环境下的 , 而node作为一个独立环境是不存在这两个对象的定义的
+1 2 console.log(window); //node报错：ReferenceError: window is not defined 3. node安装 百度node官网 , 下载安装包 , 安装完成自动配置环境变量 , 控制台输入node -v来检测node是否安装成功及查看node版本
+4. node运行js文件 可在命令行使用node命令之后 , 输入js语句 , 回车运行 , 也可输入node XX.js来运行js文件
+5. node运行示例 1 2 3 4 5 6 7 8 9 10 11 12 13 class user { constructor(){ this."><meta property="og:url" content="https://blog.bigcry.asia/p/nodejs%E5%AD%A6%E4%B9%A001/"><meta property="og:site_name" content="笑的心酸"><meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="node"><meta property="article:tag" content="学习笔记"><meta property="article:published_time" content="2020-07-17T16:41:54+00:00"><meta property="article:modified_time" content="2020-07-17T16:41:54+00:00"><meta name=twitter:title content="node学习笔记day01"><meta name=twitter:description content="1. node学习笔记day01 2. node简介 是一个运行js的环境 , 不是一门新的语言 , 不是js的框架 , 而是独立于浏览器来运行js的环境或js编译器 , 采用谷歌的V8引擎 , node可以用来写后端及操作文件或数据库 , 使js更强 node中可以输出一下window/document对象 , 会发现没有定义 , 这是因为这两个对象都是浏览器环境下的 , 而node作为一个独立环境是不存在这两个对象的定义的
+1 2 console.log(window); //node报错：ReferenceError: window is not defined 3. node安装 百度node官网 , 下载安装包 , 安装完成自动配置环境变量 , 控制台输入node -v来检测node是否安装成功及查看node版本
+4. node运行js文件 可在命令行使用node命令之后 , 输入js语句 , 回车运行 , 也可输入node XX.js来运行js文件
+5. node运行示例 1 2 3 4 5 6 7 8 9 10 11 12 13 class user { constructor(){ this."></head><body class=article-page><script>(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script><script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script><div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label=切换菜单>
+<span class=hamburger-box><span class=hamburger-inner></span></span></button><header><figure class=site-avatar><a href=/><img src=/img/avatar_hu1de919c5eb533b6d5495c078f7d65020_128364_300x0_resize_box_3.png width=300 height=300 class=site-logo loading=lazy alt=Avatar></a>
+<span class=emoji>🍥</span></figure><div class=site-meta><h1 class=site-name><a href=/>笑的心酸</a></h1><h2 class=site-description>保持热爱，保持激情</h2></div></header><ol class=social-menu><li><a href=https://github.com/mnmnmssd target=_blank title=GitHub rel=me><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6.0 00-1.3-3.2 4.2 4.2.0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3.0 00-6.2.0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2.0 00-.1 3.2A4.6 4.6.0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a></li><li><a href=https://twitter.com/mnmnmssd target=_blank title=Twitter rel=me><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M22 4.01c-1 .49-1.98.689-3 .99-1.121-1.265-2.783-1.335-4.38-.737S11.977 6.323 12 8v1c-3.245.083-6.135-1.395-8-4 0 0-4.182 7.433 4 11-1.872 1.247-3.739 2.088-6 2 3.308 1.803 6.913 2.423 10.034 1.517 3.58-1.04 6.522-3.723 7.651-7.742a13.84 13.84.0 00.497-3.753C20.18 7.773 21.692 5.25 22 4.009z"/></svg></a></li></ol><ol class=menu id=main-menu><li><a href=/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg><span>Home</span></a></li><li><a href=/about/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg><span>about</span></a></li><li><a href=/archives/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg><span>Archives</span></a></li><li><a href=/search/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg><span>Search</span></a></li><li><a href=/links/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M10 14a3.5 3.5.0 005 0l4-4a3.5 3.5.0 00-5-5l-.5.5"/><path d="M14 10a3.5 3.5.0 00-5 0l-4 4a3.5 3.5.0 005 5l.5-.5"/></svg><span>Links</span></a></li><div class=menu-bottom-section><li id=i18n-switch><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 5h7"/><path d="M9 3v2c0 4.418-2.239 8-5 8"/><path d="M5 9c-.003 2.144 2.952 3.908 6.7 4"/><path d="M12 20l4-9 4 9"/><path d="M19.1 18h-6.2"/></svg><select name=language onchange="window.location.href=this.selectedOptions[0].value"><option value=https://blog.bigcry.asia/en/>English</option><option value=https://blog.bigcry.asia/ selected>中文</option></select></li><li id=dark-mode-toggle><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg><span>暗色模式</span></li></div></ol></aside><aside class="sidebar right-sidebar sticky"><section class="widget archives"><div class=widget-icon><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg></div><h2 class="widget-title section-title">目录</h2><div class=widget--toc><nav id=TableOfContents><ol><li><a href=#81-对文件的读取操作>8.1. 对文件的读取操作</a><ol><li><a href=#811-同步>8.1.1. 同步</a></li><li><a href=#812-异步>8.1.2. 异步</a></li><li><a href=#813-封装>8.1.3. 封装</a></li></ol></li><li><a href=#82-对文件的写入操作>8.2. 对文件的写入操作</a><ol><li><a href=#821-同步>8.2.1. 同步</a></li><li><a href=#822-异步>8.2.2. 异步</a></li><li><a href=#823-封装>8.2.3. 封装</a></li></ol></li><li><a href=#83-其他操作>8.3. 其他操作</a></li></ol><ol><li><a href=#91-输入>9.1. 输入</a></li><li><a href=#92-封装>9.2. 封装</a></li></ol></nav></div></section></aside><main class="main full-width"><article class=main-article><header class=article-header><div class=article-details><header class=article-category><a href=/categories/%E5%AD%A6%E4%B9%A0/>学习</a>
+<a href=/categories/spring/>Spring</a></header><div class=article-title-wrapper><h2 class=article-title><a href=/p/nodejs%E5%AD%A6%E4%B9%A001/>node学习笔记day01</a></h2></div><footer class=article-time><div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg><time class=article-time--published>Jul 17, 2020</time></div><div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg><time class=article-time--reading>阅读时长: 4 分钟</time></div></footer></div></header><section class=article-content><h1 id=1-node学习笔记day01>1. node学习笔记day01</h1><h1 id=2-node简介>2. node简介</h1><p>是一个运行js的环境 , 不是一门新的语言 , 不是js的框架 , 而是独立于浏览器来运行js的环境或js编译器 , 采用谷歌的V8引擎 , node可以用来写后端及操作文件或数据库 , 使js更强
+node中可以输出一下<code>window</code>/<code>document</code>对象 , 会发现没有定义 , 这是因为这两个对象都是浏览器环境下的 , 而node作为一个独立环境是不存在这两个对象的定义的</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nb>window</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=c1>//node报错：ReferenceError: window is not defined
+</span></span></span></code></pre></td></tr></table></div></div><h1 id=3-node安装>3. node安装</h1><p>百度node官网 , 下载安装包 , 安装完成自动配置环境变量 , 控制台输入<code>node -v</code>来检测node是否安装成功及查看node版本</p><h1 id=4-node运行js文件>4. node运行js文件</h1><p>可在命令行使用<code>node</code>命令之后 , 输入js语句 , 回车运行 , 也可输入<code>node XX.js</code>来运行js文件</p><h1 id=5-node运行示例>5. node运行示例</h1><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kr>class</span> <span class=nx>user</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>constructor</span><span class=p>(){</span>
+</span></span><span class=line><span class=cl>        <span class=k>this</span><span class=p>.</span><span class=nx>name</span> <span class=o>=</span> <span class=s2>&#34;小明&#34;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=k>this</span><span class=p>.</span><span class=nx>pwa</span> <span class=o>=</span> <span class=s2>&#34;123456&#34;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=nx>toString</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=k>this</span><span class=p>.</span><span class=nx>name</span><span class=o>+</span><span class=s2>&#34;  &#34;</span><span class=o>+</span><span class=k>this</span><span class=p>.</span><span class=nx>pwa</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>var</span> <span class=nx>u1</span> <span class=o>=</span> <span class=k>new</span> <span class=nx>user</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>u1</span><span class=p>.</span><span class=nx>toString</span><span class=p>());</span>
+</span></span></code></pre></td></tr></table></div></div><p>保存为文件后 , 使用<code>node xx.js</code>运行后结果</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>PS E:\LearnnodeJS\day01&gt; node .\test.js
+</span></span><span class=line><span class=cl>小明  123456
+</span></span></code></pre></td></tr></table></div></div><h1 id=6-node模块化>6. node模块化</h1><p>可跨文件使用变量或对象等 , 每个文件都可以看作一个模块
+使用<code>commonJS</code>规范 , 包含三个关键字：<code>require</code>、<code>exports</code>、<code>module</code>
+js导出某对象：<code>exports.name = name</code> (xx.js)
+js导入某对象：<code>var name = require('/xx.js')</code> (test.js)
+模块化示例：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-JavaScript data-lang=JavaScript><span class=line><span class=cl><span class=c1>//xx.js 导出模块
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>var</span> <span class=nx>user</span> <span class=o>=</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>name</span><span class=o>:</span><span class=s2>&#34;zs&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nx>sex</span><span class=o>:</span><span class=s2>&#34;man&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nx>age</span><span class=o>:</span><span class=mi>12</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>exports</span><span class=p>.</span><span class=nx>user</span> <span class=o>=</span> <span class=nx>user</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=c1>//或使用
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>module</span><span class=p>.</span><span class=nx>exports</span><span class=p>.</span><span class=nx>user</span> <span class=o>=</span> <span class=nx>user</span><span class=p>;</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=c1>//test.js  导入xx模块
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>var</span> <span class=nx>u2</span> <span class=o>=</span> <span class=nx>require</span><span class=p>(</span><span class=s1>&#39;./xx.js&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>u2</span><span class=p>.</span><span class=nx>user</span><span class=p>.</span><span class=nx>name</span><span class=p>);</span>
+</span></span></code></pre></td></tr></table></div></div><p>输出结果</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>PS E:\LearnnodeJS\day01&gt; node .\test.js
+</span></span><span class=line><span class=cl>zs
+</span></span></code></pre></td></tr></table></div></div><p><code>exports</code> 本质上是指向了 <code>module.exports</code> , 所以两者使用没有区别 , 但要注意如果不小心重写了<code>exports</code> , 如：<code>exports = {user:"zs"}</code> 此时<code>exports</code>不在指向<code>module.exports</code> , 而是被重写为一个对象或属性 , 此时将没有了导出功能 , 所以以下方法：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=nx>exports</span> <span class=o>=</span> <span class=p>{</span><span class=nx>user</span><span class=o>:</span><span class=s2>&#34;zs&#34;</span><span class=p>}</span> <span class=c1>//错误的 , 将改变指向 , 不具备导出功能
+</span></span></span><span class=line><span class=cl><span class=c1>//运行后输出 :  {}
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>module</span><span class=p>.</span><span class=nx>exports</span> <span class=o>=</span> <span class=p>{</span><span class=nx>user</span><span class=o>:</span><span class=s2>&#34;zs&#34;</span><span class=p>}</span>  <span class=c1>//正确的 , 将导出一个对象
+</span></span></span><span class=line><span class=cl><span class=c1>//运行后输出 : { user: &#39;zs&#39; }
+</span></span></span></code></pre></td></tr></table></div></div><p>其两种的运行结果不同 , 所以应尽量使用<code>module.exports</code>来进行模块的导出
+模块导入后会在内存中产生<code>缓存</code> , 下次导入时若<code>缓存</code>中存在 , 将直接获取 , 若想重新导入 , 就要清除缓存</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kd>var</span> <span class=nx>a</span> <span class=o>=</span> <span class=nx>require</span><span class=p>(</span><span class=s1>&#39;./xx&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=kd>var</span> <span class=nx>b</span> <span class=o>=</span> <span class=nx>require</span><span class=p>(</span><span class=s1>&#39;./xx&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>a</span> <span class=o>==</span> <span class=nx>b</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=c1>//将输出 true
+</span></span></span></code></pre></td></tr></table></div></div><p>这是因为模块导入形成缓存 , 在第二次导入时 , 将<code>直接</code>在缓存中拿取 , 不会<code>产生</code>新对象</p><h1 id=7-node的require加载机制>7. node的require加载机制</h1><p><code>require</code>中关于路径：
+若为<code>require('/home/xx.js')</code> , 将前往磁盘根目录下层级寻找 //绝对
+若为<code>require('./xx.js')</code> , 将在主模块文件下寻找 //相对
+若为<code>require('xx')</code> , 将视为加载<code>第三方</code>模块 , 其加载顺序为 :</p><ul><li>首先查看当前目录下的<code>node_modules</code>文件夹 , 若当前目录下没有，则去父级目录查找，一直找到磁盘根目录</li><li>在<code>node_modules</code>中查找第三方模块名称文件夹 , 若找到，则进入该文件夹，查看文件间内的<code>package.json</code>文件，查找其<code>main</code>属性内容，并将其内容作为第三方模块的主入口</li><li>若没有<code>main</code>属性，则默认加载第三方模块文件夹内的<code>index.js</code>文件</li></ul><h1 id=8-node对于文件的操作>8. node对于文件的操作</h1><p>导入文件操作模块<code>fs</code> , 其中文件操作有同步与异步两种方式，node默认异步操作</p><h2 id=81-对文件的读取操作>8.1. 对文件的读取操作</h2><p><code>readFile</code>/<code>readFileSync</code>方法，异步与同步</p><h3 id=811-同步>8.1.1. 同步</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=c1>//ts.txt 内容：hello
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>var</span> <span class=nx>f1</span> <span class=o>=</span> <span class=nx>fs</span><span class=p>.</span><span class=nx>readFileSync</span><span class=p>(</span><span class=s1>&#39;ts.txt&#39;</span><span class=p>,{</span><span class=nx>flag</span><span class=o>:</span><span class=s1>&#39;r&#39;</span><span class=p>,</span><span class=nx>encoding</span><span class=o>:</span><span class=s1>&#39;utf-8&#39;</span><span class=p>});</span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>f1</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=c1>//输出：hello
+</span></span></span></code></pre></td></tr></table></div></div><p><code>readFileSync(path,[options])</code>
+参数列表：</p><ul><li>path ( 所读取文件目标路径 ) : &lt;String | number | Buffer></li><li>options ( 文件属性,可选参数 ) : &lt;Object | String><ul><li>flag ( 对文件的操作 ) : 默认值 &lsquo;r&rsquo;</li><li>encoding ( 文件编码 ) : 默认值 &rsquo;null'</li></ul></li></ul><h3 id=812-异步>8.1.2. 异步</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=nx>fs</span><span class=p>.</span><span class=nx>readFile</span><span class=p>(</span><span class=s1>&#39;ts.txt&#39;</span><span class=p>,{</span><span class=nx>flag</span><span class=o>:</span><span class=s1>&#39;r&#39;</span><span class=p>,</span><span class=nx>encoding</span><span class=o>:</span><span class=s1>&#39;utf-8&#39;</span><span class=p>},(</span><span class=nx>err</span><span class=p>,</span><span class=nx>data</span><span class=p>)=&gt;{</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=nx>err</span><span class=p>)</span> <span class=k>throw</span> <span class=nx>err</span><span class=p>;</span> <span class=c1>//出现异常抛出
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>data</span><span class=p>);</span> <span class=c1>//成功打印内容：hello
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>})</span>
+</span></span></code></pre></td></tr></table></div></div><p><code>readFile(path,[options],callback)</code>
+参数列表：</p><ul><li>path ( 所读取文件目标路径 ) : &lt;String | number | Buffer></li><li>options ( 文件属性,可选参数 ) : &lt;Object | String><ul><li>flag ( 对文件的操作 ) : 默认值 &lsquo;r&rsquo;</li><li>encoding ( 文件编码 ) : 默认值 &rsquo;null'</li></ul></li><li>callback ( 回调函数 ) :<ul><li>err : 出错</li><li>data : 内容</li></ul></li></ul><h3 id=813-封装>8.1.3. 封装</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kd>function</span> <span class=nx>f2</span><span class=p>(</span><span class=nx>path</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=k>new</span> <span class=nb>Promise</span><span class=p>((</span><span class=nx>res</span><span class=p>,</span><span class=nx>rect</span><span class=p>)=&gt;{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>fs</span><span class=p>.</span><span class=nx>readFile</span><span class=p>(</span><span class=nx>path</span><span class=p>,{</span><span class=nx>flag</span><span class=o>:</span><span class=s1>&#39;r&#39;</span><span class=p>,</span><span class=nx>encoding</span><span class=o>:</span><span class=s1>&#39;utf-8&#39;</span><span class=p>},(</span><span class=nx>err</span><span class=p>,</span><span class=nx>data</span><span class=p>)=&gt;{</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=p>(</span><span class=nx>err</span><span class=p>)</span> <span class=nx>rect</span><span class=p>(</span><span class=nx>err</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>            <span class=nx>res</span><span class=p>(</span><span class=nx>data</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=p>})</span>
+</span></span><span class=line><span class=cl>    <span class=p>})</span> 
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>f2</span><span class=p>(</span><span class=s1>&#39;ts.txt&#39;</span><span class=p>).</span><span class=nx>then</span><span class=p>((</span><span class=nx>res</span><span class=p>)=&gt;{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>res</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>})</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=82-对文件的写入操作>8.2. 对文件的写入操作</h2><p><code>writeFile</code>/<code>writeFileSync</code>方法，异步与同步
+写入文件若不存在，将自动创建文件</p><h3 id=821-同步>8.2.1. 同步</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=nx>fs</span><span class=p>.</span><span class=nx>writeFileSync</span><span class=p>(</span><span class=s1>&#39;ts.txt&#39;</span><span class=p>,</span><span class=s1>&#39;world&#39;</span><span class=p>,{</span><span class=nx>flag</span><span class=o>:</span><span class=s1>&#39;a+&#39;</span><span class=p>,</span><span class=nx>encoding</span><span class=o>:</span><span class=s1>&#39;utf-8&#39;</span><span class=p>});</span>
+</span></span></code></pre></td></tr></table></div></div><p><code>writeFileSync(path,data,[options])</code>
+参数列表：</p><ul><li>path ( 所读取文件目标路径 ) : &lt;String | number | Buffer | URL></li><li>data ( 写入的数据 ) : &lt;String | &mldr;></li><li>options ( 文件属性,可选参数 ) : &lt;Object | String><ul><li>flag ( 对文件的操作 ) : 默认值 &lsquo;w&rsquo;; &lsquo;w&rsquo;为覆盖写入; &lsquo;a+&lsquo;为追加写入</li><li>encoding ( 文件编码 ) : 默认值 &rsquo;null&rsquo;</li></ul></li></ul><h3 id=822-异步>8.2.2. 异步</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=nx>fs</span><span class=p>.</span><span class=nx>writeFile</span><span class=p>(</span><span class=s1>&#39;ts.txt&#39;</span><span class=p>,</span><span class=s1>&#39;World--Sync&#39;</span><span class=p>,{</span><span class=nx>flag</span><span class=o>:</span><span class=s1>&#39;a+&#39;</span><span class=p>,</span><span class=nx>encoding</span><span class=o>:</span><span class=s1>&#39;utf-8&#39;</span><span class=p>},(</span><span class=nx>err</span><span class=p>)=&gt;{</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=nx>err</span><span class=p>)</span> <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>err</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s2>&#34;done&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>})</span>
+</span></span></code></pre></td></tr></table></div></div><p><code>writeFile(path,data,[options],callback)</code>
+参数列表：</p><ul><li>path ( 所读取文件目标路径 ) : &lt;String | number | Buffer | URL></li><li>data ( 写入的数据 ) : &lt;String | &mldr;></li><li>options ( 文件属性,可选参数 ) : &lt;Object | String><ul><li>flag ( 对文件的操作 ) : 默认值 &lsquo;w&rsquo;; &lsquo;w&rsquo;为覆盖写入; &lsquo;a+&lsquo;为追加写入</li><li>encoding ( 文件编码 ) : 默认值 &rsquo;null&rsquo;</li></ul></li><li>callback ( 回调函数 ) :<ul><li>err ( 出现错误 ) :</li></ul></li></ul><h3 id=823-封装>8.2.3. 封装</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kd>function</span> <span class=nx>f1</span><span class=p>(</span><span class=nx>path</span><span class=p>,</span><span class=nx>data</span><span class=p>,</span><span class=nx>flag</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=k>new</span> <span class=nb>Promise</span><span class=p>((</span><span class=nx>res</span><span class=p>,</span><span class=nx>ract</span><span class=p>)=&gt;{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>fs</span><span class=p>.</span><span class=nx>writeFile</span><span class=p>(</span><span class=nx>path</span><span class=p>,</span><span class=nx>data</span><span class=p>,{</span><span class=nx>flag</span><span class=o>:</span><span class=nx>flag</span><span class=p>,</span><span class=nx>encoding</span><span class=o>:</span><span class=s1>&#39;utf-8&#39;</span><span class=p>},(</span><span class=nx>err</span><span class=p>)=&gt;{</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=p>(</span><span class=nx>err</span><span class=p>)</span> <span class=nx>ract</span><span class=p>(</span><span class=nx>err</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>            <span class=nx>res</span><span class=p>(</span><span class=s2>&#34;写入完毕&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=p>})</span>
+</span></span><span class=line><span class=cl>    <span class=p>})</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kr>async</span> <span class=kd>function</span> <span class=nx>f</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kr>await</span> <span class=nx>f1</span><span class=p>(</span><span class=s1>&#39;test.html&#39;</span><span class=p>,</span><span class=s1>&#39;&lt;h1&gt;ddddd&lt;/h1&gt;&#39;</span><span class=p>,</span><span class=s1>&#39;a+&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=83-其他操作>8.3. 其他操作</h2><p><code>unlink</code> : 删除文件操作
+<code>mkdir</code> : 创建目录
+<code>readdir</code> : 读取目录
+<code>rmdir</code> : 删除目录
+&mldr;等等 <a class=link href=http://nodejs.cn/api/ target=_blank rel=noopener>中文文档</a></p><h1 id=9-node-输入输出>9. node 输入输出</h1><h2 id=91-输入>9.1. 输入</h2><p><code>readLine</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kd>var</span> <span class=nx>readline</span> <span class=o>=</span> <span class=nx>require</span><span class=p>(</span><span class=s1>&#39;readline&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>var</span> <span class=nx>r1</span> <span class=o>=</span> <span class=nx>readline</span><span class=p>.</span><span class=nx>createInterface</span><span class=p>({</span>
+</span></span><span class=line><span class=cl>    <span class=nx>input</span><span class=o>:</span><span class=nx>process</span><span class=p>.</span><span class=nx>stdin</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nx>output</span><span class=o>:</span><span class=nx>process</span><span class=p>.</span><span class=nx>stdout</span>
+</span></span><span class=line><span class=cl><span class=p>})</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>r1</span><span class=p>.</span><span class=nx>question</span><span class=p>(</span><span class=s1>&#39;整点啥&#39;</span><span class=p>,(</span><span class=nx>answer</span><span class=p>)=&gt;{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>answer</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=nx>r1</span><span class=p>.</span><span class=nx>close</span><span class=p>();</span>
+</span></span><span class=line><span class=cl><span class=p>})</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>r1</span><span class=p>.</span><span class=nx>on</span><span class=p>(</span><span class=s1>&#39;close&#39;</span><span class=p>,()=&gt;{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>process</span><span class=p>.</span><span class=nx>exit</span><span class=p>(</span><span class=mi>0</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>})</span>
+</span></span></code></pre></td></tr></table></div></div><p><code>createInterface</code> : 创建输入输出对象，调用了终端进程的输入输出
+<code>input:process.stdin</code> : 创建输入
+<code>output:process.stdout</code> : 创建输出
+<code>question</code> : 提问方法，使用完毕后应关闭输入流，否则程序不会终止
+<code>close</code> : 关闭输入流
+<code>on</code> : 监听事件，并作出响应
+<code>process.exit(0)</code> : 退出终端进程</p><h2 id=92-封装>9.2. 封装</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kd>function</span> <span class=nx>read</span><span class=p>(</span><span class=nx>title</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=k>new</span> <span class=nb>Promise</span><span class=p>((</span><span class=nx>res</span><span class=p>)=&gt;{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>r1</span><span class=p>.</span><span class=nx>question</span><span class=p>(</span><span class=nx>title</span><span class=p>,(</span><span class=nx>answer</span><span class=p>)=&gt;{</span>
+</span></span><span class=line><span class=cl>            <span class=nx>res</span><span class=p>(</span><span class=nx>answer</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=p>})</span>
+</span></span><span class=line><span class=cl>    <span class=p>})</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h1 id=10-常用npm命令>10. 常用npm命令</h1><p><code>node -v</code> 查看node版本
+<code>npm init</code> 自动在目录下生成<code>package.json</code>文件，加入<code>-y</code>可跳过问答
+<code>npm -v</code> 查看npm版本
+<code>npm list</code> 查看当前目录下安装的包，加入<code>-g</code>查看全局安装的包
+<code>npm config list</code> 查看配置信息
+<code>npm install 包名</code> 自动安装包及其所需依赖
+<code>npm install 包名 --save -dev</code> 安装包的开发环境所需依赖
+<code>npm install 包名 --save</code> 安装包的生产环境所需依赖
+<code>npm uninstall 包名</code> 卸载某个包</p><blockquote><p>2020/07/17
+by &mdash;- 笑的心酸</p></blockquote></section><footer class=article-footer><section class=article-tags><a href=/tags/node/>node</a>
+<a href=/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/>学习笔记</a></section><section class=article-copyright><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg><span>Licensed under CC BY-NC-SA 4.0</span></section></footer></article><aside class=related-content--wrapper><h2 class=section-title>相关文章</h2><div class=related-content><div class="flex article-list--tile"><article><a href=/p/spring%E5%AD%A6%E4%B9%A0/><div class=article-details><h2 class=article-title>SpringDay01</h2></div></a></article><article><a href=/p/spring%E5%AD%A6%E4%B9%A0-02/><div class=article-details><h2 class=article-title>SpringDay02</h2></div></a></article><article><a href=/p/nodejs%E5%AD%A6%E4%B9%A004/><div class=article-details><h2 class=article-title>node学习笔记day04</h2></div></a></article><article><a href=/p/nodejs%E5%AD%A6%E4%B9%A003/><div class=article-details><h2 class=article-title>node实战项目--B站爬虫</h2></div></a></article><article><a href=/p/nodejs%E5%AD%A6%E4%B9%A002/><div class=article-details><h2 class=article-title>node学习笔记day02</h2></div></a></article></div></div></aside><script src=//unpkg.com/@waline/client@v2/dist/waline.js></script>
+<link href=//unpkg.com/@waline/client@v2/dist/waline.css rel=stylesheet><div id=waline class=waline-container></div><style>.waline-container{background-color:var(--card-background);border-radius:var(--card-border-radius);box-shadow:var(--shadow-l1);padding:var(--card-padding);--waline-font-size:var(--article-font-size)}.waline-container .wl-count{color:var(--card-text-color-main)}</style><script>Waline.init({dark:'html[data-scheme="dark"]',el:"#waline",emoji:["https://unpkg.com/@waline/emojis@1.0.1/weibo"],lang:"zh-CN",locale:{admin:"Admin",placeholder:"评论试试吧，宝贵的意见会让我更加进步！"},requiredMeta:["name","email","url"],serverURL:"https://waline-hugo-blog-4hlv2o6ta-mnmnmssd.vercel.app/"})</script><footer class=site-footer><section class=copyright>&copy;
+2020 -
+2023 笑的心酸</section><section class=powerby>Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a><br>主题 <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.16.0>Stack</a></b> 由 <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a> 设计</section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css crossorigin=anonymous></main></div><script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" crossorigin=anonymous></script><script type=text/javascript src=/ts/main.js defer></script>
+<script>(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()</script></body></html>

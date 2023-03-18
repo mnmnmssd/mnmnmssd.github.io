@@ -1,4 +1,215 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>教程 on 笑的心酸</title><link>https://blog.bigcry.asia/categories/%E6%95%99%E7%A8%8B/</link><description>Recent content in 教程 on 笑的心酸</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 09 Jun 2020 10:14:58 +0000</lastBuildDate><atom:link href="https://blog.bigcry.asia/categories/%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml"/><item><title>新版Windows Terminal美化配置</title><link>https://blog.bigcry.asia/p/windows-terminal%E7%BE%8E%E5%8C%96%E9%85%8D%E7%BD%AE/</link><pubDate>Tue, 09 Jun 2020 10:14:58 +0000</pubDate><guid>https://blog.bigcry.asia/p/windows-terminal%E7%BE%8E%E5%8C%96%E9%85%8D%E7%BD%AE/</guid><description>&lt;h1 id="关于新版windows-terminal">关于新版Windows Terminal&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>教程 on 笑的心酸</title><link>https://blog.bigcry.asia/categories/%E6%95%99%E7%A8%8B/</link><description>Recent content in 教程 on 笑的心酸</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 01 Jul 2020 22:14:01 +0000</lastBuildDate><atom:link href="https://blog.bigcry.asia/categories/%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml"/><item><title>hexo+Github+阿里云实现个人博客与自动发布</title><link>https://blog.bigcry.asia/p/hexo%E5%AE%89%E8%A3%85/</link><pubDate>Wed, 01 Jul 2020 22:14:01 +0000</pubDate><guid>https://blog.bigcry.asia/p/hexo%E5%AE%89%E8%A3%85/</guid><description>&lt;h1 id="前言">前言&lt;/h1>
+&lt;blockquote>
+&lt;p>假设以下操作你已经拥有了自己的域名与服务器&lt;/p>
+&lt;/blockquote>
+&lt;h1 id="hexo安装与基本语法">hexo安装与基本语法&lt;/h1>
+&lt;h2 id="安装前环境配置nodejs">安装前环境配置:nodejs&lt;/h2>
+&lt;p>前往&lt;a class="link" href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener"
+>nodejs官网&lt;/a>下载所需版本，安装即可
+安装好后打开终端输入&lt;code>node -v&lt;/code>,出现以下代码即表示安装成功
+&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/20200701223401.png"
+loading="lazy"
+alt="20200701223401"
+>&lt;/p>
+&lt;h2 id="hexo-配置">hexo 配置&lt;/h2>
+&lt;p>在终端中输入&lt;code>npm install hexo-cli -g&lt;/code>，回车等待安装完成
+安装成功后输入&lt;code>hexo -v&lt;/code>回车，出现以下代码即表示安装成功
+&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/20200701223647.png"
+loading="lazy"
+alt="20200701223647"
+>
+新建或选择一个储存&lt;code>博客文件&lt;/code>的文件夹
+在文件夹下打开终端，输入&lt;code>hexo init&lt;/code>回车，hexo即可在当前目录下生成博客所需的文件，稍作等待后，即可新建完成
+目录结构为&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── _config.yml
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── package.json
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── scaffolds
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── source
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| ├── _drafts
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| └── _posts
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">└── themes
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>其余命令自行查询&lt;a class="link" href="https://hexo.io/zh-cn/" target="_blank" rel="noopener"
+>hexo官方文档&lt;/a>
+接下来安装hexo的git插件来使hexo对git支持
+在当前目录下输入&lt;code>npm install hexo-deployer-git --save&lt;/code>回车即可安装
+接下来配置服务器方面&lt;/p>
+&lt;h1 id="阿里云方面配置">阿里云方面配置&lt;/h1>
+&lt;p>&lt;code>下列操作以Centos7系统为代表&lt;/code>
+安装&lt;code>nginx&lt;/code>、&lt;code>git&lt;/code>过程省略
+选择/新建一个目录来作为自己&lt;code>博客&lt;/code>文件存储的地方
+修改权限为：&lt;code>chmod -R 777 /XXX/XXX/blog/&lt;/code>
+新建一个用来发布博客的工具用户&lt;code>adduser git&lt;/code>,修改他的权限
+执行下列命令&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">chmod 740 /etc/sudoers
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">vim /etc/sudoers
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>在打开的文档中找到&lt;code>root ALLALL=() ALL&lt;/code>,在他的下面添加一行&lt;code>git ALLALL=() ALL&lt;/code>,保存退出
+输入&lt;code>sudo passswd git&lt;/code>为&lt;code>git&lt;/code>用户设置密码及解除锁定&lt;/p>
+&lt;h2 id="nginx的配置">nginx的配置&lt;/h2>
+&lt;p>进入nginx的安装目录，输入&lt;code>vim conf/nginx.conf&lt;/code>回车，即可打开nginx的配置文件,修改端口80的参数&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl"> server {
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> listen 80; //监听的端口
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> server_name www.xinsuan.xyz; //匹配主机名，例如访问的为www.xinsuan.xyz,自动匹配成功后转发到相应的服务器中
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> #access_log logs/host.access.log main;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> location / {
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> root /XXX/XXXX/blog; //网站主目录，这里改为要存储博客的目录
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> index index.html index.htm; //匹配网站主页文件
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> expires 7d; //缓存设置 (可选)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> }
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ...
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> }
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>至此，nginx方面配置结束&lt;/p>
+&lt;h2 id="git配置">Git配置&lt;/h2>
+&lt;p>输入&lt;code>su git&lt;/code>切换到新建的&lt;code>git&lt;/code>用户，选择/新建一个目录来作为远程仓库配合博客发布使用
+在新建的目录中输入&lt;code>git init --bare XXX.git &lt;/code>，其中XXX为自定义名字，配置目录权限&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">chmod -R 777 XXX.git
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>进入&lt;code>XXX.git&lt;/code>目录下的&lt;code>hooks&lt;/code>目录，新建钩子文件&lt;code>post-receive&lt;/code>,编辑文件&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="cp">#!/bin/sh
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cp">&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git --work-tree&lt;span class="o">=&lt;/span>存储博客目录 --git-dir&lt;span class="o">=&lt;/span>刚刚新建的远程仓库目录 checkout -f
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">例如：git --work-tree&lt;span class="o">=&lt;/span>/usr/bin/blog --git-dir&lt;span class="o">=&lt;/span>/usr/repo/XXX.git checkout -f
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>这个文件就是当文件上传到远程仓库后自动&lt;code>转发&lt;/code>
+接下来给文件以运行权限&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">chmod +x post-receive
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>###配置&lt;code>sshKey&lt;/code>实现免密登录
+服务端输入以下命令：&lt;code>mkdir ~/.ssh&lt;/code>、&lt;code>vim ~/.ssh/authorized_keys&lt;/code>&lt;/p>
+&lt;p>本机进入&lt;code>C:\Users\XXX\.ssh&lt;/code>目录，如果没有则需要git生成&lt;code>sshKey&lt;/code>
+输入以下命令&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">git config --global user.name &lt;span class="s2">&amp;#34;username&amp;#34;&lt;/span> //配置用户名
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git config --global user.email &lt;span class="s2">&amp;#34;useremail&amp;#34;&lt;/span> //配置邮箱
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ssh-keygen -t rsa -C &lt;span class="s2">&amp;#34;useremail&amp;#34;&lt;/span> //生成公钥与私钥,过程中连按三次回车即可，无需设置密码等
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>再次进入&lt;code>C:\Users\XXX\.ssh&lt;/code>，查看&lt;code>id_rsa.pub&lt;/code>中的内容(公钥)，将其复制到服务器刚刚新建的&lt;code>authorized_keys&lt;/code>文件中，保存退出。
+至此，服务器方面暂时结束&lt;/p>
+&lt;h1 id="配置github与hexo">配置GIthub与hexo&lt;/h1>
+&lt;p>进入&lt;code>hexo&lt;/code>博客目录，打开&lt;code>_config.yml&lt;/code>文件，这是&lt;code>hexo&lt;/code>的配置文件，具体配置参考&lt;a class="link" href="https://hexo.io/zh-cn/" target="_blank" rel="noopener"
+>官方文档&lt;/a>，这里只说一下关于git方面的配置
+修改文件中的以下内容&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">deploy:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> type: git
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> repo: git@远程仓库地址/ip:/usr/repo/XXX.git //远程仓库地址
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> //例如：git@10.10.10.10:/usr/repo/blog.git
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> branch: master //分支选择master即可
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h1 id="实现自动发布">实现自动发布&lt;/h1>
+&lt;p>接下来就是自动发布了，新建一篇文章，输入以下命令即可自动发布&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">hexo new &amp;#34;新建文章&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">hexo clean &amp;amp;&amp;amp; hexo d -g //构建并推送至远程仓库，到达远程仓库后触发hooks，自动将文件转发到了博客目录，实现自动化
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="收尾工作">收尾工作&lt;/h2>
+&lt;p>将&lt;code>git&lt;/code>用户权限限制，切换到&lt;code>root&lt;/code>用户，编辑&lt;code>/etc/passwd&lt;/code>,在最后添加一句&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">git:x:1000:1000::/home/git:/usr/bin/git-shell
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">//这是限制该用户只能使用git-shell，所以并不能登录等其他操作，只是一个发布文章的工具用户
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>其余修改&lt;code>hexo&lt;/code>主题、各种&lt;code>hexo&lt;/code>插件等，后期介绍&lt;/p>
+&lt;h1 id="参考文档">参考文档&lt;/h1>
+&lt;blockquote>
+&lt;p>&lt;a class="link" href="https://hexo.io/zh-cn/" target="_blank" rel="noopener"
+>hexo官方文档&lt;/a>&lt;/p>
+&lt;/blockquote></description></item><item><title>新版Windows Terminal美化配置</title><link>https://blog.bigcry.asia/p/windows-terminal%E7%BE%8E%E5%8C%96%E9%85%8D%E7%BD%AE/</link><pubDate>Tue, 09 Jun 2020 10:14:58 +0000</pubDate><guid>https://blog.bigcry.asia/p/windows-terminal%E7%BE%8E%E5%8C%96%E9%85%8D%E7%BD%AE/</guid><description>&lt;h1 id="关于新版windows-terminal">关于新版Windows Terminal&lt;/h1>
 &lt;h2 id="简介">简介&lt;/h2>
 &lt;p>Windows 终端是一个面向命令行工具和 shell（如命令提示符、PowerShell 和适用于 Linux 的 Windows 子系统 (WSL)）用户的新式终端应用程序。 它的主要功能包括多个选项卡、窗格、Unicode 和 UTF-8 字符支持、GPU 加速文本呈现引擎，还可以用于创建你自己的主题并自定义文本、颜色、背景和快捷键绑定。
 &lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/wt.png"
