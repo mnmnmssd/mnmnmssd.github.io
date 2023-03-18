@@ -5,6 +5,9 @@ slug: Spring学习
 categories:
     - 学习
     - Spring
+tags:
+    - Spring
+    - 学习笔记
 ---
 
 # Spring概述
