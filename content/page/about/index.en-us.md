@@ -24,3 +24,7 @@ menu:
 大学刚毕业，目前仍待业
 
 所以何时会有offer啊！！！！
+
+有offer了再详细更新本页面
+
+![](https://cdn.jsdelivr.net/gh/mnmnmssd/mnmnmssd@master/assets/github-contribution-grid-snake.svg)
