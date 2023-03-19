@@ -47,7 +47,7 @@ params:
         - post
     featuredImageField: image
     rssFullContent: true
-    favicon: static/favicon.ico # e.g.: favicon placed in `static/favicon.ico` of your site folder, then set this field to `/favicon.ico` (`/` is necessary)
+    favicon: /favicon.ico # e.g.: favicon placed in `static/favicon.ico` of your site folder, then set this field to `/favicon.ico` (`/` is necessary)
 
     footer:
         since: 2020
@@ -175,9 +175,9 @@ params:
 
     defaultImage:
         opengraph:
-            enabled: true
-            local: true
-            src: img/6.jpg
+            enabled: false
+            local: false
+            src: 
 
     colorScheme:
         # Display toggle

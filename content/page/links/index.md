@@ -12,12 +12,23 @@ links:
   - title: 哔哩哔哩
     description: 哔哩哔哩可能会倒闭！但绝不会____！
     website: https://space.bilibili.com/3803911
-    image: https://i0.hdslb.com/bfs/archive/6ef5af55cb17a8f9482e815067caadbfb86089a0.png
+    image: bilibili-log.png
 menu:
     main: 
         weight: -50
         params:
             icon: link
 
-comments: false
+comments: true
 ---
+
+### 友链交换请按以下格式发布至评论区
+
+```
+网站名称：XXXX
+网址：www.xxx.com
+网站类型：博客...
+网站描述：xxx可能会xxx，但绝不会xxx
+```
+
+交换友链前请先将本博客加入友链哦。。。
