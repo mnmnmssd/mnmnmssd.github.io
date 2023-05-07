@@ -1,4 +1,4 @@
-baseurl: https://blog.bigcry.asia
+baseurl: https://www.bigcry.asia/
 languageCode: zh-cn
 theme: hugo-theme-stack
 paginate: 5
