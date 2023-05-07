@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>笑的心酸</title><link>https://www.bigcry.asia/</link><description>Recent content on 笑的心酸</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 20 Mar 2023 17:19:05 +0800</lastBuildDate><atom:link href="https://www.bigcry.asia/index.xml" rel="self" type="application/rss+xml"/><item><title>SpringDay03</title><link>https://www.bigcry.asia/p/springday03/</link><pubDate>Mon, 20 Mar 2023 17:19:05 +0800</pubDate><guid>https://www.bigcry.asia/p/springday03/</guid><description>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg@master/2023/03/upgit_20230320_1679308851_6.jpg" alt="Featured image of post SpringDay03" />&lt;h1 id="基于xml的spring-bean配置">基于xml的Spring Bean配置&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>笑的心酸</title><link>https://bigcry.asia/</link><description>Recent content on 笑的心酸</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 20 Mar 2023 17:19:05 +0800</lastBuildDate><atom:link href="https://bigcry.asia/index.xml" rel="self" type="application/rss+xml"/><item><title>SpringDay03</title><link>https://bigcry.asia/p/springday03/</link><pubDate>Mon, 20 Mar 2023 17:19:05 +0800</pubDate><guid>https://bigcry.asia/p/springday03/</guid><description>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg@master/2023/03/upgit_20230320_1679308851_6.jpg" alt="Featured image of post SpringDay03" />&lt;h1 id="基于xml的spring-bean配置">基于xml的Spring Bean配置&lt;/h1>
 &lt;h2 id="实现factorybean的规范延迟实例化bean">实现FactoryBean的规范延迟实例化Bean&lt;/h2>
 &lt;p>之前都是使用自定义的工厂方法来实现静态工厂，其实SPring提供了一个工厂Bean的规范接口，只要实现这个接口就可以实现静态工厂，不够此接口只有在调用getBean方法时才会实例化Bean并放入缓存池中。&lt;/p>
 &lt;p>创建一个类并实现&lt;code>FactoryBean&lt;/code>接口中的两个方法&lt;code>getObject&lt;/code>与&lt;code>getObjectType&lt;/code>&lt;/p>
@@ -227,7 +227,7 @@ alt="image-20230320173311913"
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-xml" data-lang="xml">&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;alias&lt;/span> &lt;span class="na">name=&lt;/span>&lt;span class="s">&amp;#34;userDao&amp;#34;&lt;/span> &lt;span class="na">alias=&lt;/span>&lt;span class="s">&amp;#34;aaa,bbb,ccc&amp;#34;&lt;/span>&lt;span class="nt">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>SpringDay02</title><link>https://www.bigcry.asia/p/spring%E5%AD%A6%E4%B9%A0-02/</link><pubDate>Fri, 17 Mar 2023 16:55:36 +0800</pubDate><guid>https://www.bigcry.asia/p/spring%E5%AD%A6%E4%B9%A0-02/</guid><description>&lt;h1 id="基于xml的bean配置">基于XML的Bean配置&lt;/h1>
+&lt;/div></description></item><item><title>SpringDay02</title><link>https://bigcry.asia/p/spring%E5%AD%A6%E4%B9%A0-02/</link><pubDate>Fri, 17 Mar 2023 16:55:36 +0800</pubDate><guid>https://bigcry.asia/p/spring%E5%AD%A6%E4%B9%A0-02/</guid><description>&lt;h1 id="基于xml的bean配置">基于XML的Bean配置&lt;/h1>
 &lt;h2 id="基础属性">基础属性&lt;/h2>
 &lt;h3 id="beanname与别名">BeanName与别名&lt;/h3>
 &lt;p>bean标签除了id属性指定唯一标识外，还允许使用name属性指定多个别名&lt;/p>
@@ -470,7 +470,7 @@ alt="image-20230317201814909"
 &lt;/div>
 &lt;/div>&lt;p>运行后即可正常输出&lt;/p>
 &lt;h2 id="小结">小结&lt;/h2>
-&lt;p>Spring博大精深啊&lt;/p></description></item><item><title>SpringDay01</title><link>https://www.bigcry.asia/p/spring%E5%AD%A6%E4%B9%A0/</link><pubDate>Thu, 16 Mar 2023 17:45:29 +0800</pubDate><guid>https://www.bigcry.asia/p/spring%E5%AD%A6%E4%B9%A0/</guid><description>&lt;h1 id="spring概述">Spring概述&lt;/h1>
+&lt;p>Spring博大精深啊&lt;/p></description></item><item><title>SpringDay01</title><link>https://bigcry.asia/p/spring%E5%AD%A6%E4%B9%A0/</link><pubDate>Thu, 16 Mar 2023 17:45:29 +0800</pubDate><guid>https://bigcry.asia/p/spring%E5%AD%A6%E4%B9%A0/</guid><description>&lt;h1 id="spring概述">Spring概述&lt;/h1>
 &lt;p>Spring 是最受欢迎的企业级 Java 应用程序开发框架，数以百万的来自世界各地的开发人员使用 Spring 框架来创建性能好、易于测试、可重用的代码。&lt;/p>
 &lt;p>Spring 框架是一个开源的 Java 平台，它最初是由 Rod Johnson 编写的，并且于 2003 年 6 月首次在 Apache 2.0 许可下发布。&lt;/p>
 &lt;p>Spring 是轻量级的框架，其基础版本只有 2 MB 左右的大小。&lt;/p>
@@ -650,7 +650,7 @@ alt="image-20230316195506908"
 >&lt;/p>
 &lt;h2 id="小结">小结&lt;/h2>
 &lt;p>今天学习了Spring中常见的Bean生产方式，分为&lt;code>BeanFactory&lt;/code>与&lt;code>ApplicationContext&lt;/code>方式，后者更为常用与强大。&lt;/p>
-&lt;p>虽然如今SpringBoot与SpringCould如火如荼，但其底层仍为Spring框架，之前只是使用SpringBoot进行项目开发，并未从源码角度进行思考，只是会用的级别，此次从新学习Spring有了更多感悟。&lt;/p></description></item><item><title>记一次被迫反编译加中间人攻击</title><link>https://www.bigcry.asia/p/114514/</link><pubDate>Fri, 04 Mar 2022 17:12:47 +0000</pubDate><guid>https://www.bigcry.asia/p/114514/</guid><description>&lt;h1 id="0x00-事件起因">0x00 事件起因&lt;/h1>
+&lt;p>虽然如今SpringBoot与SpringCould如火如荼，但其底层仍为Spring框架，之前只是使用SpringBoot进行项目开发，并未从源码角度进行思考，只是会用的级别，此次从新学习Spring有了更多感悟。&lt;/p></description></item><item><title>记一次被迫反编译加中间人攻击</title><link>https://bigcry.asia/p/114514/</link><pubDate>Fri, 04 Mar 2022 17:12:47 +0000</pubDate><guid>https://bigcry.asia/p/114514/</guid><description>&lt;h1 id="0x00-事件起因">0x00 事件起因&lt;/h1>
 &lt;p>最近在搞毕设，其中有一个模块需要用到人脸识别服务，遂去网上寻找现成的轮子，终于在某慕课平台上发现了一款简单的人脸识别框架，其使用cython编写并编译成C代码，借助Flask框架实现Web服务。下载运行的过程此处不多细说。&lt;/p>
 &lt;p>运行十分顺利，docker一键部署即可，结果在调用其生成的服务接口时出现问题，其应返回一串由python生成的人脸模型字符串，结果他给我返回了个&lt;code>icode不正确&lt;/code>，经查询发现，其还需要向慕课后台传递一串随机&lt;code>code&lt;/code>，此code只有购买该课程的人才能生成并有时效性，奈何本人囊中羞涩，实在付不起昂贵的课程费用，于是动起了小心思。&lt;/p>
 &lt;h1 id="0x01-返本溯源">0x01 返本溯源&lt;/h1>
@@ -803,7 +803,7 @@ loading="lazy"
 alt="image-20220304180643723"
 >&lt;/p>
 &lt;h1 id="0x04-end">0x04 END&lt;/h1>
-&lt;p>其实最后都可以修改内部参数，完全可以将请求的路径修改为本地路径，本地在搭建个小服务器返回正确的响应就好，一些软件的破解也是这么做的，或者修改其中验证code函数的返回值都i是可以的。为了搞这个服务，把好多年扔下的反编译老底都掏出来了，还是希望有能力的人可以支持正版，支持他人的劳动成果吧！&lt;/p></description></item><item><title>期末博客系统扩展</title><link>https://www.bigcry.asia/p/%E6%9C%9F%E6%9C%AB%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F%E6%89%A9%E5%B1%95/</link><pubDate>Wed, 27 Oct 2021 20:42:47 +0000</pubDate><guid>https://www.bigcry.asia/p/%E6%9C%9F%E6%9C%AB%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F%E6%89%A9%E5%B1%95/</guid><description>&lt;h1 id="spring-boot-扩展博客系统">Spring boot (扩展)博客系统&lt;/h1>
+&lt;p>其实最后都可以修改内部参数，完全可以将请求的路径修改为本地路径，本地在搭建个小服务器返回正确的响应就好，一些软件的破解也是这么做的，或者修改其中验证code函数的返回值都i是可以的。为了搞这个服务，把好多年扔下的反编译老底都掏出来了，还是希望有能力的人可以支持正版，支持他人的劳动成果吧！&lt;/p></description></item><item><title>期末博客系统扩展</title><link>https://bigcry.asia/p/%E6%9C%9F%E6%9C%AB%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F%E6%89%A9%E5%B1%95/</link><pubDate>Wed, 27 Oct 2021 20:42:47 +0000</pubDate><guid>https://bigcry.asia/p/%E6%9C%9F%E6%9C%AB%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F%E6%89%A9%E5%B1%95/</guid><description>&lt;h1 id="spring-boot-扩展博客系统">Spring boot (扩展)博客系统&lt;/h1>
 &lt;h2 id="主要扩展功能">主要扩展功能&lt;/h2>
 &lt;p>&lt;code>在老师已有基础上扩展&lt;/code>&lt;/p>
 &lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/image-20211019211243949.png"
@@ -1608,7 +1608,7 @@ alt="image-20211021165805221"
 &lt;h3 id="个人信息管理">个人信息管理&lt;/h3>
 &lt;h4 id="修改个人信息">修改个人信息&lt;/h4>
 &lt;h3 id="网站信息管理">网站信息管理&lt;/h3>
-&lt;h4 id="修改网站信息">修改网站信息&lt;/h4></description></item><item><title>虚拟机下的ArchLinux 安装实录(一)</title><link>https://www.bigcry.asia/p/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E7%9A%84archlinux-%E5%AE%89%E8%A3%85%E5%AE%9E%E5%BD%95/</link><pubDate>Mon, 10 Aug 2020 23:23:10 +0000</pubDate><guid>https://www.bigcry.asia/p/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E7%9A%84archlinux-%E5%AE%89%E8%A3%85%E5%AE%9E%E5%BD%95/</guid><description>&lt;h1 id="虚拟机下的archlinux-安装实录一">虚拟机下的ArchLinux 安装实录(一)&lt;/h1>
+&lt;h4 id="修改网站信息">修改网站信息&lt;/h4></description></item><item><title>虚拟机下的ArchLinux 安装实录(一)</title><link>https://bigcry.asia/p/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E7%9A%84archlinux-%E5%AE%89%E8%A3%85%E5%AE%9E%E5%BD%95/</link><pubDate>Mon, 10 Aug 2020 23:23:10 +0000</pubDate><guid>https://bigcry.asia/p/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E7%9A%84archlinux-%E5%AE%89%E8%A3%85%E5%AE%9E%E5%BD%95/</guid><description>&lt;h1 id="虚拟机下的archlinux-安装实录一">虚拟机下的ArchLinux 安装实录(一)&lt;/h1>
 &lt;h2 id="获取镜像---创建虚拟机">获取镜像 -&amp;gt; 创建虚拟机&lt;/h2>
 &lt;h3 id="获取安装镜像">获取安装镜像&lt;/h3>
 &lt;p>首先在 &lt;a class="link" href="https://www.archlinux.org/download/" target="_blank" rel="noopener"
@@ -2094,7 +2094,7 @@ alt="image-20200811172715340"
 &lt;blockquote>
 &lt;p>2020年8月11日&lt;/p>
 &lt;p>by &amp;mdash;笑的心酸&lt;/p>
-&lt;/blockquote></description></item><item><title>node学习笔记day04</title><link>https://www.bigcry.asia/p/nodejs%E5%AD%A6%E4%B9%A004/</link><pubDate>Tue, 04 Aug 2020 17:50:45 +0000</pubDate><guid>https://www.bigcry.asia/p/nodejs%E5%AD%A6%E4%B9%A004/</guid><description>&lt;h1 id="1-node学习笔记day04">1. node学习笔记day04&lt;/h1>
+&lt;/blockquote></description></item><item><title>node学习笔记day04</title><link>https://bigcry.asia/p/nodejs%E5%AD%A6%E4%B9%A004/</link><pubDate>Tue, 04 Aug 2020 17:50:45 +0000</pubDate><guid>https://bigcry.asia/p/nodejs%E5%AD%A6%E4%B9%A004/</guid><description>&lt;h1 id="1-node学习笔记day04">1. node学习笔记day04&lt;/h1>
 &lt;h2 id="11-cheerio模块">1.1. cheerio模块&lt;/h2>
 &lt;blockquote>
 &lt;p>cheerio是jquery核心功能的一个快速灵活而又简洁的实现，主要是为了用在服务器端需要对DOM进行操作的地方&lt;/p>
@@ -2304,7 +2304,7 @@ alt="20200803162838"
 &lt;/div>&lt;blockquote>
 &lt;p>2020年8月4日
 by &amp;mdash; 笑的心酸&lt;/p>
-&lt;/blockquote></description></item><item><title>node实战项目--B站爬虫</title><link>https://www.bigcry.asia/p/nodejs%E5%AD%A6%E4%B9%A003/</link><pubDate>Thu, 23 Jul 2020 19:13:05 +0000</pubDate><guid>https://www.bigcry.asia/p/nodejs%E5%AD%A6%E4%B9%A003/</guid><description>&lt;h1 id="1-node学习笔记day03">1. node学习笔记day03&lt;/h1>
+&lt;/blockquote></description></item><item><title>node实战项目--B站爬虫</title><link>https://bigcry.asia/p/nodejs%E5%AD%A6%E4%B9%A003/</link><pubDate>Thu, 23 Jul 2020 19:13:05 +0000</pubDate><guid>https://bigcry.asia/p/nodejs%E5%AD%A6%E4%B9%A003/</guid><description>&lt;h1 id="1-node学习笔记day03">1. node学习笔记day03&lt;/h1>
 &lt;p>&lt;code>node&lt;/code> 结合 &lt;code>os&lt;/code> 模块与 &lt;code>axios&lt;/code> 模块实现爬虫实战&lt;/p>
 &lt;h1 id="2-目标">2. 目标&lt;/h1>
 &lt;p>爬取B站用户追番信息，并保存为&lt;code>json&lt;/code>文件形式&lt;/p>
@@ -2777,7 +2777,7 @@ alt="20200723204347"
 &lt;/div>&lt;blockquote>
 &lt;p>2020/7/23
 by &amp;mdash;笑的心酸&lt;/p>
-&lt;/blockquote></description></item><item><title>node学习笔记day02</title><link>https://www.bigcry.asia/p/nodejs%E5%AD%A6%E4%B9%A002/</link><pubDate>Tue, 21 Jul 2020 19:53:30 +0000</pubDate><guid>https://www.bigcry.asia/p/nodejs%E5%AD%A6%E4%B9%A002/</guid><description>&lt;h1 id="1-node学习笔记day02">1. node学习笔记day02&lt;/h1>
+&lt;/blockquote></description></item><item><title>node学习笔记day02</title><link>https://bigcry.asia/p/nodejs%E5%AD%A6%E4%B9%A002/</link><pubDate>Tue, 21 Jul 2020 19:53:30 +0000</pubDate><guid>https://bigcry.asia/p/nodejs%E5%AD%A6%E4%B9%A002/</guid><description>&lt;h1 id="1-node学习笔记day02">1. node学习笔记day02&lt;/h1>
 &lt;h1 id="2-node文件流">2. node文件流&lt;/h1>
 &lt;p>流的出现是为了解决读取文件时，文件内容过于庞大而造成计算机内存不够导致的问题
 其将庞大文件分为多个流，以流的形式经由内存写入磁盘&lt;/p>
@@ -3084,7 +3084,7 @@ by &amp;mdash;笑的心酸&lt;/p>
 &lt;/div>&lt;blockquote>
 &lt;p>2020年7/21
 by 笑的心酸&lt;/p>
-&lt;/blockquote></description></item><item><title>hexo升级实录</title><link>https://www.bigcry.asia/p/hexo%E5%8D%87%E7%BA%A7%E5%AE%9E%E5%BD%95/</link><pubDate>Sat, 18 Jul 2020 19:49:33 +0000</pubDate><guid>https://www.bigcry.asia/p/hexo%E5%8D%87%E7%BA%A7%E5%AE%9E%E5%BD%95/</guid><description>&lt;h1 id="hexo升级实录">hexo升级实录&lt;/h1>
+&lt;/blockquote></description></item><item><title>hexo升级实录</title><link>https://bigcry.asia/p/hexo%E5%8D%87%E7%BA%A7%E5%AE%9E%E5%BD%95/</link><pubDate>Sat, 18 Jul 2020 19:49:33 +0000</pubDate><guid>https://bigcry.asia/p/hexo%E5%8D%87%E7%BA%A7%E5%AE%9E%E5%BD%95/</guid><description>&lt;h1 id="hexo升级实录">hexo升级实录&lt;/h1>
 &lt;p>今天升级了&lt;code>nodeJS&lt;/code>到14版本，然后使用&lt;code>hexo&lt;/code>时出现如下警告&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -3117,7 +3117,7 @@ hexo升级分为以下四步，还是很简单的&lt;/p>
 &lt;p>此时全局hexo升级完成，但是用来发布博客的版本尚未升级
 此时应新建一个博客文件夹，执行&lt;code>hexo init&lt;/code>命令，然后将旧博客的配置文件:&lt;code>package.json&lt;/code> 、 &lt;code>_config.yml&lt;/code> 以及 &lt;code>主题文件&lt;/code> 、&lt;code>md文章&lt;/code>复制到新的博客文件夹相应位置中
 然后在新目录下执行 &lt;code>npm update --save&lt;/code>来安装/升级所需依赖
-此时&lt;code>hexo&lt;/code>升级工作完成&lt;/p></description></item><item><title>node学习笔记day01</title><link>https://www.bigcry.asia/p/nodejs%E5%AD%A6%E4%B9%A001/</link><pubDate>Fri, 17 Jul 2020 16:41:54 +0000</pubDate><guid>https://www.bigcry.asia/p/nodejs%E5%AD%A6%E4%B9%A001/</guid><description>&lt;h1 id="1-node学习笔记day01">1. node学习笔记day01&lt;/h1>
+此时&lt;code>hexo&lt;/code>升级工作完成&lt;/p></description></item><item><title>node学习笔记day01</title><link>https://bigcry.asia/p/nodejs%E5%AD%A6%E4%B9%A001/</link><pubDate>Fri, 17 Jul 2020 16:41:54 +0000</pubDate><guid>https://bigcry.asia/p/nodejs%E5%AD%A6%E4%B9%A001/</guid><description>&lt;h1 id="1-node学习笔记day01">1. node学习笔记day01&lt;/h1>
 &lt;h1 id="2-node简介">2. node简介&lt;/h1>
 &lt;p>是一个运行js的环境 , 不是一门新的语言 , 不是js的框架 , 而是独立于浏览器来运行js的环境或js编译器 , 采用谷歌的V8引擎 , node可以用来写后端及操作文件或数据库 , 使js更强
 node中可以输出一下&lt;code>window&lt;/code>/&lt;code>document&lt;/code>对象 , 会发现没有定义 , 这是因为这两个对象都是浏览器环境下的 , 而node作为一个独立环境是不存在这两个对象的定义的&lt;/p>
@@ -3543,7 +3543,7 @@ js导入某对象：&lt;code>var name = require('/xx.js')&lt;/code> (test.js)
 &lt;blockquote>
 &lt;p>2020/07/17
 by &amp;mdash;- 笑的心酸&lt;/p>
-&lt;/blockquote></description></item><item><title>hexo+Github+阿里云实现个人博客与自动发布</title><link>https://www.bigcry.asia/p/hexo%E5%AE%89%E8%A3%85/</link><pubDate>Wed, 01 Jul 2020 22:14:01 +0000</pubDate><guid>https://www.bigcry.asia/p/hexo%E5%AE%89%E8%A3%85/</guid><description>&lt;h1 id="前言">前言&lt;/h1>
+&lt;/blockquote></description></item><item><title>hexo+Github+阿里云实现个人博客与自动发布</title><link>https://bigcry.asia/p/hexo%E5%AE%89%E8%A3%85/</link><pubDate>Wed, 01 Jul 2020 22:14:01 +0000</pubDate><guid>https://bigcry.asia/p/hexo%E5%AE%89%E8%A3%85/</guid><description>&lt;h1 id="前言">前言&lt;/h1>
 &lt;blockquote>
 &lt;p>假设以下操作你已经拥有了自己的域名与服务器&lt;/p>
 &lt;/blockquote>
@@ -3754,7 +3754,7 @@ alt="20200701223647"
 &lt;blockquote>
 &lt;p>&lt;a class="link" href="https://hexo.io/zh-cn/" target="_blank" rel="noopener"
 >hexo官方文档&lt;/a>&lt;/p>
-&lt;/blockquote></description></item><item><title>新版Windows Terminal美化配置</title><link>https://www.bigcry.asia/p/windows-terminal%E7%BE%8E%E5%8C%96%E9%85%8D%E7%BD%AE/</link><pubDate>Tue, 09 Jun 2020 10:14:58 +0000</pubDate><guid>https://www.bigcry.asia/p/windows-terminal%E7%BE%8E%E5%8C%96%E9%85%8D%E7%BD%AE/</guid><description>&lt;h1 id="关于新版windows-terminal">关于新版Windows Terminal&lt;/h1>
+&lt;/blockquote></description></item><item><title>新版Windows Terminal美化配置</title><link>https://bigcry.asia/p/windows-terminal%E7%BE%8E%E5%8C%96%E9%85%8D%E7%BD%AE/</link><pubDate>Tue, 09 Jun 2020 10:14:58 +0000</pubDate><guid>https://bigcry.asia/p/windows-terminal%E7%BE%8E%E5%8C%96%E9%85%8D%E7%BD%AE/</guid><description>&lt;h1 id="关于新版windows-terminal">关于新版Windows Terminal&lt;/h1>
 &lt;h2 id="简介">简介&lt;/h2>
 &lt;p>Windows 终端是一个面向命令行工具和 shell（如命令提示符、PowerShell 和适用于 Linux 的 Windows 子系统 (WSL)）用户的新式终端应用程序。 它的主要功能包括多个选项卡、窗格、Unicode 和 UTF-8 字符支持、GPU 加速文本呈现引擎，还可以用于创建你自己的主题并自定义文本、颜色、背景和快捷键绑定。
 &lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/hexoBlogimg/blog/2020/wt.png"
@@ -4113,7 +4113,7 @@ alt="path"
 >如何打造好看还好用的 Windows Terminal&amp;mdash;ChrAlpha&lt;/a>
 &lt;a class="link" href="https://sspai.com/post/52907" target="_blank" rel="noopener"
 >5 个 PowerShell 主题，让你的 Windows 终端更好看&amp;mdash;少数派&lt;/a>&lt;/p>
-&lt;/blockquote></description></item><item><title>Archives</title><link>https://www.bigcry.asia/archives/</link><pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate><guid>https://www.bigcry.asia/archives/</guid><description/></item><item><title>about</title><link>https://www.bigcry.asia/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.bigcry.asia/about/</guid><description>&lt;h1 id="关于">关于&lt;/h1>
+&lt;/blockquote></description></item><item><title>Archives</title><link>https://bigcry.asia/archives/</link><pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate><guid>https://bigcry.asia/archives/</guid><description/></item><item><title>about</title><link>https://bigcry.asia/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://bigcry.asia/about/</guid><description>&lt;h1 id="关于">关于&lt;/h1>
 &lt;h3 id="本博客基于hugohttpsgohugoio与github-action搭建">本博客基于&lt;a class="link" href="https://gohugo.io/" target="_blank" rel="noopener"
 >hugo&lt;/a>与GitHub Action搭建&lt;/h3>
 &lt;h3 id="主题采用hugo-theme-stackhttpsgithubcomcaijimmyhugo-theme-stack">主题采用&lt;a class="link" href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener"
@@ -4128,7 +4128,7 @@ alt="path"
 &lt;p>有offer了再详细更新本页面&lt;/p>
 &lt;p>&lt;img src="https://cdn.jsdelivr.net/gh/mnmnmssd/mnmnmssd@master/assets/github-contribution-grid-snake.svg"
 loading="lazy"
->&lt;/p></description></item><item><title>Links</title><link>https://www.bigcry.asia/links/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.bigcry.asia/links/</guid><description>&lt;h3 id="友链交换请按以下格式发布至评论区">友链交换请按以下格式发布至评论区&lt;/h3>
+>&lt;/p></description></item><item><title>Links</title><link>https://bigcry.asia/links/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://bigcry.asia/links/</guid><description>&lt;h3 id="友链交换请按以下格式发布至评论区">友链交换请按以下格式发布至评论区&lt;/h3>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -4143,4 +4143,4 @@ loading="lazy"
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">网站描述：xxx可能会xxx，但绝不会xxx
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>交换友链前请先将本博客加入友链哦。。。&lt;/p></description></item><item><title>Search</title><link>https://www.bigcry.asia/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.bigcry.asia/search/</guid><description/></item></channel></rss>
+&lt;/div>&lt;p>交换友链前请先将本博客加入友链哦。。。&lt;/p></description></item><item><title>Search</title><link>https://bigcry.asia/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://bigcry.asia/search/</guid><description/></item></channel></rss>
