@@ -104,7 +104,7 @@ params:
 
         # Waline client configuration see: https://waline.js.org/en/reference/component.html
         waline:
-            serverURL: https://waline-hugo-blog-4hlv2o6ta-mnmnmssd.vercel.app/
+            serverURL: https://hugo-blog-comment.bigcry.asia/
             lang: zh-CN
             pageview:
             emoji:
