@@ -7,7 +7,10 @@ math:
 license: 
 hidden: false
 comments: true
-draft: true
+draft: false
+categories:
+    - TODO
+    - List
 ---
 
 ## 接下来更新计划
